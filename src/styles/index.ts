@@ -17,16 +17,30 @@ export const {
       "accent-background-subtle": indigoDark.indigo2,
       "accent-shape": indigoDark.indigo3,
       "accent-border": indigoDark.indigo7,
-      "accent-text-low-contrast": indigoDark.indigo11,
-      "accent-text-high-contrast": indigoDark.indigo12,
+      "accent-text": indigoDark.indigo11,
+      "accent-text-contrast": indigoDark.indigo12,
 
       "neutral-divider": grayDark.gray6,
       "neutral-border": grayDark.gray9,
-      "neutral-placeholder": grayDark.gray11,
+      "neutral-text": grayDark.gray11,
     },
     fonts: {
       sans: "Inter, sans-serif",
       mono: "Fira Mono, monospace",
+    },
+    fontSizes: {
+      sm: "0.75rem",
+      base: "1rem",
+      lg: "1.125rem",
+      xl: "1.5rem",
+      "2xl": "2rem",
+      "3xl": "2.625rem",
+      "4xl": "3.75rem",
+    },
+    radii: {
+      sm: "4px",
+      lg: "8px",
+      full: "9999px",
     },
   },
 });

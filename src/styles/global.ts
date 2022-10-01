@@ -7,9 +7,14 @@ export const globalStyles = globalCss({
     boxSizing: "border-box",
   },
 
+  ":focus-visible": {
+    outline: "2px dashed $accent-text-contrast",
+    outlineOffset: "0.25rem",
+  },
+
   body: {
     backgroundColor: "$accent-background",
-    color: "$accent-text-high-contrast",
+    color: "$accent-text-contrast",
     "-webkit-font-smoothing": "antialiased",
     "-moz-osx-font-smoothing": "grayscale",
   },
@@ -17,7 +22,7 @@ export const globalStyles = globalCss({
   "body, input, textarea, button": {
     fontFamily: "$sans",
     fontWeight: "400",
-    fontSize: "1rem",
+    fontSize: "$base",
   },
 
   button: {
