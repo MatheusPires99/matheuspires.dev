@@ -2,10 +2,12 @@ import Image from "next/future/image";
 import Link from "next/link";
 
 import { ChipGroup, Chip } from "@/components/chip";
+import { Divider } from "@/components/divider";
 import { Heading } from "@/components/heading";
+import { Section } from "@/components/section";
 import { styled } from "@/styles";
 
-const HeroSection = styled("section", {
+const HeroSection = styled(Section, {
   display: "flex",
   alignItems: "center",
   gap: 84,
@@ -106,6 +108,8 @@ const Home = () => {
           </ChipGroup>
         </HeroContent>
       </HeroSection>
+
+      <Divider />
     </main>
   );
 };
