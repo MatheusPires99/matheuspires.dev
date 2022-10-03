@@ -9,7 +9,6 @@ import { Heading } from "@/components/heading";
 import { IconButton } from "@/components/icon-button";
 import { Link } from "@/components/link";
 
-import mockedImg from "../../../../../../Desktop/codify.png";
 import {
   FeaturedProjectContainer,
   ProjectImageContainer,
@@ -25,7 +24,7 @@ export const FeaturedProject = ({ direction }: FeaturedProjectProps) => {
     <FeaturedProjectContainer direction={direction}>
       <Link href="">
         <ProjectImageContainer>
-          <Image src={mockedImg} alt="" width={602} height={328} />
+          <Image src="/codify.png" alt="" width={602} height={328} />
         </ProjectImageContainer>
       </Link>
 
