@@ -1,5 +1,4 @@
 import Image from "next/future/image";
-import Link from "next/link";
 
 import { FileTs } from "phosphor-react";
 
@@ -8,6 +7,7 @@ import { ChipsGroup, Chip } from "@/components/chip";
 import { Divider } from "@/components/divider";
 import { FeaturedProject } from "@/components/featured-project";
 import { Heading } from "@/components/heading";
+import { Link } from "@/components/link";
 import { ProjectCard } from "@/components/project-card";
 import { Section } from "@/components/section";
 import { styled } from "@/styles";
@@ -182,6 +182,8 @@ const Home = () => {
           </Button>
         </OtherProjects>
       </ProjectsSection>
+
+      <Divider />
     </main>
   );
 };

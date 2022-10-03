@@ -1,5 +1,4 @@
 import Image from "next/future/image";
-import Link from "next/link";
 
 import { VariantProps } from "@stitches/react";
 import { GithubLogo, ArrowSquareOut, FileTs } from "phosphor-react";
@@ -8,6 +7,7 @@ import { Card } from "@/components/card";
 import { Chip, ChipsGroup } from "@/components/chip";
 import { Heading } from "@/components/heading";
 import { IconButton } from "@/components/icon-button";
+import { Link } from "@/components/link";
 
 import mockedImg from "../../../../../../Desktop/codify.png";
 import {
@@ -31,7 +31,9 @@ export const FeaturedProject = ({ direction }: FeaturedProjectProps) => {
 
       <ProjectContent direction={direction}>
         <Heading size="h3" as="h3">
-          <Link href="">Codify</Link>
+          <Link variant="primary" href="">
+            Codify
+          </Link>
         </Heading>
 
         <ChipsGroup>

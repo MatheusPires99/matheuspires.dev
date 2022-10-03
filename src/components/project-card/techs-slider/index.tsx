@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { useRef } from "react";
 
 import { CaretLeft, CaretRight, FileTs } from "phosphor-react";
@@ -8,6 +7,7 @@ import "swiper/css";
 
 import { Chip } from "@/components/chip";
 import { IconButton } from "@/components/icon-button";
+import { Link } from "@/components/link";
 
 import { TechsSliderContainer, SliderNavigation } from "./styles";
 
