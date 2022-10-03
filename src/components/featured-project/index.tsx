@@ -1,8 +1,9 @@
 import Image from "next/future/image";
 
 import { VariantProps } from "@stitches/react";
-import { GithubLogo, ArrowSquareOut, FileTs } from "phosphor-react";
+import { ArrowSquareOut, FileTs } from "phosphor-react";
 
+import { GithubLogo } from "@/assets/icons/github-logo";
 import { Card } from "@/components/card";
 import { Chip, ChipsGroup } from "@/components/chip";
 import { Heading } from "@/components/heading";

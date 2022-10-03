@@ -1,7 +1,8 @@
 import Link from "next/link";
 
-import { GithubLogo, ArrowSquareOut, Star, GitFork } from "phosphor-react";
+import { ArrowSquareOut, Star, GitFork } from "phosphor-react";
 
+import { GithubLogo } from "@/assets/icons/github-logo";
 import { IconButton } from "@/components/icon-button";
 
 import {

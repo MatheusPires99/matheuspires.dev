@@ -1,5 +1,6 @@
-import { GithubLogo, LinkedinLogo } from "phosphor-react";
+import { LinkedinLogo } from "phosphor-react";
 
+import { GithubLogo } from "@/assets/icons/github-logo";
 import { Button } from "@/components/button";
 import { Container } from "@/components/container";
 import { Divider } from "@/components/divider";
@@ -23,16 +24,30 @@ export const Footer = () => {
             I&apos;m always open to chat, so please don&apos;t hesitate
             contacting me!
           </p>
-          <Button variant="outline">Say Hello</Button>
+          <Button
+            variant="outline"
+            as={Link}
+            href="mailto:matheushenriquepires99@gmail.com"
+          >
+            Say Hello
+          </Button>
         </GetInTouch>
 
         <ContactInfo>
           <strong>© Matheus Pires 2022</strong>
           <div>
-            <IconButton as={Link} href="" target="_blank">
+            <IconButton
+              as={Link}
+              href="https://www.linkedin.com/in/matheus-pires-521271180/"
+              target="_blank"
+            >
               <LinkedinLogo />
             </IconButton>
-            <IconButton as={Link} href="" target="_blank">
+            <IconButton
+              as={Link}
+              href="https://github.com/MatheusPires99"
+              target="_blank"
+            >
               <GithubLogo />
             </IconButton>
           </div>
@@ -40,7 +55,11 @@ export const Footer = () => {
 
         <DesignedBy>
           Designed by{" "}
-          <Link variant="hightlight" href="" target="_blank">
+          <Link
+            variant="hightlight"
+            href="https://www.linkedin.com/in/gabriela-rezende-61a7881ba/"
+            target="_blank"
+          >
             Gabriela Rezende
           </Link>
         </DesignedBy>

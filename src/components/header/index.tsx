@@ -1,8 +1,12 @@
+import { useRouter } from "next/router";
+
 import { Container } from "../container";
 import { Link } from "../link";
 import { HeaderContainer, Navigation } from "./styles";
 
 export const Header = () => {
+  const { pathname } = useRouter();
+
   return (
     <HeaderContainer>
       <Container
@@ -18,10 +22,18 @@ export const Header = () => {
         </Link>
 
         <Navigation>
-          <Link variant="primary" href="/about">
+          <Link
+            variant="primary"
+            isSelected={pathname === "/about"}
+            href="/about"
+          >
             About
           </Link>
-          <Link variant="primary" href="/projects">
+          <Link
+            variant="primary"
+            isSelected={pathname === "/projects"}
+            href="/projects"
+          >
             Projects
           </Link>
         </Navigation>
