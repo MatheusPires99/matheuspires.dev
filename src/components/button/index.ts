@@ -18,12 +18,12 @@ export const Button = styled("button", {
   variants: {
     variant: {
       outline: {
-        color: "$accent-text",
-        border: "1px solid $accent-border",
+        color: "$text-contrast",
+        border: "1px solid $border",
 
         "&:hover": {
-          backgroundColor: "$accent-background-subtle",
-          borderColor: "$accent-border-hover",
+          backgroundColor: "$background-light",
+          borderColor: "$border-hover",
         },
       },
     },

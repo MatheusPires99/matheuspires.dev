@@ -26,14 +26,12 @@ export const ProjectImageContainer = styled("div", {
   border: "1px solid $neutral-divider",
   overflow: "hidden",
 
-  "&:hover": {
-    img: {
-      transform: "scale(1.1)",
-    },
-  },
-
   img: {
     transition: "transform 0.2s ease-in-out",
+
+    "&:hover": {
+      transform: "scale(1.1)",
+    },
   },
 });
 
@@ -51,7 +49,7 @@ export const ProjectContent = styled("div", {
     transition: "color 0.2s",
 
     "&:hover": {
-      color: "$accent-text",
+      color: "$text-contrast",
     },
   },
 

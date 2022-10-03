@@ -8,13 +8,13 @@ export const globalStyles = globalCss({
   },
 
   ":focus-visible": {
-    outline: "2px dashed $accent-text",
+    outline: "2px dashed $text-contrast",
     outlineOffset: 4,
   },
 
   body: {
-    backgroundColor: "$accent-background",
-    color: "$accent-text-contrast",
+    backgroundColor: "$background",
+    color: "$text-base",
     "-webkit-font-smoothing": "antialiased",
     "-moz-osx-font-smoothing": "grayscale",
   },

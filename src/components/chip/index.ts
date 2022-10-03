@@ -9,9 +9,9 @@ export const ChipsGroup = styled("ul", {
 
 export const Chip = styled("div", {
   borderRadius: "$full",
-  border: "1px solid $neutral-border",
+  border: "1px solid $accent-border",
   padding: "0.5rem",
-  color: "$accent-text-contrast",
+  color: "$text",
   fontSize: "$sm",
   fontFamily: "$mono",
   lineHeight: 1,

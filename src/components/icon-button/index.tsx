@@ -1,7 +1,7 @@
 import { styled } from "@/styles";
 
 export const IconButton = styled("button", {
-  color: "$accent-text-contrast",
+  color: "$text-base",
   backgroundColor: "transparent",
   border: "none",
 
@@ -12,7 +12,7 @@ export const IconButton = styled("button", {
   transition: "color 0.2s",
 
   "&:hover": {
-    color: "$accent-text",
+    color: "$text-contrast",
   },
 
   variants: {

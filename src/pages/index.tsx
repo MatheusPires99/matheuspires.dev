@@ -36,13 +36,13 @@ const Introduction = styled("div", {
   span: {
     fontFamily: "$mono",
     fontSize: "$lg",
-    color: "$accent-text",
+    color: "$text-contrast",
     marginBottom: "0.5rem",
   },
 
   p: {
     fontSize: "$lg",
-    color: "$neutral-text",
+    color: "$accent-text",
     marginTop: "1.5rem",
   },
 });

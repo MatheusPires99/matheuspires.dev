@@ -29,7 +29,7 @@ export const ProjectCardContent = styled("div", {
   flex: 1,
 
   p: {
-    color: "$neutral-text",
+    color: "$accent-text",
   },
 
   "> div": {

@@ -13,19 +13,19 @@ export const {
 } = createStitches({
   theme: {
     colors: {
-      // TODO: Change naming
-      "accent-background": indigoDark.indigo1,
-      "accent-background-subtle": indigoDark.indigo2,
-      "accent-shape": indigoDark.indigo3,
-      "accent-shape-hover": indigoDark.indigo4,
-      "accent-border": indigoDark.indigo7,
-      "accent-border-hover": indigoDark.indigo8,
-      "accent-text": indigoDark.indigo11,
-      "accent-text-contrast": indigoDark.indigo12,
+      background: indigoDark.indigo1,
+      "background-light": indigoDark.indigo2,
+      shape: indigoDark.indigo3,
+      "shape-hover": indigoDark.indigo4,
+      border: indigoDark.indigo7,
+      "border-hover": indigoDark.indigo8,
+      "text-contrast": indigoDark.indigo11,
+      "text-base": indigoDark.indigo12,
 
-      "neutral-divider": grayDark.gray6,
-      "neutral-border": grayDark.gray9,
-      "neutral-text": grayDark.gray11,
+      "accent-border": grayDark.gray9,
+      "accent-text": grayDark.gray11,
+
+      divider: grayDark.gray6,
     },
     fonts: {
       sans: "Inter, sans-serif",
@@ -44,6 +44,12 @@ export const {
       sm: "4px",
       lg: "8px",
       full: "9999px",
+    },
+    shadows: {
+      md: "0 8px 30px rgba(0,0,0,.12)",
+    },
+    sizes: {
+      "page-width": "946px",
     },
   },
 });

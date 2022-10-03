@@ -21,7 +21,7 @@ export const SliderNavigation = styled("div", {
   },
 
   [`${IconButton}`]: {
-    backgroundColor: "$accent-shape",
+    backgroundColor: "$shape",
   },
 
   variants: {
@@ -34,7 +34,7 @@ export const SliderNavigation = styled("div", {
           width: 32,
           height: "100%",
           background:
-            "linear-gradient(to left, $accent-shape, rgba(25, 33, 64, 0.9) 10%, rgba(25, 33, 64, 0.01) 90%)",
+            "linear-gradient(to left, $shape, rgba(25, 33, 64, 0.9) 10%, rgba(25, 33, 64, 0.01) 90%)",
         },
       },
       left: {
@@ -45,7 +45,7 @@ export const SliderNavigation = styled("div", {
           width: 32,
           height: "100%",
           background:
-            "linear-gradient(to right, $accent-shape, rgba(25, 33, 64, 0.9) 10%, rgba(25, 33, 64, 0.01) 90%)",
+            "linear-gradient(to right, $shape, rgba(25, 33, 64, 0.9) 10%, rgba(25, 33, 64, 0.01) 90%)",
         },
       },
     },

@@ -3,7 +3,7 @@ import * as SeparatorPrimitive from "@radix-ui/react-separator";
 import { styled } from "@/styles";
 
 export const Divider = styled(SeparatorPrimitive.Root, {
-  backgroundColor: "$neutral-divider",
+  backgroundColor: "$divider",
 
   "&[data-orientation=horizontal]": {
     height: 1,
