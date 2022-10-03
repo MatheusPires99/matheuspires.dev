@@ -2,6 +2,7 @@ import { GithubLogo, LinkedinLogo } from "phosphor-react";
 
 import { Button } from "@/components/button";
 import { Container } from "@/components/container";
+import { Divider } from "@/components/divider";
 import { Heading } from "@/components/heading";
 import { IconButton } from "@/components/icon-button";
 import { Link } from "@/components/link";
@@ -11,6 +12,8 @@ import { FooterContainer, GetInTouch, ContactInfo, DesignedBy } from "./styles";
 export const Footer = () => {
   return (
     <Container as="footer">
+      <Divider />
+
       <FooterContainer as="div">
         <GetInTouch>
           <Heading size="h2" as="h2" centered>
