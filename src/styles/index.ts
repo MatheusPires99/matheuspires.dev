@@ -13,10 +13,13 @@ export const {
 } = createStitches({
   theme: {
     colors: {
+      // TODO: Change naming
       "accent-background": indigoDark.indigo1,
       "accent-background-subtle": indigoDark.indigo2,
       "accent-shape": indigoDark.indigo3,
+      "accent-shape-hover": indigoDark.indigo4,
       "accent-border": indigoDark.indigo7,
+      "accent-border-hover": indigoDark.indigo8,
       "accent-text": indigoDark.indigo11,
       "accent-text-contrast": indigoDark.indigo12,
 

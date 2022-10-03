@@ -1,8 +1,6 @@
 import { styled } from "@/styles";
 
-export const ChipGroup = styled("ul", {
-  listStyle: "none",
-
+export const ChipsGroup = styled("ul", {
   display: "flex",
   alignItems: "center",
   gap: "0.5rem",
@@ -16,6 +14,7 @@ export const Chip = styled("div", {
   color: "$accent-text-contrast",
   fontSize: "$sm",
   fontFamily: "$mono",
+  lineHeight: 1,
 
   display: "flex",
   alignItems: "center",
@@ -23,10 +22,6 @@ export const Chip = styled("div", {
   gap: "0.25rem",
 
   transition: "all 0.2s",
-
-  "&:hover": {
-    transform: "scale(1.0125)",
-  },
 
   variants: {
     highlightColor: {

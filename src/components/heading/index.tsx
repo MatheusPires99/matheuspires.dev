@@ -1,13 +1,28 @@
-import { ComponentProps } from "react";
+import { styled } from "@/styles";
 
-import { StyledHeading } from "./styles";
+export const Heading = styled("h1", {
+  fontWeight: "600",
 
-type HeadingProps = ComponentProps<typeof StyledHeading>;
+  variants: {
+    size: {
+      h1: {
+        fontSize: "$4xl",
+      },
+      h2: {
+        fontSize: "$3xl",
+      },
+      h3: {
+        fontSize: "$2xl",
+      },
+    },
+    centered: {
+      true: {
+        textAlign: "center",
+      },
+    },
+  },
 
-export const Heading = ({ children, ...props }: HeadingProps) => {
-  return (
-    <StyledHeading as={props.size as any} {...props}>
-      {children}
-    </StyledHeading>
-  );
-};
+  defaultVariants: {
+    size: "h1",
+  },
+});

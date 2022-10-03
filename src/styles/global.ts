@@ -8,8 +8,8 @@ export const globalStyles = globalCss({
   },
 
   ":focus-visible": {
-    outline: "2px dashed $accent-text-contrast",
-    outlineOffset: "0.25rem",
+    outline: "2px dashed $accent-text",
+    outlineOffset: 4,
   },
 
   body: {
@@ -34,8 +34,12 @@ export const globalStyles = globalCss({
     textDecoration: "none",
   },
 
-  "h1, h2, h3, h4": {
+  "h1, h2, h3": {
     fontFamily: "$sans",
     fontWeight: "600",
+  },
+
+  ul: {
+    listStyle: "none",
   },
 });
