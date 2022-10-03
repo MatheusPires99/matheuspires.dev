@@ -32,9 +32,16 @@ export const Link = styled(NextLink, {
       },
       unstyled: {},
     },
+    isSelected: {
+      true: {
+        color: "$text-contrast",
+        fontWeight: "600",
+      },
+    },
   },
 
   defaultVariants: {
     variant: "unstyled",
+    isSelected: false,
   },
 });

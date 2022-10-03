@@ -4,6 +4,7 @@ import { FileTs } from "phosphor-react";
 
 import { Button } from "@/components/button";
 import { ChipsGroup, Chip } from "@/components/chip";
+import { Container } from "@/components/container";
 import { Divider } from "@/components/divider";
 import { FeaturedProject } from "@/components/featured-project";
 import { Heading } from "@/components/heading";
@@ -82,7 +83,7 @@ const OtherProjectsGroup = styled("ul", {
 
 const Home = () => {
   return (
-    <main>
+    <Container as="main">
       <HeroSection>
         <HeroImage
           src="/me.jpg"
@@ -206,7 +207,7 @@ const Home = () => {
       </ProjectsSection>
 
       <Divider />
-    </main>
+    </Container>
   );
 };
 

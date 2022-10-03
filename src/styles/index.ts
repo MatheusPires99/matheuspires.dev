@@ -48,10 +48,11 @@ export const {
       full: "9999px",
     },
     shadows: {
-      md: "0 8px 30px rgba(0,0,0,.12)",
+      md: "0 8px 30px rgba(0, 0, 0, 0.12)",
     },
     sizes: {
       "page-width": "946px",
+      "header-height": "80px",
     },
   },
 });
