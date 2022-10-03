@@ -47,6 +47,14 @@ const Introduction = styled("div", {
   },
 });
 
+const CallToActions = styled("div", {
+  marginTop: "2rem",
+
+  display: "flex",
+  alignItems: "center",
+  gap: "1rem",
+});
+
 const ProjectsSection = styled(Section, {});
 
 const FeaturedProjectsGroup = styled("div", {
@@ -136,6 +144,20 @@ const Home = () => {
               </Link>
             </li>
           </ChipsGroup>
+
+          <CallToActions>
+            <Button as={Link} href="/about">
+              More about me
+            </Button>
+            <Button
+              variant="outline"
+              as={Link}
+              href="/resume.pdf"
+              target="_blank"
+            >
+              Resume
+            </Button>
+          </CallToActions>
         </HeroContent>
       </HeroSection>
 

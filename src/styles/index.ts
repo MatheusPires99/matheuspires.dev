@@ -19,6 +19,8 @@ export const {
       "shape-hover": indigoDark.indigo4,
       border: indigoDark.indigo7,
       "border-hover": indigoDark.indigo8,
+      "solid-background": indigoDark.indigo9,
+      "solid-background-hover": indigoDark.indigo10,
       "text-contrast": indigoDark.indigo11,
       "text-base": indigoDark.indigo12,
 

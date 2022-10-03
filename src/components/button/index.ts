@@ -13,13 +13,23 @@ export const Button = styled("button", {
   alignItems: "center",
   justifyContent: "center",
 
-  transition: "background-color 0.2s, border-color 0.2s",
-
   variants: {
     variant: {
+      primary: {
+        backgroundColor: "$solid-background",
+        color: "$text-base",
+
+        transition: "background-color 0.2s",
+
+        "&:hover": {
+          backgroundColor: "$solid-background-hover",
+        },
+      },
       outline: {
         color: "$text-contrast",
         border: "1px solid $border",
+
+        transition: "background-color 0.2s, border-color 0.2s",
 
         "&:hover": {
           backgroundColor: "$background-light",
@@ -27,5 +37,9 @@ export const Button = styled("button", {
         },
       },
     },
+  },
+
+  defaultVariants: {
+    variant: "primary",
   },
 });
