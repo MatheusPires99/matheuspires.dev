@@ -29,11 +29,6 @@ export const globalStyles = globalCss({
     cursor: "pointer",
   },
 
-  a: {
-    color: "inherit",
-    textDecoration: "none",
-  },
-
   "h1, h2, h3": {
     fontFamily: "$sans",
     fontWeight: "600",

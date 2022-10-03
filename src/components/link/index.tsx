@@ -5,12 +5,12 @@ import { styled } from "@/styles";
 export const Link = styled(NextLink, {
   textDecoration: "none",
 
-  transition: "color 0.2s",
-
   variants: {
     variant: {
       primary: {
         color: "$text-base",
+
+        transition: "color 0.2s",
 
         "&:hover": {
           color: "$text-contrast",
@@ -19,9 +19,15 @@ export const Link = styled(NextLink, {
       hightlight: {
         color: "$text-contrast",
         fontWeight: "600",
+        position: "relative",
 
-        "&:hover": {
-          textDecoration: "underline",
+        "&:hover::before": {
+          content: "",
+          width: "100%",
+          height: 1,
+          backgroundColor: "$text-contrast",
+          position: "absolute",
+          bottom: 0,
         },
       },
       unstyled: {},
