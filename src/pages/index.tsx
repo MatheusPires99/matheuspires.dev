@@ -13,12 +13,6 @@ import { ProjectCard } from "@/components/project-card";
 import { Section } from "@/components/section";
 import { styled } from "@/styles";
 
-const HeroSection = styled(Section, {
-  display: "flex",
-  alignItems: "center",
-  gap: 84,
-});
-
 const HeroImage = styled(Image, {
   borderRadius: "$sm",
 });
@@ -56,21 +50,12 @@ const CallToActions = styled("div", {
   gap: "1rem",
 });
 
-const ProjectsSection = styled(Section, {});
-
 const FeaturedProjectsGroup = styled("div", {
   marginTop: "3.5rem",
 
   display: "flex",
   flexDirection: "column",
   gap: "6.5rem",
-});
-
-const OtherProjects = styled("div", {
-  marginTop: "9.5rem",
-
-  display: "flex",
-  flexDirection: "column",
 });
 
 const OtherProjectsGroup = styled("ul", {
@@ -84,7 +69,7 @@ const OtherProjectsGroup = styled("ul", {
 const Home = () => {
   return (
     <Container as="main">
-      <HeroSection>
+      <Section css={{ display: "flex", alignItems: "center", gap: 84 }}>
         <HeroImage
           src="/me.jpg"
           alt="Matheus's photo"
@@ -160,53 +145,53 @@ const Home = () => {
             </Button>
           </CallToActions>
         </HeroContent>
-      </HeroSection>
+      </Section>
 
       <Divider />
 
-      <ProjectsSection>
+      <Section css={{ paddingBottom: 0 }}>
         <Heading size="h2">Featured Projects</Heading>
 
         <FeaturedProjectsGroup>
           <FeaturedProject direction="left" />
           <FeaturedProject direction="right" />
         </FeaturedProjectsGroup>
+      </Section>
 
-        <OtherProjects>
-          <Heading size="h3" centered as="h3">
-            Other Projects
-          </Heading>
+      <Section
+        css={{ paddingTop: "9.5rem", display: "flex", flexDirection: "column" }}
+      >
+        <Heading size="h3" centered as="h3">
+          Other Projects
+        </Heading>
 
-          <OtherProjectsGroup>
-            <li>
-              <ProjectCard />
-            </li>
-            <li>
-              <ProjectCard />
-            </li>
-            <li>
-              <ProjectCard />
-            </li>
-            <li>
-              <ProjectCard />
-            </li>
-            <li>
-              <ProjectCard />
-            </li>
-          </OtherProjectsGroup>
+        <OtherProjectsGroup>
+          <li>
+            <ProjectCard />
+          </li>
+          <li>
+            <ProjectCard />
+          </li>
+          <li>
+            <ProjectCard />
+          </li>
+          <li>
+            <ProjectCard />
+          </li>
+          <li>
+            <ProjectCard />
+          </li>
+        </OtherProjectsGroup>
 
-          <Button
-            variant="outline"
-            as={Link}
-            href="/projects"
-            css={{ marginTop: "3.5rem", alignSelf: "center" }}
-          >
-            View all
-          </Button>
-        </OtherProjects>
-      </ProjectsSection>
-
-      <Divider />
+        <Button
+          variant="outline"
+          as={Link}
+          href="/projects"
+          css={{ marginTop: "3.5rem", alignSelf: "center" }}
+        >
+          View all
+        </Button>
+      </Section>
     </Container>
   );
 };
