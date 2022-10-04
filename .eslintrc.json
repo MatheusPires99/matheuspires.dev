@@ -2,5 +2,8 @@
   "extends": "@matheuspires/eslint-config",
   "rules": {
     "react/no-unescaped-entities": "off"
-  }
+  },
+  "ignorePatterns": [
+    "src/generated"
+  ]
 }
