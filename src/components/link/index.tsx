@@ -35,7 +35,6 @@ export const Link = styled(NextLink, {
     isSelected: {
       true: {
         color: "$text-contrast",
-        fontWeight: "600",
       },
     },
   },
