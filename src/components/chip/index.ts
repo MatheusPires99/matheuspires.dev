@@ -23,6 +23,10 @@ export const Chip = styled("div", {
 
   transition: "all 0.2s",
 
+  "&:hover": {
+    transform: "scale(1.05)",
+  },
+
   variants: {
     highlightColor: {
       cyan: {
@@ -72,6 +76,13 @@ export const Chip = styled("div", {
           color: "#a0a0a0",
           backgroundColor: "#1c1c1c",
           borderColor: "#343434",
+        },
+      },
+      red: {
+        "&:hover": {
+          color: "#ff6369",
+          backgroundColor: "#291415",
+          borderColor: "#671e22",
         },
       },
     },
