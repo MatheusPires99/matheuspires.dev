@@ -3,15 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "predev": "yarn run codegen",
     "dev": "next dev",
+    "prebuild": "yarn run codegen",
     "build": "next build",
     "start": "next start",
-    "lint": "npx eslint src --ext .ts,.tsx"
+    "lint": "npx eslint src --ext .ts,.tsx",
+    "codegen": "graphql-codegen --config codegen.yml"
   },
   "dependencies": {
+    "@apollo/client": "^3.7.0",
     "@radix-ui/colors": "^0.1.8",
     "@radix-ui/react-separator": "^1.0.0",
     "@stitches/react": "^1.2.8",
+    "graphql": "^16.6.0",
     "next": "12.3.1",
     "phosphor-react": "^1.4.1",
     "react": "18.2.0",
@@ -19,6 +24,10 @@
     "swiper": "^8.4.2"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "2.13.3",
+    "@graphql-codegen/typescript": "^2.7.3",
+    "@graphql-codegen/typescript-operations": "^2.5.3",
+    "@graphql-codegen/typescript-react-apollo": "^3.3.3",
     "@matheuspires/eslint-config": "^1.0.3",
     "@types/node": "18.7.23",
     "@types/react": "18.0.21",

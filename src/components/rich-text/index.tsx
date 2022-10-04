@@ -1,16 +1,46 @@
-import { ComponentProps } from "react";
+import { styled } from "@/styles";
 
-import { RichTextContainer } from "./styles";
+export const RichText = styled("div", {
+  color: "$accent-text",
+  lineHeight: "1.5",
 
-type RichTextProps = ComponentProps<typeof RichTextContainer> & {
-  children: string;
-};
+  "p + p": {
+    marginTop: "1rem",
+  },
 
-export const RichText = ({ children, ...props }: RichTextProps) => {
-  return (
-    <RichTextContainer
-      {...props}
-      dangerouslySetInnerHTML={{ __html: children }}
-    />
-  );
-};
+  strong: {
+    color: "$text-base",
+    fontWeight: "600",
+  },
+
+  a: {
+    textDecoration: "none",
+    color: "$text-contrast",
+    fontWeight: "600",
+    position: "relative",
+
+    "&:hover::before": {
+      content: "",
+      width: "100%",
+      height: 1,
+      backgroundColor: "$text-contrast",
+      position: "absolute",
+      bottom: 0,
+    },
+  },
+
+  variants: {
+    variant: {
+      default: {
+        fontSize: "$base",
+      },
+      lg: {
+        fontSize: "$lg",
+      },
+    },
+  },
+
+  defaultVariants: {
+    variant: "default",
+  },
+});

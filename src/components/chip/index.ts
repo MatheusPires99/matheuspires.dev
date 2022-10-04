@@ -25,6 +25,13 @@ export const Chip = styled("div", {
 
   variants: {
     highlightColor: {
+      cyan: {
+        "&:hover": {
+          color: "#00c2d7",
+          backgroundColor: "#061e24",
+          borderColor: "#064150",
+        },
+      },
       green: {
         "&:hover": {
           color: "#4cc38a",
@@ -53,18 +60,18 @@ export const Chip = styled("div", {
           borderColor: "#0d3868",
         },
       },
-      red: {
-        "&:hover": {
-          color: "#ff6369",
-          backgroundColor: "#291415",
-          borderColor: "#671e22",
-        },
-      },
       orange: {
         "&:hover": {
           color: "#ff8b3e",
           backgroundColor: "#2b1400",
           borderColor: "#5f2a06",
+        },
+      },
+      black: {
+        "&:hover": {
+          color: "#a0a0a0",
+          backgroundColor: "#1c1c1c",
+          borderColor: "#343434",
         },
       },
     },

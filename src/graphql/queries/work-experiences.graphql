@@ -1,0 +1,18 @@
+query WorkExperiences {
+  workExperiences(orderBy: startsAt_DESC) {
+    id
+    role
+    startsAt
+    endsAt
+    description {
+      html
+    }
+    company {
+      name
+      logo {
+        url
+      }
+      websiteUrl
+    }
+  }
+}

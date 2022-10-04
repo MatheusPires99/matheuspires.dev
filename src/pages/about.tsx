@@ -1,6 +1,5 @@
+import { GetStaticProps, InferGetStaticPropsType } from "next";
 import Image from "next/future/image";
-
-import { FileHtml } from "phosphor-react";
 
 import { Button } from "@/components/button";
 import { Chip, ChipsGroup } from "@/components/chip";
@@ -10,7 +9,9 @@ import { Heading } from "@/components/heading";
 import { Link } from "@/components/link";
 import { RichText } from "@/components/rich-text";
 import { Section } from "@/components/section";
-import { WorkExperiences } from "@/components/work-experiences";
+import { WorkExperience } from "@/components/work-experience";
+import { TechnologiesQuery, WorkExperiencesQuery } from "@/generated/graphql";
+import { cmsService } from "@/services";
 import { styled } from "@/styles";
 
 const AboutHeader = styled("header", {
@@ -21,7 +22,40 @@ const AboutHeader = styled("header", {
   justifyContent: "space-between",
 });
 
-const About = () => {
+const WorkExperienceGroup = styled("div", {
+  position: "relative",
+
+  "&::before": {
+    content: "",
+    height: "100%",
+    width: 2,
+    backgroundColor: "$shape",
+    position: "absolute",
+    left: "50%",
+    transform: "translateX(-50%)",
+  },
+});
+
+export const getStaticProps: GetStaticProps<
+  TechnologiesQuery & WorkExperiencesQuery
+> = async () => {
+  const [technologies, workExperiences] = await Promise.all([
+    cmsService.getTechnologies(),
+    cmsService.getWorkExperiences(),
+  ]);
+
+  return {
+    props: {
+      technologies,
+      workExperiences,
+    },
+    revalidate: 60 * 60, // 1 hour
+  };
+};
+
+type AboutProps = InferGetStaticPropsType<typeof getStaticProps>;
+
+const About = ({ technologies, workExperiences }: AboutProps) => {
   return (
     <Container as="main">
       <Section>
@@ -48,9 +82,52 @@ const About = () => {
         />
 
         <RichText css={{ marginTop: "3.5rem" }} variant="lg">
-          {
-            '<p>This repository contains a monorepo of the <strong>Pokedex</strong> app</p><p>The Pokedex is an app which the user can view a list of Pokemons, search and view the details of a specific Pokemon. To get the Pokemons data it was used the <a target=\'_blank\' title="https://pokeapi.co/" href="https://pokeapi.co/">PokéAPI</a>.</p><p>The main goal with this project was to know and learn hot the animations and gestures work on React Native. In order to do that it was used mainly the Animated API from React Native.</p>'
-          }
+          <p>
+            Whilst studying computer science, I always felt different. I cared
+            deeply about the visual components of programming. After college, I
+            would spend my nights learning about HTML, CSS, design, animations,
+            etc.{" "}
+            <strong>
+              I started cultivating a passion for the web as I realised it's
+              power and universality compared to any sort of native compiled
+              application
+            </strong>
+            .
+          </p>
+          <p>
+            When in college, it was clear to me that I was going to work with
+            web technologies. I went on take a position at Serafine, as intern
+            part of the e-commerce team working with front-end technologies,
+            such as HTML, CSS and JavaScript to build UI improvements. It was
+            not enought to fuel <strong>my passion for front-end</strong> too,
+            so I decided look for a new challenge.
+          </p>
+          <p>
+            After 8 months at Serafine, I accepted a front-end developer role at
+            Sambatech, where I had the opportunity to work on award projects for
+            top level brazilian brands such as{" "}
+            <Link href="https://www.portoseguro.com.br/" target="_blank">
+              Porto Seguro
+            </Link>{" "}
+            and{" "}
+            <Link href="https://www.ambev.com.br/" target="_blank">
+              Ambev
+            </Link>{" "}
+            producing all sorts of high-end web-based solutions based on
+            client's needs.
+          </p>
+          <p>
+            In early 2021, I took another challenge and I accepted a front-end
+            developer role at numa, where I could work for an international
+            company based in Germany.
+          </p>
+          <p>
+            I am absolutely passionate about the web and{" "}
+            <strong>I focus my expertise in front-end development</strong>. With
+            3 years experience in web development and great collaboration
+            skills, notably with design and UX people,{" "}
+            <strong>I am a solid addition to any team</strong>.
+          </p>
         </RichText>
       </Section>
 
@@ -61,12 +138,17 @@ const About = () => {
           Skills
         </Heading>
         <ChipsGroup>
-          {Array.from({ length: 20 }).map(() => (
-            <li key="">
-              <Link href="">
-                <Chip highlightColor="orange">
-                  <FileHtml />
-                  HTML
+          {technologies.map((tech) => (
+            <li key={tech.id}>
+              <Link href={tech.websiteUrl} target="_blank">
+                <Chip highlightColor={tech.highlightColor}>
+                  <Image
+                    src={tech.image.url}
+                    alt={tech.name}
+                    width={18}
+                    height={18}
+                  />
+                  {tech.name}
                 </Chip>
               </Link>
             </li>
@@ -81,7 +163,23 @@ const About = () => {
           Professional Experience
         </Heading>
 
-        <WorkExperiences />
+        <WorkExperienceGroup>
+          {workExperiences.map((workExperience, index) => (
+            <WorkExperience
+              key={workExperience.id}
+              direction={index % 2 === 0 ? "left" : "right"}
+              role={workExperience.role}
+              description={workExperience.description.html}
+              startsAt={workExperience.startsAt}
+              endsAt={workExperience.endsAt}
+              company={{
+                name: workExperience.company?.name!,
+                websiteUrl: workExperience.company?.websiteUrl!,
+                logo: workExperience.company?.logo?.url!,
+              }}
+            />
+          ))}
+        </WorkExperienceGroup>
       </Section>
     </Container>
   );

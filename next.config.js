@@ -2,6 +2,10 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  images: {
+    dangerouslyAllowSVG: true,
+    domains: ["media.graphassets.com"],
+  },
   experimental: {
     newNextLinkBehavior: true,
   },

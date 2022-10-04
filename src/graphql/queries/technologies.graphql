@@ -1,0 +1,12 @@
+query Technologies {
+  technologies(first: 30, orderBy: order_ASC) {
+    id
+    name
+    websiteUrl
+    image {
+      url
+    }
+    highlightColor
+    isFeatured
+  }
+}

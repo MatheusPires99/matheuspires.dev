@@ -21,8 +21,7 @@ export const Footer = () => {
             Get In Touch
           </Heading>
           <p>
-            I&apos;m always open to chat, so please don&apos;t hesitate
-            contacting me!
+            I'm always open to chat, so please don't hesitate contacting me!
           </p>
           <Button
             variant="outline"

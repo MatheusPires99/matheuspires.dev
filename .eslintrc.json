@@ -1,3 +1,6 @@
 {
-  "extends": "@matheuspires/eslint-config"
+  "extends": "@matheuspires/eslint-config",
+  "rules": {
+    "react/no-unescaped-entities": "off"
+  }
 }

@@ -1,20 +1,6 @@
 import { styled } from "@/styles";
 
-export const WorkExperienceGroup = styled("div", {
-  position: "relative",
-
-  "&::before": {
-    content: "",
-    height: "100%",
-    width: 2,
-    backgroundColor: "$shape",
-    position: "absolute",
-    left: "50%",
-    transform: "translateX(-50%)",
-  },
-});
-
-export const WorkExperience = styled("div", {
+export const WorkExperienceContainer = styled("div", {
   display: "flex",
   alignItems: "center",
   gap: "1rem",
@@ -48,8 +34,8 @@ export const CompanyImage = styled("div", {
   flexShrink: 0,
 
   img: {
-    width: "1.5rem",
-    height: "1.5rem",
+    width: "2.5rem",
+    height: "2.5rem",
   },
 });
 
