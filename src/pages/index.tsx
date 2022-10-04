@@ -1,4 +1,4 @@
-import { GetStaticProps, InferGetStaticPropsType } from "next";
+import { GetStaticProps } from "next";
 
 import { Container } from "@/components/container";
 import { Divider } from "@/components/divider";
@@ -10,21 +10,9 @@ import {
 import { TechnologiesQuery } from "@/generated/graphql";
 import { cmsService } from "@/services";
 
-export const getStaticProps: GetStaticProps<TechnologiesQuery> = async () => {
-  const technologies = await cmsService.getTechnologies();
-
-  const featuredTechnologiesInOrder = technologies.filter(
-    (tech) => tech.isFeatured,
-  );
-
-  return {
-    props: {
-      technologies: featuredTechnologiesInOrder,
-    },
-  };
+type HomeProps = {
+  technologies: TechnologiesQuery["technologies"];
 };
-
-type HomeProps = InferGetStaticPropsType<typeof getStaticProps>;
 
 const Home = ({ technologies }: HomeProps) => {
   return (
@@ -38,3 +26,17 @@ const Home = ({ technologies }: HomeProps) => {
 };
 
 export default Home;
+
+export const getStaticProps: GetStaticProps = async () => {
+  const technologies = await cmsService.getTechnologies();
+
+  const featuredTechnologiesInOrder = technologies.filter(
+    (tech) => tech.isFeatured,
+  );
+
+  return {
+    props: {
+      technologies: featuredTechnologiesInOrder,
+    },
+  };
+};

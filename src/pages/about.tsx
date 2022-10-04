@@ -1,4 +1,4 @@
-import { GetStaticProps, InferGetStaticPropsType } from "next";
+import { GetStaticProps } from "next";
 
 import { Container } from "@/components/container";
 import { Divider } from "@/components/divider";
@@ -10,24 +10,10 @@ import {
 import { TechnologiesQuery, WorkExperiencesQuery } from "@/generated/graphql";
 import { cmsService } from "@/services";
 
-export const getStaticProps: GetStaticProps<
-  TechnologiesQuery & WorkExperiencesQuery
-> = async () => {
-  const [technologies, workExperiences] = await Promise.all([
-    cmsService.getTechnologies(),
-    cmsService.getWorkExperiences(),
-  ]);
-
-  return {
-    props: {
-      technologies,
-      workExperiences,
-    },
-    revalidate: 60 * 60, // 1 hour
-  };
+type AboutProps = {
+  technologies: TechnologiesQuery["technologies"];
+  workExperiences: WorkExperiencesQuery["workExperiences"];
 };
-
-type AboutProps = InferGetStaticPropsType<typeof getStaticProps>;
 
 const About = ({ technologies, workExperiences }: AboutProps) => {
   return (
@@ -42,3 +28,18 @@ const About = ({ technologies, workExperiences }: AboutProps) => {
 };
 
 export default About;
+
+export const getStaticProps: GetStaticProps = async () => {
+  const [technologies, workExperiences] = await Promise.all([
+    cmsService.getTechnologies(),
+    cmsService.getWorkExperiences(),
+  ]);
+
+  return {
+    props: {
+      technologies,
+      workExperiences,
+    },
+    revalidate: 60 * 60, // 1 hour
+  };
+};
