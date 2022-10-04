@@ -37,6 +37,7 @@ const Introduction = styled("div", {
 
   p: {
     fontSize: "$lg",
+    lineHeight: "1.5",
     color: "$accent-text",
     marginTop: "1.5rem",
   },

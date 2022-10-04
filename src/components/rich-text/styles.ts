@@ -2,6 +2,7 @@ import { styled } from "@/styles";
 
 export const RichTextContainer = styled("div", {
   color: "$accent-text",
+  lineHeight: "1.5",
 
   "p + p": {
     marginTop: "1rem",
@@ -31,11 +32,9 @@ export const RichTextContainer = styled("div", {
   variants: {
     variant: {
       default: {
-        lineHeight: "1.5rem",
         fontSize: "$base",
       },
       lg: {
-        lineHeight: "1.75rem",
         fontSize: "$lg",
       },
     },

@@ -59,6 +59,7 @@ export const ProjectContent = styled("div", {
 
   [`${Card}`]: {
     marginTop: "1.5rem",
+    lineHeight: "1.5",
   },
 
   footer: {

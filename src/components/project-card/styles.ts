@@ -30,6 +30,7 @@ export const ProjectCardContent = styled("div", {
 
   p: {
     color: "$accent-text",
+    lineHeight: "1.5",
   },
 
   "> div": {

@@ -24,7 +24,7 @@ export const {
       "text-contrast": indigoDark.indigo11,
       "text-base": indigoDark.indigo12,
 
-      "accent-border": grayDark.gray9,
+      "accent-border": grayDark.gray6,
       "accent-text": grayDark.gray11,
 
       divider: grayDark.gray6,
