@@ -27,6 +27,13 @@ type WorkExperienceProps = Required<
   };
 };
 
+const formatDate = (date: string) => {
+  return new Date(date).toLocaleDateString("en-US", {
+    month: "short",
+    year: "numeric",
+  });
+};
+
 export const WorkExperience = ({
   role,
   description,
@@ -49,7 +56,7 @@ export const WorkExperience = ({
           </Link>
         </RoleAndCompany>
         <WorkPeriod>
-          {startsAt} - {endsAt || "present"}
+          {formatDate(startsAt)} - {endsAt ? formatDate(endsAt) : "present"}
         </WorkPeriod>
         <RichText
           css={{ marginTop: "1rem" }}
