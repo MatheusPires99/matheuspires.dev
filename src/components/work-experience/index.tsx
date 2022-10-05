@@ -35,15 +35,15 @@ const formatDate = (date: string) => {
 };
 
 export const WorkExperience = ({
+  direction,
   role,
   description,
   startsAt,
   endsAt,
   company,
-  ...props
 }: WorkExperienceProps) => {
   return (
-    <WorkExperienceContainer {...props}>
+    <WorkExperienceContainer direction={direction}>
       <CompanyImage>
         <Image src={company.logo} alt={company.name} width={40} height={40} />
       </CompanyImage>

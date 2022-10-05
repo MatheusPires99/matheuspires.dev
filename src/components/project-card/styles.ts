@@ -24,31 +24,13 @@ export const ProjectCardHeader = styled("header", {
   },
 });
 
-export const ProjectCardContent = styled("div", {
-  marginTop: "1.5rem",
+export const ProjectCardDescription = styled("p", {
   flex: 1,
-
-  p: {
-    color: "$accent-text",
-    lineHeight: "1.5",
-  },
-
-  "> div": {
-    marginTop: "1rem",
-
-    display: "flex",
-    alignItems: "center",
-    gap: "1.5rem",
-  },
-});
-
-export const ProjectStat = styled("div", {
-  display: "flex",
-  alignItems: "center",
-  gap: "0.375rem",
-
-  span: {
-    fontFamily: "$mono",
-    fontSize: "$sm",
-  },
+  marginTop: "1.5rem",
+  color: "$accent-text",
+  lineHeight: "1.5",
+  display: "-webkit-box",
+  "-webkit-line-clamp": "4",
+  "-webkit-box-orient": "vertical",
+  overflow: "hidden",
 });

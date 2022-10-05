@@ -7,20 +7,22 @@ import {
   HeroSection,
   OtherProjectsSection,
 } from "@/components/sections/home";
-import { TechnologiesQuery } from "@/generated/graphql";
+import { ProjectsQuery, TechnologiesQuery } from "@/generated/graphql";
 import { cmsService } from "@/services";
 
 type HomeProps = {
   technologies: TechnologiesQuery["technologies"];
+  featuredProjects: ProjectsQuery["projects"];
+  otherProjects: ProjectsQuery["projects"];
 };
 
-const Home = ({ technologies }: HomeProps) => {
+const Home = ({ technologies, featuredProjects, otherProjects }: HomeProps) => {
   return (
     <Container as="main">
       <HeroSection technologies={technologies} />
       <Divider />
-      <FeaturedProjectSection />
-      <OtherProjectsSection />
+      <FeaturedProjectSection featuredProjects={featuredProjects} />
+      <OtherProjectsSection otherProjects={otherProjects} />
     </Container>
   );
 };
@@ -28,15 +30,20 @@ const Home = ({ technologies }: HomeProps) => {
 export default Home;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const technologies = await cmsService.getTechnologies();
+  const [technologies, projects] = await Promise.all([
+    cmsService.getTechnologies(),
+    cmsService.getProjects(),
+  ]);
 
-  const featuredTechnologiesInOrder = technologies.filter(
-    (tech) => tech.isFeatured,
-  );
+  const featuredTechnologies = technologies.filter((tech) => tech.isFeatured);
+  const featuredProjects = projects.filter((tech) => tech.isFeatured);
+  const otherProjects = projects.filter((tech) => !tech.isFeatured);
 
   return {
     props: {
-      technologies: featuredTechnologiesInOrder,
+      technologies: featuredTechnologies,
+      featuredProjects,
+      otherProjects,
     },
   };
 };

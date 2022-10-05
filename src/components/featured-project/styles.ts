@@ -23,8 +23,11 @@ export const FeaturedProjectContainer = styled("div", {
 
 export const ProjectImageContainer = styled("div", {
   borderRadius: "$sm",
-  border: "1px solid $neutral-divider",
+  border: "1px solid $accent-border",
   overflow: "hidden",
+  width: 602,
+  height: 328,
+  position: "relative",
 
   img: {
     transition: "transform 0.2s ease-in-out",

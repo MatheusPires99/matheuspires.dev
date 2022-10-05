@@ -1,12 +1,12 @@
 import { IconButton } from "@/components/icon-button";
 import { styled } from "@/styles";
 
-export const TechsSliderContainer = styled("div", {
+export const TechsCarouselContainer = styled("div", {
   position: "relative",
   marginTop: "1.75rem",
 });
 
-export const SliderNavigation = styled("div", {
+export const CarouselNavigation = styled("div", {
   height: "100%",
   zIndex: 10,
 

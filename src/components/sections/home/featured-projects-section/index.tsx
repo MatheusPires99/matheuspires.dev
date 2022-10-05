@@ -1,17 +1,34 @@
 import { FeaturedProject } from "@/components/featured-project";
 import { Heading } from "@/components/heading";
 import { Section } from "@/components/section";
+import { ProjectsQuery } from "@/generated/graphql";
 
 import { FeaturedProjectsGroup } from "./styles";
 
-export const FeaturedProjectSection = () => {
+type FeaturedProjectSectionProps = {
+  featuredProjects: ProjectsQuery["projects"];
+};
+
+export const FeaturedProjectSection = ({
+  featuredProjects,
+}: FeaturedProjectSectionProps) => {
   return (
     <Section css={{ paddingBottom: 0 }}>
       <Heading size="h2">Featured Projects</Heading>
 
       <FeaturedProjectsGroup>
-        <FeaturedProject direction="left" />
-        <FeaturedProject direction="right" />
+        {featuredProjects.map((project, index) => (
+          <FeaturedProject
+            key={project.id}
+            direction={index % 2 === 0 ? "left" : "right"}
+            name={project.name}
+            description={project.description}
+            image={project.image}
+            githubUrl={project.githubUrl}
+            websiteUrl={project.websiteUrl}
+            technologies={project.technologies}
+          />
+        ))}
       </FeaturedProjectsGroup>
     </Section>
   );

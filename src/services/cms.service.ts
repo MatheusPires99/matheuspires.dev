@@ -1,4 +1,6 @@
 import {
+  ProjectsDocument,
+  ProjectsQuery,
   TechnologiesDocument,
   TechnologiesQuery,
   WorkExperiencesDocument,
@@ -21,5 +23,13 @@ export class CmsService {
     });
 
     return data.workExperiences;
+  }
+
+  async getProjects() {
+    const { data } = await client.query<ProjectsQuery>({
+      query: ProjectsDocument,
+    });
+
+    return data.projects;
   }
 }

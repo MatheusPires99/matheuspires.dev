@@ -1,7 +1,7 @@
 import Image from "next/future/image";
 
 import { VariantProps } from "@stitches/react";
-import { ArrowSquareOut, FileTs } from "phosphor-react";
+import { ArrowSquareOut } from "phosphor-react";
 
 import { GithubLogo } from "@/assets/icons/github-logo";
 import { Card } from "@/components/card";
@@ -9,6 +9,7 @@ import { Chip, ChipsGroup } from "@/components/chip";
 import { Heading } from "@/components/heading";
 import { IconButton } from "@/components/icon-button";
 import { Link } from "@/components/link";
+import { ProjectsQuery } from "@/generated/graphql";
 
 import {
   FeaturedProjectContainer,
@@ -18,64 +19,70 @@ import {
 
 type FeaturedProjectProps = Required<
   VariantProps<typeof FeaturedProjectContainer>
->;
+> &
+  Pick<
+    ProjectsQuery["projects"][0],
+    | "name"
+    | "description"
+    | "image"
+    | "githubUrl"
+    | "websiteUrl"
+    | "technologies"
+  >;
 
-export const FeaturedProject = ({ direction }: FeaturedProjectProps) => {
+export const FeaturedProject = ({
+  direction,
+  name,
+  description,
+  image,
+  githubUrl,
+  websiteUrl,
+  technologies,
+}: FeaturedProjectProps) => {
   return (
     <FeaturedProjectContainer direction={direction}>
-      <Link href="">
+      <Link href={githubUrl} target="_blank">
         <ProjectImageContainer>
-          <Image src="/codify.png" alt="" width={602} height={328} />
+          <Image src={image.url} alt={name} fill />
         </ProjectImageContainer>
       </Link>
 
       <ProjectContent direction={direction}>
         <Heading size="h3" as="h3">
           <Link variant="primary" href="">
-            Codify
+            {name}
           </Link>
         </Heading>
 
         <ChipsGroup>
-          <li>
-            <Link href="https://google.com" target="_blank">
-              <Chip highlightColor="blue">
-                <FileTs />
-                TypeScript
-              </Chip>
-            </Link>
-          </li>
-          <li>
-            <Link href="https://google.com" target="_blank">
-              <Chip highlightColor="green">
-                <FileTs />
-                TypeScript
-              </Chip>
-            </Link>
-          </li>
-          <li>
-            <Link href="https://google.com" target="_blank">
-              <Chip highlightColor="orange">
-                <FileTs />
-                TypeScript
-              </Chip>
-            </Link>
-          </li>
+          {technologies.map((tech) => (
+            <li key={tech.id}>
+              <Link href={tech.websiteUrl} target="_blank">
+                <Chip highlightColor={tech.highlightColor}>
+                  <Image
+                    src={tech.image.url}
+                    alt={tech.name}
+                    width={18}
+                    height={18}
+                  />
+                  {tech.name}
+                </Chip>
+              </Link>
+            </li>
+          ))}
         </ChipsGroup>
 
-        <Card>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud
-        </Card>
+        <Card>{description}</Card>
 
         <footer>
-          <IconButton as={Link} href="">
+          <IconButton as={Link} href={githubUrl} target="_blank">
             <GithubLogo />
           </IconButton>
-          <IconButton as={Link} href="">
-            <ArrowSquareOut />
-          </IconButton>
+          {websiteUrl && (
+            <IconButton as={Link} href={websiteUrl} target="_blank">
+              <ArrowSquareOut />
+            </IconButton>
+          )}
         </footer>
       </ProjectContent>
     </FeaturedProjectContainer>
