@@ -11,6 +11,7 @@ import { ProjectsQuery } from "@/generated/graphql";
 
 import {
   ProjectCardContainer,
+  ProjectCardImage,
   ProjectCardHead,
   ProjectCardDescription,
   ProjectCardContent,
@@ -32,7 +33,11 @@ export const ProjectCard = ({
 }: ProjectCardProps) => {
   return (
     <ProjectCardContainer>
-      <Image src={image.url} alt={name} width={296} height={180} />
+      <Link href={githubUrl} target="_blank">
+        <ProjectCardImage>
+          <Image src={image.url} alt={name} width={296} height={180} />
+        </ProjectCardImage>
+      </Link>
 
       <ProjectCardContent>
         <ProjectCardHead>

@@ -9,6 +9,20 @@ export const ProjectCardContainer = styled(Card, {
   flexDirection: "column",
 });
 
+export const ProjectCardImage = styled("div", {
+  overflow: "hidden",
+
+  display: "flex",
+
+  img: {
+    transition: "transform 0.2s ease-in-out",
+
+    "&:hover": {
+      transform: "scale(1.1)",
+    },
+  },
+});
+
 export const ProjectCardContent = styled("div", {
   padding: "1.5rem",
   paddingTop: "1rem",
