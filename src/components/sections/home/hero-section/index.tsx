@@ -33,17 +33,20 @@ export const HeroSection = ({ technologies }: HeroSectionProps) => {
         <ChipsGroup>
           {technologies.map((tech) => (
             <li key={tech.id}>
-              <Link href={tech.websiteUrl} target="_blank">
-                <Chip highlightColor={tech.highlightColor}>
-                  <Image
-                    src={tech.image.url}
-                    alt={tech.name}
-                    width={18}
-                    height={18}
-                  />
-                  {tech.name}
-                </Chip>
-              </Link>
+              <Chip
+                highlightColor={tech.highlightColor}
+                as={Link}
+                href={tech.websiteUrl}
+                target="_blank"
+              >
+                <Image
+                  src={tech.image.url}
+                  alt={tech.name}
+                  width={18}
+                  height={18}
+                />
+                {tech.name}
+              </Chip>
             </li>
           ))}
         </ChipsGroup>
