@@ -6,4 +6,9 @@ export const OtherProjectsGroup = styled("ul", {
   display: "grid",
   gridTemplateColumns: "repeat(3, 1fr)",
   gap: "1.5rem",
+
+  "@mobile": {
+    display: "flex",
+    flexDirection: "column",
+  },
 });

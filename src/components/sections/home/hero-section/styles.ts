@@ -4,6 +4,11 @@ import { styled } from "@/styles";
 
 export const HeroImage = styled(Image, {
   borderRadius: "$sm",
+
+  "@mobile": {
+    width: "11.25rem",
+    height: "11.25rem",
+  },
 });
 
 export const HeroContent = styled("div", {
@@ -22,6 +27,10 @@ export const Introduction = styled("div", {
     fontSize: "$lg",
     color: "$text-contrast",
     marginBottom: "0.5rem",
+
+    "@mobile": {
+      fontSize: "$base",
+    },
   },
 
   p: {
@@ -29,6 +38,11 @@ export const Introduction = styled("div", {
     lineHeight: "1.5",
     color: "$accent-text",
     marginTop: "1.5rem",
+
+    "@mobile": {
+      fontSize: "$base",
+      marginTop: "1rem",
+    },
   },
 });
 

@@ -2,8 +2,8 @@ import { GetStaticProps } from "next";
 
 import { Divider } from "@/components/divider";
 import {
-  FeaturedProjectSection,
   HeroSection,
+  FeaturedProjectsSection,
   OtherProjectsSection,
 } from "@/components/sections/home";
 import { ProjectsQuery, TechnologiesQuery } from "@/generated/graphql";
@@ -20,7 +20,7 @@ const Home = ({ technologies, featuredProjects, otherProjects }: HomeProps) => {
     <>
       <HeroSection technologies={technologies} />
       <Divider />
-      <FeaturedProjectSection featuredProjects={featuredProjects} />
+      <FeaturedProjectsSection featuredProjects={featuredProjects} />
       <OtherProjectsSection otherProjects={otherProjects} />
     </>
   );

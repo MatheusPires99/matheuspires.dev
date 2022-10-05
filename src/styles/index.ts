@@ -52,8 +52,11 @@ export const {
       md: "0 8px 30px rgba(0, 0, 0, 0.12)",
     },
     sizes: {
-      "page-width": "936px",
+      "page-width": "1000px",
       "header-height": "80px",
     },
+  },
+  media: {
+    mobile: "(max-width: 768px)",
   },
 });

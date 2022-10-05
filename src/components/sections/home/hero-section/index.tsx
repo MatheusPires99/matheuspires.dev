@@ -7,7 +7,7 @@ import { Link } from "@/components/link";
 import { Section } from "@/components/section";
 import { TechnologiesQuery } from "@/generated/graphql";
 
-import { CallToActions, HeroContent, HeroImage, Introduction } from "./styles";
+import { HeroImage, HeroContent, Introduction, CallToActions } from "./styles";
 
 type HeroSectionProps = {
   technologies: TechnologiesQuery["technologies"];
@@ -16,7 +16,17 @@ type HeroSectionProps = {
 export const HeroSection = ({ technologies }: HeroSectionProps) => {
   return (
     <Section
-      css={{ display: "flex", alignItems: "center", gap: 84 }}
+      css={{
+        display: "flex",
+        alignItems: "center",
+        gap: "5.25rem",
+
+        "@mobile": {
+          flexDirection: "column",
+          alignItems: "flex-start",
+          gap: "4rem",
+        },
+      }}
       isFirstSection
     >
       <HeroImage src="/me.jpg" alt="Matheus's photo" width={298} height={298} />
@@ -24,7 +34,14 @@ export const HeroSection = ({ technologies }: HeroSectionProps) => {
       <HeroContent>
         <Introduction>
           <span>Hi, my name is</span>
-          <Heading>Matheus Pires</Heading>
+          <Heading
+            size={{
+              "@initial": "h1",
+              "@mobile": "h2",
+            }}
+          >
+            Matheus Pires
+          </Heading>
           <p>
             I'm Matheus, a software developer with 3 years of experience focused
             on front-end. I have worked in various industries such as clothing

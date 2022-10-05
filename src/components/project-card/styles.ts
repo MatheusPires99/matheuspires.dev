@@ -8,6 +8,10 @@ export const ProjectCardContainer = styled(Card, {
 
   display: "flex",
   flexDirection: "column",
+
+  "@mobile": {
+    maxWidth: "none",
+  },
 });
 
 export const ProjectCardImage = styled("div", {

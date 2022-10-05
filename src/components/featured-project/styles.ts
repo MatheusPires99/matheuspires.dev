@@ -5,7 +5,6 @@ import { styled } from "@/styles";
 
 export const FeaturedProjectContainer = styled("div", {
   position: "relative",
-
   display: "flex",
 
   variants: {
@@ -28,6 +27,14 @@ export const ProjectImageContainer = styled("div", {
   height: 328,
   position: "relative",
 
+  "@mobile": {
+    width: "100%",
+    height: 216,
+    zIndex: -1,
+    position: "absolute",
+    top: "6.5rem",
+  },
+
   img: {
     objectFit: "cover",
     transition: "transform 0.2s ease-in-out",
@@ -47,6 +54,13 @@ export const ProjectContent = styled("div", {
   position: "absolute",
   top: "50%",
   transform: "translateY(-50%)",
+
+  "@mobile": {
+    width: "100%",
+    position: "unset",
+    top: "unset",
+    transform: "unset",
+  },
 
   [`${Heading}`]: {
     transition: "color 0.2s",
@@ -79,6 +93,16 @@ export const ProjectContent = styled("div", {
         },
       },
     },
+  },
+});
+
+export const ProjectDesription = styled(Card, {
+  padding: "1.5rem",
+  marginTop: "1.5rem",
+
+  "@mobile": {
+    width: "80vw",
+    marginTop: "10.75rem",
   },
 });
 

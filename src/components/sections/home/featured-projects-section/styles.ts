@@ -6,4 +6,8 @@ export const FeaturedProjectsGroup = styled("div", {
   display: "flex",
   flexDirection: "column",
   gap: "6.5rem",
+
+  "@mobile": {
+    gap: "4rem",
+  },
 });

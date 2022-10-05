@@ -10,11 +10,21 @@ export const GetInTouchContainer = styled(Container, {
 
   p: {
     marginTop: "1rem",
+    textAlign: "center",
     fontSize: "$lg",
+    lineHeight: "1.5",
     color: "$accent-text",
+
+    "@mobile": {
+      maxWidth: "21.5rem",
+    },
   },
 
   [`${Button}`]: {
     marginTop: "3.5rem",
+
+    "@mobile": {
+      marginTop: "2.5rem",
+    },
   },
 });

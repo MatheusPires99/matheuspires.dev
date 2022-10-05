@@ -9,12 +9,19 @@ type FeaturedProjectSectionProps = {
   featuredProjects: ProjectsQuery["projects"];
 };
 
-export const FeaturedProjectSection = ({
+export const FeaturedProjectsSection = ({
   featuredProjects,
 }: FeaturedProjectSectionProps) => {
   return (
     <Section css={{ paddingBottom: 0 }}>
-      <Heading size="h2">Featured Projects</Heading>
+      <Heading
+        size={{
+          "@initial": "h2",
+          "@mobile": "h3",
+        }}
+      >
+        Featured Projects
+      </Heading>
 
       <FeaturedProjectsGroup>
         {featuredProjects.map((project, index) => (

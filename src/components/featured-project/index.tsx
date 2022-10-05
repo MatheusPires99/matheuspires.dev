@@ -4,7 +4,6 @@ import { VariantProps } from "@stitches/react";
 import { ArrowSquareOut } from "phosphor-react";
 
 import { GithubLogo } from "@/assets/icons/github-logo";
-import { Card } from "@/components/card";
 import { Chip, ChipsGroup } from "@/components/chip";
 import { Heading } from "@/components/heading";
 import { IconButton } from "@/components/icon-button";
@@ -15,6 +14,7 @@ import {
   FeaturedProjectContainer,
   ProjectImageContainer,
   ProjectContent,
+  ProjectDesription,
   ProjectLinks,
 } from "./styles";
 
@@ -75,10 +75,7 @@ export const FeaturedProject = ({
             </li>
           ))}
         </ChipsGroup>
-
-        <Card css={{ padding: "1.5rem", marginTop: "1.5rem" }}>
-          {description}
-        </Card>
+        <ProjectDesription>{description}</ProjectDesription>
 
         <ProjectLinks>
           <IconButton as={Link} href={githubUrl} target="_blank">
