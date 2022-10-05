@@ -12,10 +12,11 @@ export const ProjectCardContainer = styled(Card, {
 
 export const ProjectCardImage = styled("div", {
   overflow: "hidden",
-
   display: "flex",
 
   img: {
+    width: "100%",
+    objectFit: "cover",
     transition: "transform 0.2s ease-in-out",
 
     "&:hover": {

@@ -29,6 +29,7 @@ export const ProjectImageContainer = styled("div", {
   position: "relative",
 
   img: {
+    objectFit: "cover",
     transition: "transform 0.2s ease-in-out",
 
     "&:hover": {
