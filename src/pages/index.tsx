@@ -1,6 +1,5 @@
 import { GetStaticProps } from "next";
 
-import { Container } from "@/components/container";
 import { Divider } from "@/components/divider";
 import {
   FeaturedProjectSection,
@@ -18,12 +17,12 @@ type HomeProps = {
 
 const Home = ({ technologies, featuredProjects, otherProjects }: HomeProps) => {
   return (
-    <Container as="main">
+    <>
       <HeroSection technologies={technologies} />
       <Divider />
       <FeaturedProjectSection featuredProjects={featuredProjects} />
       <OtherProjectsSection otherProjects={otherProjects} />
-    </Container>
+    </>
   );
 };
 

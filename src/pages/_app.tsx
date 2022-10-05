@@ -1,24 +1,22 @@
 import type { AppProps } from "next/app";
 
+import { Container } from "@/components/container";
 import { Footer } from "@/components/footer";
+import { GetInTouch } from "@/components/get-in-touch";
 import { Header } from "@/components/header";
-import { styled } from "@/styles";
 
 import { globalStyles } from "../styles/global";
 
 globalStyles();
 
-const Box = styled("div", {
-  marginTop: "$sizes$header-height",
-});
-
 const App = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <Header />
-      <Box>
+      <Container as="main" css={{ marginTop: "$sizes$header-height" }}>
         <Component {...pageProps} />
-      </Box>
+      </Container>
+      <GetInTouch />
       <Footer />
     </>
   );

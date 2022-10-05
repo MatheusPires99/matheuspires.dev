@@ -1,32 +1,13 @@
-import { Button } from "@/components/button";
-import { Section } from "@/components/section";
+import { Container } from "@/components/container";
 import { styled } from "@/styles";
 
-export const FooterContainer = styled(Section, {
+export const FooterContainer = styled(Container, {
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-});
-
-export const GetInTouch = styled("div", {
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-
-  p: {
-    marginTop: "1rem",
-    fontSize: "$lg",
-    color: "$accent-text",
-  },
-
-  [`${Button}`]: {
-    marginTop: "3.5rem",
-  },
 });
 
 export const ContactInfo = styled("div", {
-  marginTop: "6.5rem",
-
   display: "flex",
   alignItems: "center",
   gap: "2.5rem",

@@ -3,7 +3,6 @@ import { ChangeEvent, useState } from "react";
 
 import { MagnifyingGlass } from "phosphor-react";
 
-import { Container } from "@/components/container";
 import { Heading } from "@/components/heading";
 import { Input } from "@/components/input";
 import { ProjectCard } from "@/components/project-card";
@@ -45,7 +44,7 @@ const Projects = ({ projects }: ProjectsProps) => {
   };
 
   return (
-    <Container as="main">
+    <>
       <Section
         css={{ display: "flex", flexDirection: "column", gap: "4rem" }}
         isFirstSection
@@ -84,7 +83,7 @@ const Projects = ({ projects }: ProjectsProps) => {
           </NoProjectsFound>
         )}
       </Section>
-    </Container>
+    </>
   );
 };
 

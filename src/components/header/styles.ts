@@ -1,6 +1,6 @@
+import { Container } from "@/components/container";
+import { Link } from "@/components/link";
 import { styled } from "@/styles";
-
-import { Link } from "../link";
 
 export const HeaderContainer = styled("header", {
   height: "$header-height",
@@ -12,6 +12,13 @@ export const HeaderContainer = styled("header", {
 
   position: "fixed",
   top: 0,
+});
+
+export const HeaderContent = styled(Container, {
+  height: "100%",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "space-between",
 });
 
 export const Navigation = styled("nav", {

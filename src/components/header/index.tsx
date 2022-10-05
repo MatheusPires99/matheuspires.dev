@@ -1,22 +1,15 @@
 import { useRouter } from "next/router";
 
-import { Container } from "../container";
-import { Link } from "../link";
-import { HeaderContainer, Navigation } from "./styles";
+import { Link } from "@/components/link";
+
+import { HeaderContainer, HeaderContent, Navigation } from "./styles";
 
 export const Header = () => {
   const { pathname } = useRouter();
 
   return (
     <HeaderContainer>
-      <Container
-        css={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          height: "100%",
-        }}
-      >
+      <HeaderContent>
         <Link variant="primary" href="/">
           Matheus Pires
         </Link>
@@ -37,7 +30,7 @@ export const Header = () => {
             Projects
           </Link>
         </Navigation>
-      </Container>
+      </HeaderContent>
     </HeaderContainer>
   );
 };

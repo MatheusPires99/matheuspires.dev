@@ -1,37 +1,16 @@
 import { LinkedinLogo } from "phosphor-react";
 
 import { GithubLogo } from "@/assets/icons/github-logo";
-import { Button } from "@/components/button";
-import { Container } from "@/components/container";
-import { Divider } from "@/components/divider";
-import { Heading } from "@/components/heading";
 import { IconButton } from "@/components/icon-button";
 import { Link } from "@/components/link";
 
-import { FooterContainer, GetInTouch, ContactInfo, DesignedBy } from "./styles";
+import { Section } from "../section";
+import { FooterContainer, ContactInfo, DesignedBy } from "./styles";
 
 export const Footer = () => {
   return (
-    <Container as="footer">
-      <Divider />
-
-      <FooterContainer as="div">
-        <GetInTouch>
-          <Heading size="h2" as="h2" centered>
-            Get In Touch
-          </Heading>
-          <p>
-            I'm always open to chat, so please don't hesitate contacting me!
-          </p>
-          <Button
-            variant="outline"
-            as={Link}
-            href="mailto:matheushenriquepires99@gmail.com"
-          >
-            Say Hello
-          </Button>
-        </GetInTouch>
-
+    <Section as="footer" css={{ paddingTop: 0 }}>
+      <FooterContainer>
         <ContactInfo>
           <strong>© Matheus Pires 2022</strong>
           <div>
@@ -63,6 +42,6 @@ export const Footer = () => {
           </Link>
         </DesignedBy>
       </FooterContainer>
-    </Container>
+    </Section>
   );
 };
