@@ -51,7 +51,7 @@ export const {
       md: "0 8px 30px rgba(0, 0, 0, 0.12)",
     },
     sizes: {
-      "page-width": "946px",
+      "page-width": "936px",
       "header-height": "80px",
     },
   },

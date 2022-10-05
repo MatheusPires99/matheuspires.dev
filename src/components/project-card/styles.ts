@@ -1,22 +1,29 @@
-import { Card } from "@/components/card";
 import { styled } from "@/styles";
 
-export const ProjectCardContainer = styled(Card, {
+export const ProjectCardContainer = styled("div", {
   height: "100%",
+  backgroundColor: "$shape",
+  borderRadius: "$sm",
+  boxShadow: "$md",
+  overflow: "hidden",
 
   display: "flex",
   flexDirection: "column",
 });
 
-export const ProjectCardHeader = styled("header", {
+export const ProjectCardContent = styled("div", {
+  padding: "1.5rem",
+  paddingTop: "1rem",
+
+  display: "flex",
+  flexDirection: "column",
+  flex: 1,
+});
+
+export const ProjectCardHead = styled("div", {
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
-
-  strong: {
-    fontSize: "1.5rem",
-    fontWeight: 600,
-  },
 
   div: {
     display: "flex",
@@ -26,7 +33,7 @@ export const ProjectCardHeader = styled("header", {
 
 export const ProjectCardDescription = styled("p", {
   flex: 1,
-  marginTop: "1.5rem",
+  marginTop: "1rem",
   color: "$accent-text",
   lineHeight: "1.5",
   display: "-webkit-box",

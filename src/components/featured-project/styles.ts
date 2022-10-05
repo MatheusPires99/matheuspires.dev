@@ -1,4 +1,3 @@
-import { Card } from "@/components/card";
 import { ChipsGroup } from "@/components/chip";
 import { styled } from "@/styles";
 
@@ -38,6 +37,15 @@ export const ProjectImageContainer = styled("div", {
   },
 });
 
+export const ProjectDescription = styled("div", {
+  marginTop: "1.5rem",
+  lineHeight: "1.5",
+  padding: "1.5rem",
+  backgroundColor: "$shape",
+  boxShadow: "$md",
+  borderRadius: "$sm",
+});
+
 export const ProjectContent = styled("div", {
   width: 430,
 
@@ -60,25 +68,13 @@ export const ProjectContent = styled("div", {
     marginTop: "1rem",
   },
 
-  [`${Card}`]: {
-    marginTop: "1.5rem",
-    lineHeight: "1.5",
-  },
-
-  footer: {
-    marginTop: "1rem",
-
-    display: "flex",
-    alignItems: "center",
-  },
-
   variants: {
     direction: {
       left: {
         alignItems: "flex-end",
         right: 0,
 
-        [`${Card}`]: {
+        [`${ProjectDescription}`]: {
           textAlign: "right",
         },
       },
@@ -86,10 +82,17 @@ export const ProjectContent = styled("div", {
         alignItems: "flex-start",
         left: 0,
 
-        [`${Card}`]: {
+        [`${ProjectDescription}`]: {
           textAlign: "left",
         },
       },
     },
   },
+});
+
+export const ProjectLinks = styled("footer", {
+  marginTop: "1rem",
+
+  display: "flex",
+  alignItems: "center",
 });

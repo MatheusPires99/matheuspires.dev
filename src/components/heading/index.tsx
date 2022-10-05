@@ -14,6 +14,9 @@ export const Heading = styled("h1", {
       h3: {
         fontSize: "$2xl",
       },
+      h4: {
+        fontSize: "$xl",
+      },
     },
     centered: {
       true: {

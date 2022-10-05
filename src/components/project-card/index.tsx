@@ -4,14 +4,16 @@ import { ArrowSquareOut } from "phosphor-react";
 
 import { GithubLogo } from "@/assets/icons/github-logo";
 import { Chip } from "@/components/chip";
+import { Heading } from "@/components/heading";
 import { IconButton } from "@/components/icon-button";
 import { Link } from "@/components/link";
 import { ProjectsQuery } from "@/generated/graphql";
 
 import {
   ProjectCardContainer,
-  ProjectCardHeader,
+  ProjectCardHead,
   ProjectCardDescription,
+  ProjectCardContent,
 } from "./styles";
 import { TechsCarousel, TechSlider } from "./techs-carousel";
 
@@ -30,39 +32,45 @@ export const ProjectCard = ({
 }: ProjectCardProps) => {
   return (
     <ProjectCardContainer>
-      <ProjectCardHeader>
-        <strong>{name}</strong>
-        <div>
-          <IconButton as={Link} href={githubUrl} target="_blank">
-            <GithubLogo />
-          </IconButton>
-          {websiteUrl && (
-            <IconButton as={Link} href={websiteUrl} target="_blank">
-              <ArrowSquareOut />
+      <Image src={image.url} alt={name} width={296} height={180} />
+
+      <ProjectCardContent>
+        <ProjectCardHead>
+          <Heading size="h4" as="h3">
+            {name}
+          </Heading>
+          <div>
+            <IconButton as={Link} href={githubUrl} target="_blank">
+              <GithubLogo />
             </IconButton>
-          )}
-        </div>
-      </ProjectCardHeader>
+            {websiteUrl && (
+              <IconButton as={Link} href={websiteUrl} target="_blank">
+                <ArrowSquareOut />
+              </IconButton>
+            )}
+          </div>
+        </ProjectCardHead>
 
-      <ProjectCardDescription>{description}</ProjectCardDescription>
+        <ProjectCardDescription>{description}</ProjectCardDescription>
 
-      <TechsCarousel>
-        {technologies.map((tech) => (
-          <TechSlider key={tech.id} style={{ width: "fit-content" }}>
-            <Link href={tech.websiteUrl} target="_blank">
-              <Chip highlightColor={tech.highlightColor}>
-                <Image
-                  src={tech.image.url}
-                  alt={tech.name}
-                  width={18}
-                  height={18}
-                />
-                {tech.name}
-              </Chip>
-            </Link>
-          </TechSlider>
-        ))}
-      </TechsCarousel>
+        <TechsCarousel>
+          {technologies.map((tech) => (
+            <TechSlider key={tech.id} style={{ width: "fit-content" }}>
+              <Link href={tech.websiteUrl} target="_blank">
+                <Chip highlightColor={tech.highlightColor}>
+                  <Image
+                    src={tech.image.url}
+                    alt={tech.name}
+                    width={18}
+                    height={18}
+                  />
+                  {tech.name}
+                </Chip>
+              </Link>
+            </TechSlider>
+          ))}
+        </TechsCarousel>
+      </ProjectCardContent>
     </ProjectCardContainer>
   );
 };

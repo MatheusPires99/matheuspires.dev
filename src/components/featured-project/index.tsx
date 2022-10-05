@@ -4,7 +4,6 @@ import { VariantProps } from "@stitches/react";
 import { ArrowSquareOut } from "phosphor-react";
 
 import { GithubLogo } from "@/assets/icons/github-logo";
-import { Card } from "@/components/card";
 import { Chip, ChipsGroup } from "@/components/chip";
 import { Heading } from "@/components/heading";
 import { IconButton } from "@/components/icon-button";
@@ -15,6 +14,8 @@ import {
   FeaturedProjectContainer,
   ProjectImageContainer,
   ProjectContent,
+  ProjectDescription,
+  ProjectLinks,
 } from "./styles";
 
 type FeaturedProjectProps = Required<
@@ -72,9 +73,9 @@ export const FeaturedProject = ({
           ))}
         </ChipsGroup>
 
-        <Card>{description}</Card>
+        <ProjectDescription>{description}</ProjectDescription>
 
-        <footer>
+        <ProjectLinks>
           <IconButton as={Link} href={githubUrl} target="_blank">
             <GithubLogo />
           </IconButton>
@@ -83,7 +84,7 @@ export const FeaturedProject = ({
               <ArrowSquareOut />
             </IconButton>
           )}
-        </footer>
+        </ProjectLinks>
       </ProjectContent>
     </FeaturedProjectContainer>
   );

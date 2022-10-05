@@ -3,7 +3,7 @@ import { styled } from "@/styles";
 
 export const TechsCarouselContainer = styled("div", {
   position: "relative",
-  marginTop: "1.75rem",
+  marginTop: "1rem",
 });
 
 export const CarouselNavigation = styled("div", {
