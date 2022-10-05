@@ -45,5 +45,6 @@ export const getStaticProps: GetStaticProps = async () => {
       featuredProjects,
       otherProjects,
     },
+    revalidate: 60 * 60, // 1 hour
   };
 };

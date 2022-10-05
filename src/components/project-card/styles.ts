@@ -4,6 +4,7 @@ import { Card } from "../card";
 
 export const ProjectCardContainer = styled(Card, {
   height: "100%",
+  maxWidth: 296,
 
   display: "flex",
   flexDirection: "column",

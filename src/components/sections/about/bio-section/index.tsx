@@ -12,9 +12,7 @@ export const BioSection = () => {
   return (
     <Section>
       <BioHeader>
-        <Heading size="h2" as="h2">
-          About
-        </Heading>
+        <Heading size="h2">About</Heading>
         <Button variant="outline" as={Link} href="/resume.pdf" target="_blank">
           Resume
         </Button>

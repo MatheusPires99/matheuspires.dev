@@ -25,6 +25,7 @@ export const {
       "text-base": indigoDark.indigo12,
 
       "accent-border": grayDark.gray6,
+      "accent-placeholder": grayDark.gray9,
       "accent-text": grayDark.gray11,
 
       divider: grayDark.gray6,
