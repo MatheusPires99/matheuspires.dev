@@ -15,7 +15,10 @@ type HeroSectionProps = {
 
 export const HeroSection = ({ technologies }: HeroSectionProps) => {
   return (
-    <Section css={{ display: "flex", alignItems: "center", gap: 84 }}>
+    <Section
+      css={{ display: "flex", alignItems: "center", gap: 84 }}
+      isFirstSection
+    >
       <HeroImage src="/me.jpg" alt="Matheus's photo" width={298} height={298} />
 
       <HeroContent>

@@ -10,7 +10,7 @@ import { BioHeader } from "./styles";
 
 export const BioSection = () => {
   return (
-    <Section>
+    <Section isFirstSection>
       <BioHeader>
         <Heading size="h2">About</Heading>
         <Button variant="outline" as={Link} href="/resume.pdf" target="_blank">

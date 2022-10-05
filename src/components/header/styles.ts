@@ -5,8 +5,8 @@ import { Link } from "../link";
 export const HeaderContainer = styled("header", {
   height: "$header-height",
   width: "100%",
-  backgroundColor: "rgb(19, 22, 32, 0.6)",
-  backdropFilter: "blur(6px)",
+  backgroundColor: "rgb(19, 22, 32, 0.75)",
+  backdropFilter: "blur(12px)",
   zIndex: "9999",
   borderBottom: "1px solid $divider",
 

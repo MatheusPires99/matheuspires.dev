@@ -45,10 +45,11 @@ const Projects = ({ projects }: ProjectsProps) => {
   };
 
   return (
-    <Container>
+    <Container as="main">
       <Section
-        as="main"
         css={{ display: "flex", flexDirection: "column", gap: "4rem" }}
+        isFirstSection
+        as="div"
       >
         <Heading size="h2">Projects</Heading>
 
