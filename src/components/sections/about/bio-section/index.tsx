@@ -58,8 +58,9 @@ export const BioSection = () => {
         </p>
         <p>
           In early 2021, I took another challenge and I accepted a front-end
-          developer role at numa, where I could work for an international
-          company based in Germany.
+          engineer role at numa, an international company based in Germany,
+          where I had the opportunity to develop new features to the projects
+          and craft an incredible experience for the users.
         </p>
         <p>
           I am absolutely passionate about the web and{" "}
