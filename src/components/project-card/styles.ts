@@ -1,11 +1,9 @@
 import { styled } from "@/styles";
 
-export const ProjectCardContainer = styled("div", {
+import { Card } from "../card";
+
+export const ProjectCardContainer = styled(Card, {
   height: "100%",
-  backgroundColor: "$shape",
-  borderRadius: "$sm",
-  boxShadow: "$md",
-  overflow: "hidden",
 
   display: "flex",
   flexDirection: "column",
@@ -33,9 +31,8 @@ export const ProjectCardHead = styled("div", {
 
 export const ProjectCardDescription = styled("p", {
   flex: 1,
-  marginTop: "1rem",
+  marginTop: "0.5rem",
   color: "$accent-text",
-  lineHeight: "1.5",
   display: "-webkit-box",
   "-webkit-line-clamp": "4",
   "-webkit-box-orient": "vertical",

@@ -1,7 +1,7 @@
+import { Card } from "@/components/card";
 import { ChipsGroup } from "@/components/chip";
+import { Heading } from "@/components/heading";
 import { styled } from "@/styles";
-
-import { Heading } from "../heading";
 
 export const FeaturedProjectContainer = styled("div", {
   position: "relative",
@@ -37,15 +37,6 @@ export const ProjectImageContainer = styled("div", {
   },
 });
 
-export const ProjectDescription = styled("div", {
-  marginTop: "1.5rem",
-  lineHeight: "1.5",
-  padding: "1.5rem",
-  backgroundColor: "$shape",
-  boxShadow: "$md",
-  borderRadius: "$sm",
-});
-
 export const ProjectContent = styled("div", {
   width: 430,
 
@@ -74,7 +65,7 @@ export const ProjectContent = styled("div", {
         alignItems: "flex-end",
         right: 0,
 
-        [`${ProjectDescription}`]: {
+        [`${Card}`]: {
           textAlign: "right",
         },
       },
@@ -82,7 +73,7 @@ export const ProjectContent = styled("div", {
         alignItems: "flex-start",
         left: 0,
 
-        [`${ProjectDescription}`]: {
+        [`${Card}`]: {
           textAlign: "left",
         },
       },
