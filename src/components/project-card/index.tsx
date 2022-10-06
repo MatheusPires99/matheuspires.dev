@@ -60,7 +60,7 @@ export const ProjectCard = ({
 
         <TechsCarousel>
           {technologies.map((tech) => (
-            <TechSlider key={tech.id} style={{ width: "fit-content" }}>
+            <TechSlider key={tech.id}>
               <Chip
                 highlightColor={tech.highlightColor}
                 as={Link}
