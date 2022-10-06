@@ -68,6 +68,10 @@ export const RoleAndCompany = styled("div", {
   display: "flex",
   alignItems: "center",
   gap: "0.5rem",
+
+  "@tablet": {
+    flexWrap: "wrap",
+  },
 });
 
 export const WorkPeriod = styled("span", {

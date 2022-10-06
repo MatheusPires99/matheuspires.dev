@@ -17,9 +17,12 @@ export const ProjectsGrid = styled("ul", {
   gridTemplateColumns: "repeat(3, 1fr)",
   gap: "1.5rem",
 
+  "@tablet": {
+    gridTemplateColumns: "repeat(2, 1fr)",
+  },
+
   "@mobile": {
-    display: "flex",
-    flexDirection: "column",
+    gridTemplateColumns: "repeat(1, 1fr)",
   },
 });
 
@@ -52,11 +55,23 @@ const Projects = ({ projects }: ProjectsProps) => {
   return (
     <>
       <Section
-        css={{ display: "flex", flexDirection: "column", gap: "4rem" }}
+        css={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "4rem",
+          "@mobile": { gap: "2rem" },
+        }}
         isFirstSection
         as="div"
       >
-        <Heading size="h2">Projects</Heading>
+        <Heading
+          size={{
+            "@initial": "h2",
+            "@mobile": "h3",
+          }}
+        >
+          Projects
+        </Heading>
 
         <Input
           preffix={<MagnifyingGlass />}

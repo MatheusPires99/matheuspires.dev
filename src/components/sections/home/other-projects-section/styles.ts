@@ -7,8 +7,11 @@ export const OtherProjectsGroup = styled("ul", {
   gridTemplateColumns: "repeat(3, 1fr)",
   gap: "1.5rem",
 
+  "@tablet": {
+    gridTemplateColumns: "repeat(2, 1fr)",
+  },
+
   "@mobile": {
-    display: "flex",
-    flexDirection: "column",
+    gridTemplateColumns: "repeat(1, 1fr)",
   },
 });

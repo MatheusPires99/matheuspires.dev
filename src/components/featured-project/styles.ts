@@ -27,7 +27,7 @@ export const ProjectImageContainer = styled("div", {
   height: 328,
   position: "relative",
 
-  "@mobile": {
+  "@tablet": {
     width: "100%",
     height: 216,
     zIndex: -1,
@@ -55,7 +55,7 @@ export const ProjectContent = styled("div", {
   top: "50%",
   transform: "translateY(-50%)",
 
-  "@mobile": {
+  "@tablet": {
     width: "100%",
     position: "unset",
     top: "unset",
@@ -100,7 +100,7 @@ export const ProjectDesription = styled(Card, {
   padding: "1.5rem",
   marginTop: "1.5rem",
 
-  "@mobile": {
+  "@tablet": {
     width: "80vw",
     marginTop: "10.75rem",
   },

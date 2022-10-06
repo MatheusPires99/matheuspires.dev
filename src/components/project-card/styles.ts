@@ -9,7 +9,7 @@ export const ProjectCardContainer = styled(Card, {
   display: "flex",
   flexDirection: "column",
 
-  "@mobile": {
+  "@tablet": {
     maxWidth: "none",
   },
 });

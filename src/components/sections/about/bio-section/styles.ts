@@ -11,7 +11,7 @@ export const BioHeader = styled("header", {
 });
 
 export const BioImage = styled(Image, {
-  "@mobile": {
+  "@tablet": {
     width: "100%",
     height: "100%",
   },
