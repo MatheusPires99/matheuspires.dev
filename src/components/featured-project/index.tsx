@@ -1,4 +1,3 @@
-import { useTheme } from "next-themes";
 import Image from "next/future/image";
 
 import { VariantProps } from "@stitches/react";
@@ -37,8 +36,6 @@ export const FeaturedProject = ({
   direction,
   project,
 }: FeaturedProjectProps) => {
-  const { theme } = useTheme();
-
   return (
     <FeaturedProjectContainer direction={direction}>
       <Link href={project.githubUrl} target="_blank">
@@ -70,9 +67,7 @@ export const FeaturedProject = ({
                 target="_blank"
               >
                 <Image
-                  src={
-                    theme === "dark" ? tech.darkImage.url : tech.lightImage.url
-                  }
+                  src={tech.image.url}
                   alt={tech.name}
                   width={18}
                   height={18}

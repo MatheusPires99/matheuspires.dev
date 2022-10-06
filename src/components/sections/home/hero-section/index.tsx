@@ -1,4 +1,3 @@
-import { useTheme } from "next-themes";
 import Image from "next/future/image";
 
 import meImage from "@/assets/images/me.jpg";
@@ -16,8 +15,6 @@ type HeroSectionProps = {
 };
 
 export const HeroSection = ({ technologies }: HeroSectionProps) => {
-  const { theme } = useTheme();
-
   return (
     <Section
       css={{
@@ -70,9 +67,7 @@ export const HeroSection = ({ technologies }: HeroSectionProps) => {
                 target="_blank"
               >
                 <Image
-                  src={
-                    theme === "dark" ? tech.darkImage.url : tech.lightImage.url
-                  }
+                  src={tech.image.url}
                   alt={tech.name}
                   width={18}
                   height={18}

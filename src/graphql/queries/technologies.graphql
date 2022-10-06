@@ -3,10 +3,7 @@ query Technologies {
     id
     name
     websiteUrl
-    darkImage {
-      url
-    }
-    lightImage {
+    image {
       url
     }
     highlightColor

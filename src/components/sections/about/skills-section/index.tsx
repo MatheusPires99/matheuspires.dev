@@ -1,4 +1,3 @@
-import { useTheme } from "next-themes";
 import Image from "next/future/image";
 
 import { Chip, ChipsGroup } from "@/components/chip";
@@ -12,8 +11,6 @@ type SkillsSectionProps = {
 };
 
 export const SkillsSection = ({ technologies }: SkillsSectionProps) => {
-  const { theme } = useTheme();
-
   return (
     <Section>
       <Heading
@@ -36,9 +33,7 @@ export const SkillsSection = ({ technologies }: SkillsSectionProps) => {
               target="_blank"
             >
               <Image
-                src={
-                  theme === "dark" ? tech.darkImage.url : tech.lightImage.url
-                }
+                src={tech.image.url}
                 alt={tech.name}
                 width={18}
                 height={18}

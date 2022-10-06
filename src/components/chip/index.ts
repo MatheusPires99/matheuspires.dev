@@ -27,6 +27,12 @@ export const Chip = styled("div", {
     transform: "scale(1.05)",
   },
 
+  img: {
+    [`.${lightTheme} &`]: {
+      filter: "invert(0.9)",
+    },
+  },
+
   variants: {
     highlightColor: {
       cyan: {

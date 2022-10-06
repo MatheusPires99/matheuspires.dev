@@ -12,10 +12,7 @@ query Projects {
       id
       name
       websiteUrl
-      darkImage {
-        url
-      }
-      lightImage {
+      image {
         url
       }
       highlightColor
