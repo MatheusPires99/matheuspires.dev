@@ -18,6 +18,10 @@ export const CarouselNavigation = styled("div", {
   top: "50%",
   transform: "translateY(-50%)",
 
+  "@mobile": {
+    display: "none",
+  },
+
   [`${IconButton}`]: {
     backgroundColor: "$shape",
   },

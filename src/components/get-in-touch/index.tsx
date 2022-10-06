@@ -13,7 +13,14 @@ export const GetInTouch = () => {
 
       <Section as="div">
         <GetInTouchContainer>
-          <Heading size="h2" as="h2" centered>
+          <Heading
+            size={{
+              "@initial": "h2",
+              "@mobile": "h3",
+            }}
+            as="h2"
+            centered
+          >
             Get In Touch
           </Heading>
           <p>
