@@ -1,70 +1,8 @@
-import { IconButton } from "@/components/icon-button";
-import { lightTheme, styled } from "@/styles";
+import { styled } from "@/styles";
 
-import "keen-slider/keen-slider.min.css";
+import "swiper/css";
 
 export const TechsCarouselContainer = styled("div", {
   position: "relative",
   marginTop: "1rem",
-});
-
-export const CarouselNavigation = styled("div", {
-  height: "100%",
-  zIndex: 10,
-
-  display: "flex",
-
-  position: "absolute",
-  top: "50%",
-  transform: "translateY(-50%)",
-
-  "@tablet": {
-    display: "none",
-  },
-
-  [`${IconButton}`]: {
-    backgroundColor: "$shape",
-  },
-
-  variants: {
-    direction: {
-      right: {
-        right: -16,
-
-        "&::before": {
-          content: "",
-          width: 32,
-          height: "100%",
-          background:
-            "linear-gradient(to left, $shape, rgba(25, 33, 64, 0.9) 10%, rgba(25, 33, 64, 0.01) 90%)",
-
-          [`.${lightTheme} &`]: {
-            background:
-              "linear-gradient(to left, $shape, rgba(240, 244, 255, 0.9) 10%, rgba(240, 244, 255, 0.01) 90%)",
-          },
-        },
-      },
-      left: {
-        left: -16,
-
-        "&::after": {
-          content: "",
-          width: 32,
-          height: "100%",
-          background:
-            "linear-gradient(to right, $shape, rgba(25, 33, 64, 0.9) 10%, rgba(25, 33, 64, 0.01) 90%)",
-
-          [`.${lightTheme} &`]: {
-            background:
-              "linear-gradient(to right, $shape, rgba(240, 244, 255, 0.9) 10%, rgba(240, 244, 255, 0.01) 90%)",
-          },
-        },
-      },
-    },
-    isDisabled: {
-      true: {
-        display: "none",
-      },
-    },
-  },
 });

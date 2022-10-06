@@ -67,7 +67,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
 
         <TechsCarousel>
           {project.technologies.map((tech) => (
-            <TechsCarouselSlider key={tech.id}>
+            <TechsCarouselSlider key={tech.id} style={{ width: "fit-content" }}>
               <Chip
                 highlightColor={tech.highlightColor}
                 as={Link}
