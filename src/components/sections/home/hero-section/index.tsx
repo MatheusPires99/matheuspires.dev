@@ -7,6 +7,8 @@ import { Link } from "@/components/link";
 import { Section } from "@/components/section";
 import { TechnologiesQuery } from "@/generated/graphql";
 
+// @ts-ignore
+import meImage from "../../../../../public/me.jpg";
 import { HeroImage, HeroContent, Introduction, CallToActions } from "./styles";
 
 type HeroSectionProps = {
@@ -29,7 +31,13 @@ export const HeroSection = ({ technologies }: HeroSectionProps) => {
       }}
       isFirstSection
     >
-      <HeroImage src="/me.jpg" alt="Matheus's photo" width={298} height={298} />
+      <HeroImage
+        src={meImage}
+        alt="Matheus's photo"
+        width={298}
+        height={298}
+        placeholder="blur"
+      />
 
       <HeroContent>
         <Introduction>

@@ -6,6 +6,8 @@ import { Link } from "@/components/link";
 import { RichText } from "@/components/rich-text";
 import { Section } from "@/components/section";
 
+// @ts-ignore
+import meImage from "../../../../../public/me-full-png";
 import { BioHeader } from "./styles";
 
 export const BioSection = () => {
@@ -18,7 +20,14 @@ export const BioSection = () => {
         </Button>
       </BioHeader>
 
-      <Image src="/me-full.png" alt="" width={946} height={425} quality={100} />
+      <Image
+        src={meImage}
+        alt=""
+        width={946}
+        height={425}
+        quality={100}
+        placeholder="blur"
+      />
 
       <RichText css={{ marginTop: "3.5rem" }} variant="lg">
         <p>

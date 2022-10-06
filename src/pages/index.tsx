@@ -1,5 +1,7 @@
 import { GetStaticProps } from "next";
 
+import { getPlaiceholder } from "plaiceholder";
+
 import { Divider } from "@/components/divider";
 import {
   HeroSection,
@@ -35,8 +37,27 @@ export const getStaticProps: GetStaticProps = async () => {
   ]);
 
   const featuredTechnologies = technologies.filter((tech) => tech.isFeatured);
-  const featuredProjects = projects.filter((tech) => tech.isFeatured);
-  const otherProjects = projects.filter((tech) => !tech.isFeatured);
+
+  const projectsWithImageBlurHash = await Promise.all(
+    projects.map(async (project) => {
+      const { base64 } = await getPlaiceholder(project.image.url, { size: 10 });
+
+      return {
+        ...project,
+        image: {
+          ...project.image,
+          base64,
+        },
+      };
+    }),
+  );
+
+  const featuredProjects = projectsWithImageBlurHash.filter(
+    (tech) => tech.isFeatured,
+  );
+  const otherProjects = projectsWithImageBlurHash.filter(
+    (tech) => !tech.isFeatured,
+  );
 
   return {
     props: {

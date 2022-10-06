@@ -35,7 +35,14 @@ export const ProjectCard = ({
     <ProjectCardContainer>
       <Link href={githubUrl} target="_blank">
         <ProjectCardImage>
-          <Image src={image.url} alt={name} width={296} height={180} />
+          <Image
+            src={image.url}
+            alt={name}
+            width={296}
+            height={180}
+            placeholder="blur"
+            blurDataURL={(image as any).base64}
+          />
         </ProjectCardImage>
       </Link>
 

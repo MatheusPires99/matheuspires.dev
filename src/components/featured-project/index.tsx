@@ -44,7 +44,13 @@ export const FeaturedProject = ({
     <FeaturedProjectContainer direction={direction}>
       <Link href={githubUrl} target="_blank">
         <ProjectImageContainer>
-          <Image src={image.url} alt={name} fill />
+          <Image
+            src={image.url}
+            alt={name}
+            fill
+            placeholder="blur"
+            blurDataURL={(image as any).base64}
+          />
         </ProjectImageContainer>
       </Link>
 

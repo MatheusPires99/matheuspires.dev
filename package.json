@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.7.0",
+    "@plaiceholder/next": "^2.5.0",
     "@radix-ui/colors": "^0.1.8",
     "@radix-ui/react-separator": "^1.0.0",
     "@stitches/react": "^1.2.8",
@@ -20,8 +21,10 @@
     "keen-slider": "^6.8.2",
     "next": "12.3.1",
     "phosphor-react": "^1.4.1",
+    "plaiceholder": "^2.5.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "sharp": "^0.31.1"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "2.13.3",
