@@ -1,4 +1,6 @@
-import { styled } from "@stitches/react";
+import Image from "next/future/image";
+
+import { styled } from "@/styles";
 
 export const BioHeader = styled("header", {
   marginBottom: "2rem",
@@ -6,4 +8,11 @@ export const BioHeader = styled("header", {
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
+});
+
+export const BioImage = styled(Image, {
+  "@mobile": {
+    width: "100%",
+    height: "100%",
+  },
 });

@@ -27,7 +27,7 @@ export const FeaturedProjectsSection = ({
         {featuredProjects.map((project, index) => (
           <FeaturedProject
             key={project.id}
-            direction={index % 2 === 0 ? "left" : "right"}
+            direction={index % 2 === 0 ? "right" : "left"}
             project={{
               name: project.name,
               description: project.description,

@@ -13,7 +13,14 @@ type SkillsSectionProps = {
 export const SkillsSection = ({ technologies }: SkillsSectionProps) => {
   return (
     <Section>
-      <Heading size="h2" as="h2" css={{ marginBottom: "2.5rem" }}>
+      <Heading
+        size={{
+          "@initial": "h2",
+          "@mobile": "h3",
+        }}
+        as="h2"
+        css={{ marginBottom: "2.5rem", "@mobile": { marginBottom: "1.5rem" } }}
+      >
         Skills
       </Heading>
       <ChipsGroup>

@@ -1,5 +1,3 @@
-import Image from "next/future/image";
-
 import meImage from "@/assets/images/me-full.png";
 import { Button } from "@/components/button";
 import { Heading } from "@/components/heading";
@@ -7,7 +5,7 @@ import { Link } from "@/components/link";
 import { RichText } from "@/components/rich-text";
 import { Section } from "@/components/section";
 
-import { BioHeader } from "./styles";
+import { BioHeader, BioImage } from "./styles";
 
 export const BioSection = () => {
   return (
@@ -19,7 +17,7 @@ export const BioSection = () => {
         </Button>
       </BioHeader>
 
-      <Image
+      <BioImage
         src={meImage}
         alt=""
         width={946}
@@ -28,7 +26,10 @@ export const BioSection = () => {
         placeholder="blur"
       />
 
-      <RichText css={{ marginTop: "3.5rem" }} variant="lg">
+      <RichText
+        css={{ marginTop: "3.5rem", "@mobile": { marginTop: "2rem" } }}
+        variant="lg"
+      >
         <p>
           Whilst studying computer science, I always felt different. I cared
           deeply about the visual components of programming. After college, I

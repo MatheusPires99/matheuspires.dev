@@ -3,12 +3,19 @@ import { styled } from "@/styles";
 export const WorkExperienceContainer = styled("div", {
   display: "flex",
   alignItems: "center",
-  gap: "1rem",
+
+  "@mobile": {
+    gap: "1.5rem",
+  },
 
   variants: {
     direction: {
       right: {
         flexDirection: "row-reverse",
+
+        "@mobile": {
+          flexDirection: "row",
+        },
       },
       left: {
         flexDirection: "row",
@@ -33,6 +40,11 @@ export const CompanyImage = styled("div", {
   justifyContent: "center",
   flexShrink: 0,
 
+  "@mobile": {
+    position: "unset",
+    margin: 0,
+  },
+
   img: {
     width: "2.5rem",
     height: "2.5rem",
@@ -44,6 +56,10 @@ export const WorkContent = styled("div", {
 
   display: "flex",
   flexDirection: "column",
+
+  "@mobile": {
+    width: "auto",
+  },
 });
 
 export const RoleAndCompany = styled("div", {
