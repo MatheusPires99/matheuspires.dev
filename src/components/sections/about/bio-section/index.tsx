@@ -11,7 +11,14 @@ export const BioSection = () => {
   return (
     <Section isFirstSection>
       <BioHeader>
-        <Heading size="h2">About</Heading>
+        <Heading
+          size={{
+            "@initial": "h2",
+            "@mobile": "h3",
+          }}
+        >
+          About
+        </Heading>
         <Button variant="outline" as={Link} href="/resume.pdf" target="_blank">
           Resume
         </Button>
@@ -43,21 +50,28 @@ export const BioSection = () => {
         </p>
         <p>
           When in college, it was clear to me that I was going to work with web
-          technologies. I went on take a position at Serafine, as intern part of
-          the e-commerce team working with front-end technologies, such as HTML,
-          CSS and JavaScript to build UI improvements. It was not enought to
-          fuel <strong>my passion for front-end</strong> too, so I decided look
-          for a new challenge.
+          technologies. I went on take a position at{" "}
+          <Link href="https://www.serafine.com.br" target="_blank">
+            Serafine
+          </Link>
+          , as intern part of the e-commerce team working with front-end
+          technologies, such as HTML, CSS and JavaScript to build UI
+          improvements. It was not enought to fuel{" "}
+          <strong>my passion for front-end</strong> too, so I decided look for a
+          new challenge.
         </p>
         <p>
           After 8 months at Serafine, I accepted a front-end developer role at
-          Sambatech, where I had the opportunity to work on award projects for
-          top level brazilian brands such as{" "}
-          <Link href="https://www.portoseguro.com.br/" target="_blank">
+          <Link href="https://www.sambatech.com.br" target="_blank">
+            Sambatech
+          </Link>
+          , where I had the opportunity to work on award projects for top level
+          brazilian brands such as{" "}
+          <Link href="https://www.portoseguro.com.br" target="_blank">
             Porto Seguro
           </Link>{" "}
           and{" "}
-          <Link href="https://www.ambev.com.br/" target="_blank">
+          <Link href="https://www.ambev.com.br" target="_blank">
             Ambev
           </Link>{" "}
           producing all sorts of high-end web-based solutions based on client's
@@ -65,9 +79,13 @@ export const BioSection = () => {
         </p>
         <p>
           In early 2021, I took another challenge and I accepted a front-end
-          engineer role at numa, an international company based in Germany,
-          where I had the opportunity to develop new features to the projects
-          and craft an incredible experience for the users.
+          engineer role at{" "}
+          <Link href="https://www.numastays.com" target="_blank">
+            numa
+          </Link>
+          , an international company based in Germany, where I had the
+          opportunity to develop new features to the projects and craft an
+          incredible experience for the users.
         </p>
         <p>
           I am absolutely passionate about the web and{" "}
