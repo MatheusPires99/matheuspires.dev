@@ -1,3 +1,4 @@
+import { useTheme } from "next-themes";
 import Image from "next/future/image";
 
 import { ArrowSquareOut } from "phosphor-react";
@@ -31,6 +32,8 @@ type ProjectCardProps = {
 };
 
 export const ProjectCard = ({ project }: ProjectCardProps) => {
+  const { theme } = useTheme();
+
   return (
     <ProjectCardContainer>
       <Link href={project.githubUrl} target="_blank">
@@ -75,7 +78,9 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
                 target="_blank"
               >
                 <Image
-                  src={tech.image.url}
+                  src={
+                    theme === "dark" ? tech.darkImage.url : tech.lightImage.url
+                  }
                   alt={tech.name}
                   width={18}
                   height={18}

@@ -1,4 +1,4 @@
-import { styled } from "@/styles";
+import { lightTheme, styled } from "@/styles";
 
 export const Button = styled("button", {
   height: "3.5rem",
@@ -20,6 +20,10 @@ export const Button = styled("button", {
         color: "$text-base",
 
         transition: "background-color 0.2s",
+
+        [`.${lightTheme} &`]: {
+          color: "$background",
+        },
 
         "&:hover": {
           backgroundColor: "$solid-background-hover",

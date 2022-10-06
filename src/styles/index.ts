@@ -1,4 +1,4 @@
-import { indigoDark, grayDark } from "@radix-ui/colors";
+import { indigoDark, grayDark, indigo, gray } from "@radix-ui/colors";
 import { createStitches } from "@stitches/react";
 
 export const {
@@ -49,7 +49,7 @@ export const {
       full: "9999px",
     },
     shadows: {
-      md: "0 8px 30px rgba(0, 0, 0, 0.12)",
+      md: "0 10px 15px -3px rgb(0, 0, 0, 0.1), 0 4px 6px -4px rgb(0, 0, 0, 0.1)",
     },
     sizes: {
       "page-width": "1000px",
@@ -59,5 +59,26 @@ export const {
   media: {
     mobile: "(max-width: 768px)",
     tablet: "(max-width: 1024px)",
+  },
+});
+
+export const lightTheme = createTheme("light-theme", {
+  colors: {
+    background: indigo.indigo1,
+    "background-light": indigo.indigo2,
+    shape: indigo.indigo3,
+    "shape-hover": indigo.indigo4,
+    border: indigo.indigo7,
+    "border-hover": indigo.indigo8,
+    "solid-background": indigo.indigo9,
+    "solid-background-hover": indigo.indigo10,
+    "text-contrast": indigo.indigo11,
+    "text-base": indigo.indigo12,
+
+    "accent-border": gray.gray6,
+    "accent-placeholder": gray.gray9,
+    "accent-text": gray.gray11,
+
+    divider: gray.gray6,
   },
 });

@@ -1,5 +1,5 @@
 import { IconButton } from "@/components/icon-button";
-import { styled } from "@/styles";
+import { lightTheme, styled } from "@/styles";
 
 import "swiper/css";
 
@@ -41,6 +41,11 @@ export const CarouselNavigation = styled("div", {
           height: "100%",
           background:
             "linear-gradient(to left, $shape, rgba(25, 33, 64, 0.9) 10%, rgba(25, 33, 64, 0.01) 90%)",
+
+          [`.${lightTheme} &`]: {
+            background:
+              "linear-gradient(to left, $shape, rgba(240, 244, 255, 0.9) 10%, rgba(240, 244, 255, 0.01) 90%)",
+          },
         },
       },
       left: {
@@ -52,6 +57,11 @@ export const CarouselNavigation = styled("div", {
           height: "100%",
           background:
             "linear-gradient(to right, $shape, rgba(25, 33, 64, 0.9) 10%, rgba(25, 33, 64, 0.01) 90%)",
+
+          [`.${lightTheme} &`]: {
+            background:
+              "linear-gradient(to right, $shape, rgba(240, 244, 255, 0.9) 10%, rgba(240, 244, 255, 0.01) 90%)",
+          },
         },
       },
     },

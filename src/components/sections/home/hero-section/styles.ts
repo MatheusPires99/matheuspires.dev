@@ -4,6 +4,7 @@ import { styled } from "@/styles";
 
 export const HeroImage = styled(Image, {
   borderRadius: "$sm",
+  boxShadow: "$md",
 
   "@mobile": {
     width: "11.25rem",

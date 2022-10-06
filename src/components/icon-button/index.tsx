@@ -22,6 +22,11 @@ export const IconButton = styled("button", {
         width: "2.25rem",
         height: "2.25rem",
       },
+      md: {
+        fontSize: "1.25rem",
+        width: "2.25rem",
+        height: "2.25rem",
+      },
       lg: {
         fontSize: "1.5rem",
         width: "2.5rem",

@@ -1,6 +1,6 @@
 import { Container } from "@/components/container";
 import { Link } from "@/components/link";
-import { styled } from "@/styles";
+import { lightTheme, styled } from "@/styles";
 
 export const HeaderContainer = styled("header", {
   height: "$header-height",
@@ -12,6 +12,10 @@ export const HeaderContainer = styled("header", {
 
   position: "fixed",
   top: 0,
+
+  [`.${lightTheme} &`]: {
+    backgroundColor: "rgb(253, 253, 254, 0.75)",
+  },
 });
 
 export const HeaderContent = styled(Container, {
