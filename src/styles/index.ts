@@ -1,4 +1,11 @@
-import { indigoDark, grayDark, indigo, gray } from "@radix-ui/colors";
+import {
+  indigoDark,
+  indigoDarkA,
+  indigo,
+  indigoA,
+  grayDark,
+  gray,
+} from "@radix-ui/colors";
 import { createStitches } from "@stitches/react";
 
 export const {
@@ -16,6 +23,7 @@ export const {
       background: indigoDark.indigo1,
       "background-light": indigoDark.indigo2,
       shape: indigoDark.indigo3,
+      "shape-alpha": indigoDarkA.indigoA3,
       "shape-hover": indigoDark.indigo4,
       border: indigoDark.indigo7,
       "border-hover": indigoDark.indigo8,
@@ -67,6 +75,7 @@ export const lightTheme = createTheme("light-theme", {
     background: indigo.indigo1,
     "background-light": indigo.indigo2,
     shape: indigo.indigo3,
+    "shape-alpha": indigoA.indigoA3,
     "shape-hover": indigo.indigo4,
     border: indigo.indigo7,
     "border-hover": indigo.indigo8,

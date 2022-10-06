@@ -3,9 +3,9 @@ import { useRouter } from "next/router";
 
 import { Moon, Sun } from "phosphor-react";
 
+import { IconButton } from "@/components/icon-button";
 import { Link } from "@/components/link";
 
-import { IconButton } from "../icon-button";
 import { HeaderContainer, HeaderContent, Navigation } from "./styles";
 
 export const Header = () => {

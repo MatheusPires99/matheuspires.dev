@@ -4,15 +4,17 @@ export const IconButton = styled("button", {
   color: "$text-base",
   backgroundColor: "transparent",
   border: "none",
+  borderRadius: "$sm",
 
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
 
-  transition: "color 0.2s",
+  transition: "color 0.2s, background-color 0.2s",
 
   "&:hover": {
     color: "$text-contrast",
+    backgroundColor: "$shape-alpha",
   },
 
   variants: {
