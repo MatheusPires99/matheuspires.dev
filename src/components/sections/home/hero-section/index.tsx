@@ -1,6 +1,6 @@
 import Image from "next/future/image";
 
-import meImage from "@/assets/images/me.png";
+import meImage from "@/assets/images/me.jpg";
 import { Button } from "@/components/button";
 import { Chip, ChipsGroup } from "@/components/chip";
 import { Heading } from "@/components/heading";
