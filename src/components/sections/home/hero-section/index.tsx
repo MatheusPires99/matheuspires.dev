@@ -25,7 +25,7 @@ export const HeroSection = ({ technologies }: HeroSectionProps) => {
         "@mobile": {
           flexDirection: "column",
           alignItems: "flex-start",
-          gap: "4rem",
+          gap: "3rem",
         },
       }}
       isFirstSection

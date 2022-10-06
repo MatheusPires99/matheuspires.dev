@@ -23,14 +23,12 @@ export const WorkExperiencesSection = ({
           <WorkExperience
             key={workExperience.id}
             direction={index % 2 === 0 ? "left" : "right"}
-            role={workExperience.role}
-            description={workExperience.description.html}
-            startsAt={workExperience.startsAt}
-            endsAt={workExperience.endsAt}
-            company={{
-              name: workExperience.company?.name!,
-              websiteUrl: workExperience.company?.websiteUrl!,
-              logo: workExperience.company?.logo?.url!,
+            workExperience={{
+              role: workExperience.role,
+              description: workExperience.description,
+              startsAt: workExperience.startsAt,
+              endsAt: workExperience.endsAt,
+              company: workExperience.company,
             }}
           />
         ))}

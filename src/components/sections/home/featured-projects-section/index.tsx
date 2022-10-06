@@ -28,12 +28,14 @@ export const FeaturedProjectsSection = ({
           <FeaturedProject
             key={project.id}
             direction={index % 2 === 0 ? "left" : "right"}
-            name={project.name}
-            description={project.description}
-            image={project.image}
-            githubUrl={project.githubUrl}
-            websiteUrl={project.websiteUrl}
-            technologies={project.technologies}
+            project={{
+              name: project.name,
+              description: project.description,
+              image: project.image,
+              githubUrl: project.githubUrl,
+              websiteUrl: project.websiteUrl,
+              technologies: project.technologies,
+            }}
           />
         ))}
       </FeaturedProjectsGroup>

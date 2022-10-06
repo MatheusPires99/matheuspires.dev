@@ -4,6 +4,7 @@ import { VariantProps } from "@stitches/react";
 
 import { Link } from "@/components/link";
 import { RichText } from "@/components/rich-text";
+import { WorkExperiencesQuery } from "@/generated/graphql";
 
 import {
   WorkExperienceContainer,
@@ -16,15 +17,10 @@ import {
 type WorkExperienceProps = Required<
   VariantProps<typeof WorkExperienceContainer>
 > & {
-  role: string;
-  description: string;
-  startsAt: string;
-  endsAt: string;
-  company: {
-    name: string;
-    websiteUrl: string;
-    logo: string;
-  };
+  workExperience: Pick<
+    WorkExperiencesQuery["workExperiences"][0],
+    "role" | "description" | "startsAt" | "endsAt" | "company"
+  >;
 };
 
 const formatDate = (date: string) => {
@@ -36,31 +32,39 @@ const formatDate = (date: string) => {
 
 export const WorkExperience = ({
   direction,
-  role,
-  description,
-  startsAt,
-  endsAt,
-  company,
+  workExperience,
 }: WorkExperienceProps) => {
   return (
     <WorkExperienceContainer direction={direction}>
       <CompanyImage>
-        <Image src={company.logo} alt={company.name} width={40} height={40} />
+        <Image
+          src={workExperience.company!.logo.url}
+          alt={workExperience.company!.name}
+          width={40}
+          height={40}
+        />
       </CompanyImage>
 
       <WorkContent>
         <RoleAndCompany>
-          <strong>{role}</strong>
-          <Link variant="hightlight" href={company.websiteUrl} target="_blank">
-            @ {company.name}
+          <strong>{workExperience.role}</strong>
+          <Link
+            variant="hightlight"
+            href={workExperience.company!.websiteUrl}
+            target="_blank"
+          >
+            @ {workExperience.company!.name}
           </Link>
         </RoleAndCompany>
         <WorkPeriod>
-          {formatDate(startsAt)} - {endsAt ? formatDate(endsAt) : "present"}
+          {formatDate(workExperience.startsAt)} -{" "}
+          {workExperience.endsAt
+            ? formatDate(workExperience.endsAt)
+            : "present"}
         </WorkPeriod>
         <RichText
           css={{ marginTop: "1rem" }}
-          dangerouslySetInnerHTML={{ __html: description }}
+          dangerouslySetInnerHTML={{ __html: workExperience.description.html }}
         />
       </WorkContent>
     </WorkExperienceContainer>

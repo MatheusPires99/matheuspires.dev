@@ -2,6 +2,7 @@ import { GetStaticProps } from "next";
 import { ChangeEvent, useState } from "react";
 
 import { MagnifyingGlass } from "phosphor-react";
+import { getPlaiceholder } from "plaiceholder";
 
 import { Heading } from "@/components/heading";
 import { Input } from "@/components/input";
@@ -64,12 +65,14 @@ const Projects = ({ projects }: ProjectsProps) => {
             {filteredProjects.map((project) => (
               <li key={project.id}>
                 <ProjectCard
-                  name={project.name}
-                  description={project.description}
-                  image={project.image}
-                  githubUrl={project.githubUrl}
-                  websiteUrl={project.websiteUrl}
-                  technologies={project.technologies}
+                  project={{
+                    name: project.name,
+                    description: project.description,
+                    image: project.image,
+                    githubUrl: project.githubUrl,
+                    websiteUrl: project.websiteUrl,
+                    technologies: project.technologies,
+                  }}
                 />
               </li>
             ))}
@@ -92,9 +95,25 @@ export default Projects;
 export const getStaticProps: GetStaticProps = async () => {
   const projects = await cmsService.getProjects();
 
+  const projectsWithImageBlurHash = await Promise.all(
+    projects.map(async (project) => {
+      const { base64 } = await getPlaiceholder(project.image.url, {
+        size: 24,
+      });
+
+      return {
+        ...project,
+        image: {
+          ...project.image,
+          base64,
+        },
+      };
+    }),
+  );
+
   return {
     props: {
-      projects,
+      projects: projectsWithImageBlurHash,
     },
     revalidate: 60 * 60, // 1 hour
   };

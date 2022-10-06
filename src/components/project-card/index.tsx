@@ -18,30 +18,30 @@ import {
 } from "./styles";
 import { TechsCarousel, TechSlider } from "./techs-carousel";
 
-type ProjectCardProps = Pick<
-  ProjectsQuery["projects"][0],
-  "name" | "description" | "image" | "githubUrl" | "websiteUrl" | "technologies"
->;
+type ProjectCardProps = {
+  project: Pick<
+    ProjectsQuery["projects"][0],
+    | "name"
+    | "description"
+    | "image"
+    | "githubUrl"
+    | "websiteUrl"
+    | "technologies"
+  >;
+};
 
-export const ProjectCard = ({
-  name,
-  description,
-  image,
-  githubUrl,
-  websiteUrl,
-  technologies,
-}: ProjectCardProps) => {
+export const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
     <ProjectCardContainer>
-      <Link href={githubUrl} target="_blank">
+      <Link href={project.githubUrl} target="_blank">
         <ProjectCardImage>
           <Image
-            src={image.url}
-            alt={name}
+            src={project.image.url}
+            alt={project.name}
             width={296}
             height={180}
             placeholder="blur"
-            blurDataURL={(image as any).base64}
+            blurDataURL={(project.image as any).base64}
           />
         </ProjectCardImage>
       </Link>
@@ -49,24 +49,24 @@ export const ProjectCard = ({
       <ProjectCardContent>
         <ProjectCardHead>
           <Heading size="h4" as="h3">
-            {name}
+            {project.name}
           </Heading>
           <div>
-            <IconButton as={Link} href={githubUrl} target="_blank">
+            <IconButton as={Link} href={project.githubUrl} target="_blank">
               <GithubLogo />
             </IconButton>
-            {websiteUrl && (
-              <IconButton as={Link} href={websiteUrl} target="_blank">
+            {project.websiteUrl && (
+              <IconButton as={Link} href={project.websiteUrl} target="_blank">
                 <ArrowSquareOut />
               </IconButton>
             )}
           </div>
         </ProjectCardHead>
 
-        <ProjectCardDescription>{description}</ProjectCardDescription>
+        <ProjectCardDescription>{project.description}</ProjectCardDescription>
 
         <TechsCarousel>
-          {technologies.map((tech) => (
+          {project.technologies.map((tech) => (
             <TechSlider key={tech.id} style={{ width: "fit-content" }}>
               <Chip
                 highlightColor={tech.highlightColor}

@@ -40,7 +40,9 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const projectsWithImageBlurHash = await Promise.all(
     projects.map(async (project) => {
-      const { base64 } = await getPlaiceholder(project.image.url, { size: 10 });
+      const { base64 } = await getPlaiceholder(project.image.url, {
+        size: 24,
+      });
 
       return {
         ...project,

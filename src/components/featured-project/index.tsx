@@ -20,8 +20,8 @@ import {
 
 type FeaturedProjectProps = Required<
   VariantProps<typeof FeaturedProjectContainer>
-> &
-  Pick<
+> & {
+  project: Pick<
     ProjectsQuery["projects"][0],
     | "name"
     | "description"
@@ -30,26 +30,22 @@ type FeaturedProjectProps = Required<
     | "websiteUrl"
     | "technologies"
   >;
+};
 
 export const FeaturedProject = ({
   direction,
-  name,
-  description,
-  image,
-  githubUrl,
-  websiteUrl,
-  technologies,
+  project,
 }: FeaturedProjectProps) => {
   return (
     <FeaturedProjectContainer direction={direction}>
-      <Link href={githubUrl} target="_blank">
+      <Link href={project.githubUrl} target="_blank">
         <ProjectImageContainer>
           <Image
-            src={image.url}
-            alt={name}
+            src={project.image.url}
+            alt={project.name}
             fill
             placeholder="blur"
-            blurDataURL={(image as any).base64}
+            blurDataURL={(project.image as any).base64}
           />
         </ProjectImageContainer>
       </Link>
@@ -57,12 +53,12 @@ export const FeaturedProject = ({
       <ProjectContent direction={direction}>
         <Heading size="h3" as="h3">
           <Link variant="primary" href="">
-            {name}
+            {project.name}
           </Link>
         </Heading>
 
         <ChipsGroup>
-          {technologies.map((tech) => (
+          {project.technologies.map((tech) => (
             <li key={tech.id}>
               <Chip
                 highlightColor={tech.highlightColor}
@@ -81,14 +77,14 @@ export const FeaturedProject = ({
             </li>
           ))}
         </ChipsGroup>
-        <ProjectDesription>{description}</ProjectDesription>
+        <ProjectDesription>{project.description}</ProjectDesription>
 
         <ProjectLinks>
-          <IconButton as={Link} href={githubUrl} target="_blank">
+          <IconButton as={Link} href={project.githubUrl} target="_blank">
             <GithubLogo />
           </IconButton>
-          {websiteUrl && (
-            <IconButton as={Link} href={websiteUrl} target="_blank">
+          {project.websiteUrl && (
+            <IconButton as={Link} href={project.websiteUrl} target="_blank">
               <ArrowSquareOut />
             </IconButton>
           )}
