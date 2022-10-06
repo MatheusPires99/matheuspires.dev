@@ -1,7 +1,8 @@
-import { ReactNode, useState } from "react";
+import { ReactNode, useRef } from "react";
 
-import { useKeenSlider } from "keen-slider/react";
 import { CaretLeft, CaretRight } from "phosphor-react";
+import { Navigation, FreeMode } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 import { IconButton } from "@/components/icon-button";
 
@@ -12,53 +13,42 @@ type TechsCarouselProps = {
 };
 
 export const TechsCarousel = ({ children }: TechsCarouselProps) => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
-    mode: "free",
-    slides: {
-      perView: "auto",
-      spacing: 8,
-    },
-    slideChanged(slider) {
-      setCurrentSlide(slider.track.details.rel);
-    },
-  });
+  const navigationPrevRef = useRef<HTMLDivElement>(null);
+  const navigationNextRef = useRef<HTMLDivElement>(null);
 
   return (
     <TechsCarouselContainer>
-      <CarouselNavigation direction="left" isDisabled={currentSlide === 0}>
-        <IconButton
-          aria-label="Previous"
-          size="sm"
-          onClick={(e) =>
-            e.stopPropagation
-              ? e.stopPropagation()
-              : instanceRef.current?.prev()
-          }
-        >
+      <CarouselNavigation ref={navigationPrevRef} direction="left">
+        <IconButton aria-label="Previous" size="sm">
           <CaretLeft />
         </IconButton>
       </CarouselNavigation>
 
-      <div ref={sliderRef} className="keen-slider">
-        {children}
-      </div>
+      <Swiper
+        navigation={{
+          prevEl: navigationPrevRef.current,
+          nextEl: navigationNextRef.current,
+        }}
+        onBeforeInit={(swiper) => {
+          // @ts-ignore
+          swiper.params.navigation.prevEl = navigationPrevRef.current;
+          // @ts-ignore
+          swiper.params.navigation.nextEl = navigationNextRef.current;
 
-      <CarouselNavigation
-        direction="right"
-        isDisabled={
-          currentSlide === instanceRef.current?.track.details.slides.length! - 1
-        }
+          swiper.navigation.init();
+          swiper.navigation.update();
+        }}
+        spaceBetween={4}
+        slidesPerView="auto"
+        mousewheel
+        freeMode
+        modules={[Navigation, FreeMode]}
       >
-        <IconButton
-          aria-label="Next"
-          size="sm"
-          onClick={(e) =>
-            e.stopPropagation
-              ? e.stopPropagation()
-              : instanceRef.current?.next()
-          }
-        >
+        {children}
+      </Swiper>
+
+      <CarouselNavigation ref={navigationNextRef} direction="right">
+        <IconButton aria-label="Next" size="sm">
           <CaretRight />
         </IconButton>
       </CarouselNavigation>
@@ -66,14 +56,4 @@ export const TechsCarousel = ({ children }: TechsCarouselProps) => {
   );
 };
 
-type TechSliderProps = {
-  children: ReactNode;
-};
-
-export const TechSlider = ({ children }: TechSliderProps) => {
-  return (
-    <div className="keen-slider__slide" style={{ minWidth: "fit-content" }}>
-      {children}
-    </div>
-  );
-};
+export const TechSlider = SwiperSlide;
