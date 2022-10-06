@@ -16,7 +16,7 @@ import {
   ProjectCardDescription,
   ProjectCardContent,
 } from "./styles";
-import { TechsCarousel, TechSlider } from "./techs-carousel";
+import { TechsCarousel, TechsCarouselSlider } from "./techs-carousel";
 
 type ProjectCardProps = {
   project: Pick<
@@ -67,7 +67,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
 
         <TechsCarousel>
           {project.technologies.map((tech) => (
-            <TechSlider key={tech.id} style={{ width: "fit-content" }}>
+            <TechsCarouselSlider key={tech.id}>
               <Chip
                 highlightColor={tech.highlightColor}
                 as={Link}
@@ -82,7 +82,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
                 />
                 {tech.name}
               </Chip>
-            </TechSlider>
+            </TechsCarouselSlider>
           ))}
         </TechsCarousel>
       </ProjectCardContent>

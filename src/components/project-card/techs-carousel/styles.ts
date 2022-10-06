@@ -1,7 +1,7 @@
 import { IconButton } from "@/components/icon-button";
 import { lightTheme, styled } from "@/styles";
 
-import "swiper/css";
+import "keen-slider/keen-slider.min.css";
 
 export const TechsCarouselContainer = styled("div", {
   position: "relative",
@@ -18,11 +18,7 @@ export const CarouselNavigation = styled("div", {
   top: "50%",
   transform: "translateY(-50%)",
 
-  "&.swiper-button-disabled": {
-    display: "none",
-  },
-
-  "@mobile": {
+  "@tablet": {
     display: "none",
   },
 
@@ -63,6 +59,11 @@ export const CarouselNavigation = styled("div", {
               "linear-gradient(to right, $shape, rgba(240, 244, 255, 0.9) 10%, rgba(240, 244, 255, 0.01) 90%)",
           },
         },
+      },
+    },
+    isDisabled: {
+      true: {
+        display: "none",
       },
     },
   },
