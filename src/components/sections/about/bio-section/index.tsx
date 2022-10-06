@@ -1,13 +1,12 @@
 import Image from "next/future/image";
 
+import meImage from "@/assets/images/me-full.png";
 import { Button } from "@/components/button";
 import { Heading } from "@/components/heading";
 import { Link } from "@/components/link";
 import { RichText } from "@/components/rich-text";
 import { Section } from "@/components/section";
 
-// @ts-ignore
-import meImage from "../../../../../public/me-full-png";
 import { BioHeader } from "./styles";
 
 export const BioSection = () => {

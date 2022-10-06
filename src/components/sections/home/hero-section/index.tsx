@@ -1,5 +1,6 @@
 import Image from "next/future/image";
 
+import meImage from "@/assets/images/me.png";
 import { Button } from "@/components/button";
 import { Chip, ChipsGroup } from "@/components/chip";
 import { Heading } from "@/components/heading";
@@ -7,8 +8,6 @@ import { Link } from "@/components/link";
 import { Section } from "@/components/section";
 import { TechnologiesQuery } from "@/generated/graphql";
 
-// @ts-ignore
-import meImage from "../../../../../public/me.jpg";
 import { HeroImage, HeroContent, Introduction, CallToActions } from "./styles";
 
 type HeroSectionProps = {
