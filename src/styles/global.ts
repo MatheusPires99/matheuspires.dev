@@ -12,6 +12,12 @@ export const globalStyles = globalCss({
     outlineOffset: 4,
   },
 
+  "#__next": {
+    height: "100vh",
+    display: "flex",
+    flexDirection: "column",
+  },
+
   body: {
     backgroundColor: "$background",
     color: "$text-base",

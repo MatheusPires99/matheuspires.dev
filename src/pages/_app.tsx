@@ -20,7 +20,7 @@ const App = ({ Component, pageProps }: AppProps) => {
       defaultTheme="dark"
     >
       <Header />
-      <Container as="main" css={{ marginTop: "$sizes$header-height" }}>
+      <Container as="main" css={{ flex: 1, marginTop: "$sizes$header-height" }}>
         <Component {...pageProps} />
       </Container>
       <GetInTouch />
