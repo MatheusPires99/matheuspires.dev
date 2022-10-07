@@ -6,6 +6,7 @@ export const WorkExperienceContainer = styled("div", {
 
   "@mobile": {
     gap: "1.5rem",
+    alignItems: "flex-start",
   },
 
   variants: {
