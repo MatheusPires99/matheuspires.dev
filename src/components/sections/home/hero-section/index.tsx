@@ -1,6 +1,5 @@
 import Image from "next/future/image";
 
-import meImage from "@/assets/images/me.jpg";
 import { Button } from "@/components/button";
 import { Chip, ChipsGroup } from "@/components/chip";
 import { Heading } from "@/components/heading";
@@ -8,6 +7,7 @@ import { Link } from "@/components/link";
 import { Section } from "@/components/section";
 import { TechnologiesQuery } from "@/generated/graphql";
 
+import avatar from "../../../../../public/avatar.png";
 import { HeroImage, HeroContent, Introduction, CallToActions } from "./styles";
 
 type HeroSectionProps = {
@@ -31,7 +31,7 @@ export const HeroSection = ({ technologies }: HeroSectionProps) => {
       isFirstSection
     >
       <HeroImage
-        src={meImage}
+        src={avatar}
         alt="Matheus's photo"
         width={298}
         height={298}

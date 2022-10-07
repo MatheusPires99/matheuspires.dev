@@ -14,7 +14,7 @@ export const SEO = ({
   const router = useRouter();
 
   const url = "https://matheuspires-portfolio.vercel.app";
-  const imageUrl = `${url}/me-full.png`;
+  const imageUrl = `${url}/matheus-banner.png`;
   const path = router.pathname;
 
   return (
