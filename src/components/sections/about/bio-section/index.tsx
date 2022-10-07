@@ -4,7 +4,7 @@ import { Link } from "@/components/link";
 import { RichText } from "@/components/rich-text";
 import { Section } from "@/components/section";
 
-import matheusBanner from "../../../../../public/matheus-banner.png";
+import cover from "../../../../../public/cover.png";
 import { BioHeader, BioImage } from "./styles";
 
 export const BioSection = () => {
@@ -25,7 +25,7 @@ export const BioSection = () => {
       </BioHeader>
 
       <BioImage
-        src={matheusBanner}
+        src={cover}
         alt=""
         width={946}
         height={425}
