@@ -61,7 +61,7 @@ export const BioSection = () => {
           new challenge.
         </p>
         <p>
-          After 8 months at Serafine, I accepted a front-end developer role at
+          After 8 months at Serafine, I accepted a front-end developer role at{" "}
           <Link href="https://www.sambatech.com.br" target="_blank">
             Sambatech
           </Link>
