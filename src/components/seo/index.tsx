@@ -1,3 +1,4 @@
+import { useTheme } from "next-themes";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import React from "react";
@@ -12,10 +13,12 @@ export const SEO = ({
   description = "I'm Matheus, a web developer focused on front-end. I love building great products with interesting data, beautiful UI and great UX.",
 }: SEOProps) => {
   const router = useRouter();
+  const { theme } = useTheme();
 
   const url = "https://www.matheuspires.dev";
   const image = `${url}/matheus-banner.png`;
   const path = router.pathname;
+  const themeColor = theme === "dark" ? "#131620" : "#FDFDFE";
 
   return (
     <Head>
@@ -33,6 +36,8 @@ export const SEO = ({
       <meta property="og:type" content="website" />
 
       <meta name="twitter:card" content="summary_large_image" />
+
+      <meta name="theme-color" content={themeColor} />
     </Head>
   );
 };

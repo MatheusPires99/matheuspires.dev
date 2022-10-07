@@ -41,7 +41,6 @@ const Document = () => {
           href="/favicons/safari-pinned-tab.svg"
           color="#5bbad5"
         />
-        <meta name="theme-color" content="#ffffff" />
         <meta name="msapplication-TileColor" content="#b91d47" />
         <meta
           content="/favicons/browserconfig.xml"
