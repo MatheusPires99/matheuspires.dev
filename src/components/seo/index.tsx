@@ -28,6 +28,9 @@ export const SEO = ({
       <meta property="og:description" content={description} />
       <meta property="og:site_name" content={title} />
       <meta property="og:image" content={imageUrl} />
+      <meta property="og:image:type" content="image/png" />
+      <meta property="og:image:width" content="1280" />
+      <meta property="og:image:height" content="720" />
       <meta property="og:type" content="website" />
     </Head>
   );
