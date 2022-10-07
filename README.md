@@ -6,7 +6,7 @@ This project was developed with the following technologies:
 
 - [TypeScript](https://www.typescriptlang.org/)
 - [Next.js](https://nextjs.org/)
-- [GraphQL](https://graphql.org/)
+- [GraphQL](https://graphql.org/) and [GraphQL Codegen](https://www.the-guild.dev/graphql/codegen)
 - [Apollo Client](https://www.apollographql.com/)
 - [Stitches](https://stitches.dev/)
 
