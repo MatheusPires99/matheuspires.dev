@@ -80,11 +80,21 @@ export const FeaturedProject = ({
         <ProjectDesription>{project.description}</ProjectDesription>
 
         <ProjectLinks>
-          <IconButton as={Link} href={project.githubUrl} target="_blank">
+          <IconButton
+            as={Link}
+            href={project.githubUrl}
+            target="_blank"
+            aria-label="GitHub"
+          >
             <GithubLogo />
           </IconButton>
           {project.websiteUrl && (
-            <IconButton as={Link} href={project.websiteUrl} target="_blank">
+            <IconButton
+              as={Link}
+              href={project.websiteUrl}
+              target="_blank"
+              aria-label="Website"
+            >
               <ArrowSquareOut />
             </IconButton>
           )}

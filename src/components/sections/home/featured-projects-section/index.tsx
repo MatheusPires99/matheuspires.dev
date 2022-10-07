@@ -19,6 +19,7 @@ export const FeaturedProjectsSection = ({
           "@initial": "h2",
           "@mobile": "h3",
         }}
+        as="h2"
       >
         Featured Projects
       </Heading>

@@ -18,6 +18,7 @@ export const Footer = () => {
               as={Link}
               href="https://www.linkedin.com/in/matheus-pires-521271180/"
               target="_blank"
+              aria-label="LinkedIn"
             >
               <LinkedinLogo />
             </IconButton>
@@ -25,6 +26,7 @@ export const Footer = () => {
               as={Link}
               href="https://github.com/MatheusPires99"
               target="_blank"
+              aria-label="GitHub"
             >
               <GithubLogo />
             </IconButton>

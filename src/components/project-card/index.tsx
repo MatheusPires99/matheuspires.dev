@@ -48,15 +48,25 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
 
       <ProjectCardContent>
         <ProjectCardHead>
-          <Heading size="h4" as="h3">
+          <Heading size="h4" as="strong">
             {project.name}
           </Heading>
           <div>
-            <IconButton as={Link} href={project.githubUrl} target="_blank">
+            <IconButton
+              as={Link}
+              href={project.githubUrl}
+              target="_blank"
+              aria-label="GitHub"
+            >
               <GithubLogo />
             </IconButton>
             {project.websiteUrl && (
-              <IconButton as={Link} href={project.websiteUrl} target="_blank">
+              <IconButton
+                as={Link}
+                href={project.websiteUrl}
+                target="_blank"
+                aria-label="Website"
+              >
                 <ArrowSquareOut />
               </IconButton>
             )}

@@ -58,7 +58,11 @@ export const Header = () => {
           </Link>
 
           {canToggleTheme && (
-            <IconButton size="md" onClick={handleToggleTheme}>
+            <IconButton
+              size="md"
+              onClick={handleToggleTheme}
+              aria-label="Toggle Light and Dark Mode"
+            >
               {isDarkTheme ? <Sun /> : <Moon />}
             </IconButton>
           )}

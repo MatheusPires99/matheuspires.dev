@@ -42,6 +42,10 @@ export const Navigation = styled("nav", {
   alignItems: "center",
   gap: "2rem",
 
+  "@mobile": {
+    gap: "0.5rem",
+  },
+
   [`${Link}`]: {
     padding: "0.5rem 0.75rem",
     borderRadius: "$lg",
