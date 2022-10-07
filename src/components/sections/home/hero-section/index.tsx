@@ -50,8 +50,8 @@ export const HeroSection = ({ technologies }: HeroSectionProps) => {
             Matheus Pires
           </Heading>
           <p>
-            I'm Matheus, a software developer with 3 years of experience focused
-            on front-end. I have worked in various industries such as clothing
+            I'm Matheus, a web developer with 3 years of experience focused on
+            front-end. I have worked in various industries such as clothing
             retail, video streaming and hospitality. I love building great
             products with interesting data, beautiful UI and great UX.
           </p>

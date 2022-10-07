@@ -8,6 +8,7 @@ import {
   FeaturedProjectsSection,
   OtherProjectsSection,
 } from "@/components/sections/home";
+import { SEO } from "@/components/seo";
 import { ProjectsQuery, TechnologiesQuery } from "@/generated/graphql";
 import { cmsService } from "@/services";
 
@@ -20,6 +21,8 @@ type HomeProps = {
 const Home = ({ technologies, featuredProjects, otherProjects }: HomeProps) => {
   return (
     <>
+      <SEO />
+
       <HeroSection technologies={technologies} />
       <Divider />
       <FeaturedProjectsSection featuredProjects={featuredProjects} />

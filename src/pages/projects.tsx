@@ -8,6 +8,7 @@ import { Heading } from "@/components/heading";
 import { Input } from "@/components/input";
 import { ProjectCard } from "@/components/project-card";
 import { Section } from "@/components/section";
+import { SEO } from "@/components/seo";
 import { ProjectsQuery } from "@/generated/graphql";
 import { cmsService } from "@/services";
 import { styled } from "@/styles";
@@ -54,11 +55,13 @@ const Projects = ({ projects }: ProjectsProps) => {
 
   return (
     <>
+      <SEO title="Projects | Matheus Pires" />
+
       <Section
         css={{
           display: "flex",
           flexDirection: "column",
-          gap: "4rem",
+          gap: "2.5rem",
           "@mobile": { gap: "2rem" },
         }}
         isFirstSection

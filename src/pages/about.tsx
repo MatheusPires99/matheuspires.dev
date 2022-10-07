@@ -6,6 +6,7 @@ import {
   SkillsSection,
   WorkExperiencesSection,
 } from "@/components/sections/about";
+import { SEO } from "@/components/seo";
 import { TechnologiesQuery, WorkExperiencesQuery } from "@/generated/graphql";
 import { cmsService } from "@/services";
 
@@ -17,6 +18,8 @@ type AboutProps = {
 const About = ({ technologies, workExperiences }: AboutProps) => {
   return (
     <>
+      <SEO title="About | Matheus Pires" />
+
       <BioSection />
       <Divider />
       <SkillsSection technologies={technologies} />
