@@ -1,4 +1,13 @@
-# matheuspires.dev
+<h1 align="center">
+  <img alt="Pokedex" src="https://ik.imagekit.io/hwyksvj4iv/logo_COp-xugT4.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1665154431900" width="100px" />
+</h1>
+
+<p align="center">
+  <a href="#rocket-technologies">Technologies</a>
+  &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#hammer-how-to-use">How to Use</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#cloning-or-forking">Cloning or Forking</a>
+</p>
 
 ## :rocket: Technologies
 
@@ -9,8 +18,9 @@ This project was developed with the following technologies:
 - [GraphQL](https://graphql.org/) and [GraphQL Codegen](https://www.the-guild.dev/graphql/codegen)
 - [Apollo Client](https://www.apollographql.com/)
 - [Stitches](https://stitches.dev/)
+- [Radix UI Colors](https://www.radix-ui.com/colors)
 
-## :hammer: How To Use
+## :hammer: How to Use
 This application required Node.js v16+. From your command line:
 
 ``` bash
