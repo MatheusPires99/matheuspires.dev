@@ -18,6 +18,18 @@ export const HeaderContainer = styled("header", {
   },
 });
 
+export const LogoContainer = styled("div", {
+  display: "flex",
+  alignItems: "center",
+  gap: "0.5rem",
+
+  span: {
+    "@mobile": {
+      display: "none",
+    },
+  },
+});
+
 export const HeaderContent = styled(Container, {
   height: "100%",
   display: "flex",
@@ -31,6 +43,13 @@ export const Navigation = styled("nav", {
   gap: "2rem",
 
   [`${Link}`]: {
-    padding: "0.5rem",
+    padding: "0.5rem 0.75rem",
+    borderRadius: "$lg",
+
+    transition: "background-color 0.2s",
+
+    "&:hover": {
+      backgroundColor: "$shape-alpha",
+    },
   },
 });

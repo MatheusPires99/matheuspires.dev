@@ -4,7 +4,7 @@ export const IconButton = styled("button", {
   color: "$text-base",
   backgroundColor: "transparent",
   border: "none",
-  borderRadius: "$sm",
+  borderRadius: "$lg",
 
   display: "flex",
   alignItems: "center",

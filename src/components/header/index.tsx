@@ -4,10 +4,16 @@ import { useEffect, useState } from "react";
 
 import { Moon, Sun } from "phosphor-react";
 
+import { Logo } from "@/assets/icons/logo";
 import { IconButton } from "@/components/icon-button";
 import { Link } from "@/components/link";
 
-import { HeaderContainer, HeaderContent, Navigation } from "./styles";
+import {
+  HeaderContainer,
+  LogoContainer,
+  HeaderContent,
+  Navigation,
+} from "./styles";
 
 export const Header = () => {
   const { pathname } = useRouter();
@@ -29,7 +35,10 @@ export const Header = () => {
     <HeaderContainer>
       <HeaderContent>
         <Link variant="primary" href="/">
-          Matheus Pires
+          <LogoContainer>
+            <Logo />
+            <span>Matheus Pires</span>
+          </LogoContainer>
         </Link>
 
         <Navigation>
