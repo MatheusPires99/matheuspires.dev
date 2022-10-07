@@ -9,7 +9,7 @@ type SEOProps = {
 
 export const SEO = ({
   title = "Matheus Pires - Front-end Developer",
-  description = "I'm Matheus, a web developer focused on front-end. I love building great products with interesting data, beautiful UI and great UX",
+  description = "I'm Matheus, a web developer focused on front-end. I love building great products with interesting data, beautiful UI and great UX.",
 }: SEOProps) => {
   const router = useRouter();
 
