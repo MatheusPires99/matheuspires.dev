@@ -14,12 +14,14 @@ export const SEO = ({
   const router = useRouter();
 
   const url = "https://matheuspires-portfolio.vercel.app";
-  const image = `${url}/matheus-banner-1200.png`;
+  const image = `${url}/matheus-banner.png`;
   const path = router.pathname;
 
   return (
     <Head>
       <title>{title}</title>
+
+      <link rel="canonical" href={`${url}${path}`} />
 
       <meta name="description" content={description} />
 
@@ -31,9 +33,6 @@ export const SEO = ({
       <meta property="og:type" content="website" />
 
       <meta name="twitter:card" content="summary_large_image" />
-      {/* <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image} /> */}
     </Head>
   );
 };
