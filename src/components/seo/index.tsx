@@ -8,7 +8,7 @@ type SEOProps = {
 };
 
 export const SEO = ({
-  title = "Matheus Pires - Front-end Engineer",
+  title = "Matheus Pires - Front-end Developer",
   description = "I'm Matheus, a web developer focused on front-end. I love building great products with interesting data, beautiful UI and great UX",
 }: SEOProps) => {
   const router = useRouter();
@@ -28,9 +28,6 @@ export const SEO = ({
       <meta property="og:description" content={description} />
       <meta property="og:site_name" content={title} />
       <meta property="og:image" content={image} />
-      <meta property="og:image:type" content="image/png" />
-      <meta property="og:image:width" content="1280" />
-      <meta property="og:image:height" content="720" />
       <meta property="og:type" content="website" />
 
       <meta name="twitter:card" content="summary_large_image" />
