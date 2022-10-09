@@ -58,7 +58,7 @@ export const FeaturedProject = ({
         </Heading>
 
         <ChipsGroup>
-          {project.technologies.map((tech) => (
+          {project.technologies.slice(0, 2).map((tech) => (
             <li key={tech.id}>
               <Chip
                 highlightColor={tech.highlightColor}

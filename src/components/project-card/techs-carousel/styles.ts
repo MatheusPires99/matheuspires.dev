@@ -5,4 +5,8 @@ import "swiper/css";
 export const TechsCarouselContainer = styled("div", {
   position: "relative",
   marginTop: "1rem",
+
+  ".swiper": {
+    overflow: "unset",
+  },
 });

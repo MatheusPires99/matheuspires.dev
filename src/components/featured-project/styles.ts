@@ -41,6 +41,10 @@ export const ProjectImageContainer = styled("div", {
 
     "&:hover": {
       transform: "scale(1.05)",
+
+      "@mobile": {
+        transform: "none",
+      },
     },
   },
 });
