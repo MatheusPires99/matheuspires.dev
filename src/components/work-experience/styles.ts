@@ -64,7 +64,7 @@ export const WorkContent = styled("div", {
 });
 
 export const RoleAndCompany = styled("div", {
-  fontSize: "$xl",
+  fontSize: "$2xl",
 
   display: "flex",
   alignItems: "center",

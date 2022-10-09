@@ -12,7 +12,7 @@ export const Chip = styled("div", {
   border: "1px solid $accent-border",
   padding: "0.5rem",
   color: "$text-base",
-  fontSize: "$sm",
+  fontSize: "$xs",
   fontFamily: "$mono",
   lineHeight: 1,
 
