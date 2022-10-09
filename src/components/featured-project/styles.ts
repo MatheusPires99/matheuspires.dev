@@ -1,6 +1,4 @@
 import { Card } from "@/components/card";
-import { ChipsGroup } from "@/components/chip";
-import { Heading } from "@/components/heading";
 import { styled } from "@/styles";
 
 export const FeaturedProjectContainer = styled("div", {
@@ -64,18 +62,6 @@ export const ProjectContent = styled("div", {
     position: "unset",
     top: "unset",
     transform: "unset",
-  },
-
-  [`${Heading}`]: {
-    transition: "color 0.2s",
-
-    "&:hover": {
-      color: "$text-contrast",
-    },
-  },
-
-  [`${ChipsGroup}`]: {
-    marginTop: "1rem",
   },
 
   variants: {

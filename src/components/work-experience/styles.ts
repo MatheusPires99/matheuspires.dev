@@ -8,21 +8,6 @@ export const WorkExperienceContainer = styled("div", {
     gap: "1.5rem",
     alignItems: "flex-start",
   },
-
-  variants: {
-    direction: {
-      right: {
-        flexDirection: "row-reverse",
-
-        "@mobile": {
-          flexDirection: "row",
-        },
-      },
-      left: {
-        flexDirection: "row",
-      },
-    },
-  },
 });
 
 export const CompanyImage = styled("div", {

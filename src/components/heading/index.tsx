@@ -2,7 +2,6 @@ import { styled } from "@/styles";
 
 export const Heading = styled("h1", {
   fontWeight: "600",
-  color: "$text-base",
 
   variants: {
     size: {

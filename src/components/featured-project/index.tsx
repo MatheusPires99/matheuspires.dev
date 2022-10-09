@@ -51,13 +51,13 @@ export const FeaturedProject = ({
       </Link>
 
       <ProjectContent direction={direction}>
-        <Heading size="h3" as="h3">
-          <Link variant="primary" href="">
+        <Link variant="primary" href={project.githubUrl} target="_blank">
+          <Heading size="h3" as="h3">
             {project.name}
-          </Link>
-        </Heading>
+          </Heading>
+        </Link>
 
-        <ChipsGroup>
+        <ChipsGroup css={{ marginTop: "1rem" }}>
           {project.technologies.slice(0, 2).map((tech) => (
             <li key={tech.id}>
               <Chip
@@ -77,6 +77,7 @@ export const FeaturedProject = ({
             </li>
           ))}
         </ChipsGroup>
+
         <ProjectDesription>{project.description}</ProjectDesription>
 
         <ProjectLinks>

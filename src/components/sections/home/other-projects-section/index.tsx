@@ -36,14 +36,12 @@ export const OtherProjectsSection = ({
         {otherProjects.slice(0, MAX_NUMBER_OF_PROJECTS).map((project) => (
           <li key={project.id}>
             <ProjectCard
-              project={{
-                name: project.name,
-                description: project.description,
-                image: project.image,
-                githubUrl: project.githubUrl,
-                websiteUrl: project.websiteUrl,
-                technologies: project.technologies,
-              }}
+              name={project.name}
+              description={project.description}
+              image={project.image}
+              githubUrl={project.githubUrl}
+              websiteUrl={project.websiteUrl}
+              technologies={project.technologies}
             />
           </li>
         ))}

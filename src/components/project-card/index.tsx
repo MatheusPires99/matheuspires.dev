@@ -18,29 +18,29 @@ import {
 } from "./styles";
 import { TechsCarousel, TechsCarouselSlider } from "./techs-carousel";
 
-type ProjectCardProps = {
-  project: Pick<
-    ProjectsQuery["projects"][0],
-    | "name"
-    | "description"
-    | "image"
-    | "githubUrl"
-    | "websiteUrl"
-    | "technologies"
-  >;
-};
+type ProjectCardProps = Pick<
+  ProjectsQuery["projects"][0],
+  "name" | "description" | "image" | "githubUrl" | "websiteUrl" | "technologies"
+>;
 
-export const ProjectCard = ({ project }: ProjectCardProps) => {
+export const ProjectCard = ({
+  name,
+  description,
+  image,
+  githubUrl,
+  websiteUrl,
+  technologies,
+}: ProjectCardProps) => {
   return (
     <ProjectCardContainer>
-      <Link href={project.githubUrl} target="_blank">
+      <Link href={githubUrl} target="_blank">
         <ProjectCardImage>
           <Image
-            src={project.image.url}
-            alt={project.name}
+            src={image.url}
+            alt={name}
             fill
             placeholder="blur"
-            blurDataURL={(project.image as any).base64}
+            blurDataURL={(image as any).base64}
           />
         </ProjectCardImage>
       </Link>
@@ -48,23 +48,23 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
       <ProjectCardContent>
         <ProjectCardHeader>
           <Heading size="h5" as="strong">
-            {project.name}
+            {name}
           </Heading>
           <div>
             <IconButton
               size="md"
               as={Link}
-              href={project.githubUrl}
+              href={githubUrl}
               target="_blank"
               aria-label="GitHub"
             >
               <GithubLogo />
             </IconButton>
-            {project.websiteUrl && (
+            {websiteUrl && (
               <IconButton
                 size="md"
                 as={Link}
-                href={project.websiteUrl}
+                href={websiteUrl}
                 target="_blank"
                 aria-label="Website"
               >
@@ -74,10 +74,10 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
           </div>
         </ProjectCardHeader>
 
-        <ProjectCardDescription>{project.description}</ProjectCardDescription>
+        <ProjectCardDescription>{description}</ProjectCardDescription>
 
         <TechsCarousel>
-          {project.technologies.map((tech) => (
+          {technologies.map((tech) => (
             <TechsCarouselSlider key={tech.id} style={{ width: "fit-content" }}>
               <Chip
                 highlightColor={tech.highlightColor}

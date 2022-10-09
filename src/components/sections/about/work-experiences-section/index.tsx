@@ -29,14 +29,11 @@ export const WorkExperiencesSection = ({
         {workExperiences.map((workExperience, index) => (
           <WorkExperience
             key={workExperience.id}
-            direction={index % 2 === 0 ? "left" : "right"}
-            workExperience={{
-              role: workExperience.role,
-              description: workExperience.description,
-              startsAt: workExperience.startsAt,
-              endsAt: workExperience.endsAt,
-              company: workExperience.company,
-            }}
+            role={workExperience.role}
+            description={workExperience.description}
+            startsAt={workExperience.startsAt}
+            endsAt={workExperience.endsAt}
+            company={workExperience.company}
           />
         ))}
       </WorkExperienceGroup>

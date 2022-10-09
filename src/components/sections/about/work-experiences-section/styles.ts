@@ -1,3 +1,4 @@
+import { WorkExperienceContainer as WorkExperience } from "@/components/work-experience/styles";
 import { styled } from "@/styles";
 
 export const WorkExperienceGroup = styled("div", {
@@ -20,6 +21,14 @@ export const WorkExperienceGroup = styled("div", {
 
     "@mobile": {
       left: "calc(3.75rem / 2)",
+    },
+  },
+
+  [`${WorkExperience}:nth-child(even)`]: {
+    flexDirection: "row-reverse",
+
+    "@mobile": {
+      flexDirection: "row",
     },
   },
 });
