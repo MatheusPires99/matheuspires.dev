@@ -4,15 +4,15 @@ import { ArrowSquareOut } from "phosphor-react";
 
 import { GithubLogo } from "@/assets/icons/github-logo";
 import { Chip } from "@/components/chip";
-import { Heading } from "@/components/heading";
 import { IconButton } from "@/components/icon-button";
 import { Link } from "@/components/link";
 import { ProjectsQuery } from "@/generated/graphql";
 
+import { Heading } from "../heading";
 import {
   ProjectCardContainer,
   ProjectCardImage,
-  ProjectCardHead,
+  ProjectCardHeader,
   ProjectCardDescription,
   ProjectCardContent,
 } from "./styles";
@@ -46,12 +46,13 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
       </Link>
 
       <ProjectCardContent>
-        <ProjectCardHead>
-          <Heading size="h4" as="strong">
+        <ProjectCardHeader>
+          <Heading size="h5" as="strong">
             {project.name}
           </Heading>
           <div>
             <IconButton
+              size="md"
               as={Link}
               href={project.githubUrl}
               target="_blank"
@@ -61,6 +62,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
             </IconButton>
             {project.websiteUrl && (
               <IconButton
+                size="md"
                 as={Link}
                 href={project.websiteUrl}
                 target="_blank"
@@ -70,7 +72,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
               </IconButton>
             )}
           </div>
-        </ProjectCardHead>
+        </ProjectCardHeader>
 
         <ProjectCardDescription>{project.description}</ProjectCardDescription>
 

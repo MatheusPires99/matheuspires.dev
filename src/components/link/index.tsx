@@ -9,7 +9,6 @@ export const Link = styled(NextLink, {
     variant: {
       primary: {
         color: "$text-base",
-
         transition: "color 0.2s",
 
         "&:hover": {

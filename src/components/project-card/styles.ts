@@ -6,6 +6,7 @@ export const ProjectCardContainer = styled(Card, {
   height: "100%",
   maxWidth: 296,
   padding: 0,
+  position: "relative",
 
   display: "flex",
   flexDirection: "column",
@@ -23,7 +24,6 @@ export const ProjectCardImage = styled("div", {
   display: "flex",
 
   img: {
-    width: "100%",
     objectFit: "cover",
     transition: "transform 0.2s ease-in-out",
 
@@ -46,7 +46,7 @@ export const ProjectCardContent = styled("div", {
   flex: 1,
 });
 
-export const ProjectCardHead = styled("div", {
+export const ProjectCardHeader = styled("div", {
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
@@ -59,10 +59,11 @@ export const ProjectCardHead = styled("div", {
 
 export const ProjectCardDescription = styled("p", {
   flex: 1,
-  marginTop: "0.5rem",
+  marginTop: "0.25rem",
+  fontSize: "$sm",
   color: "$accent-text",
   display: "-webkit-box",
-  "-webkit-line-clamp": "4",
+  "-webkit-line-clamp": "3",
   "-webkit-box-orient": "vertical",
   overflow: "hidden",
 });

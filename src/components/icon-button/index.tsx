@@ -19,11 +19,6 @@ export const IconButton = styled("button", {
 
   variants: {
     size: {
-      sm: {
-        fontSize: "1rem",
-        width: "2.25rem",
-        height: "2.25rem",
-      },
       md: {
         fontSize: "1.25rem",
         width: "2.25rem",
