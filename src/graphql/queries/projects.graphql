@@ -1,5 +1,5 @@
 query Projects {
-  projects {
+  projects(orderBy: publishedAt_DESC) {
     id
     name
     description

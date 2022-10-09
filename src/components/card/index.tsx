@@ -6,4 +6,5 @@ export const Card = styled("div", {
   borderRadius: "$sm",
   overflow: "hidden",
   lineHeight: "1.5",
+  padding: "1.5rem",
 });

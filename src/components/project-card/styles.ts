@@ -5,6 +5,7 @@ import { Card } from "../card";
 export const ProjectCardContainer = styled(Card, {
   height: "100%",
   maxWidth: 296,
+  padding: 0,
 
   display: "flex",
   flexDirection: "column",
@@ -16,6 +17,9 @@ export const ProjectCardContainer = styled(Card, {
 
 export const ProjectCardImage = styled("div", {
   overflow: "hidden",
+  position: "relative",
+  height: 180,
+
   display: "flex",
 
   img: {
@@ -24,7 +28,7 @@ export const ProjectCardImage = styled("div", {
     transition: "transform 0.2s ease-in-out",
 
     "&:hover": {
-      transform: "scale(1.1)",
+      transform: "scale(1.05)",
     },
   },
 });

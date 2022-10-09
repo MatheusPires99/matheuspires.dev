@@ -40,7 +40,7 @@ export const ProjectImageContainer = styled("div", {
     transition: "transform 0.2s ease-in-out",
 
     "&:hover": {
-      transform: "scale(1.1)",
+      transform: "scale(1.05)",
     },
   },
 });
@@ -97,7 +97,6 @@ export const ProjectContent = styled("div", {
 });
 
 export const ProjectDesription = styled(Card, {
-  padding: "1.5rem",
   marginTop: "1.5rem",
 
   "@tablet": {

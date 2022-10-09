@@ -38,8 +38,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
           <Image
             src={project.image.url}
             alt={project.name}
-            width={296}
-            height={180}
+            fill
             placeholder="blur"
             blurDataURL={(project.image as any).base64}
           />
