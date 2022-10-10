@@ -4,7 +4,7 @@ export const WorkExperienceContainer = styled("div", {
   display: "flex",
   alignItems: "center",
 
-  "@mobile": {
+  "@tablet": {
     gap: "1.5rem",
     alignItems: "flex-start",
   },
@@ -26,7 +26,7 @@ export const CompanyImage = styled("div", {
   justifyContent: "center",
   flexShrink: 0,
 
-  "@mobile": {
+  "@tablet": {
     position: "unset",
     margin: 0,
   },
@@ -43,7 +43,7 @@ export const WorkContent = styled("div", {
   display: "flex",
   flexDirection: "column",
 
-  "@mobile": {
+  "@tablet": {
     width: "auto",
   },
 });
@@ -53,11 +53,8 @@ export const RoleAndCompany = styled("div", {
 
   display: "flex",
   alignItems: "center",
+  flexWrap: "wrap",
   gap: "0.5rem",
-
-  "@tablet": {
-    flexWrap: "wrap",
-  },
 });
 
 export const WorkPeriod = styled("span", {

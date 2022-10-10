@@ -67,8 +67,9 @@ export const {
     },
   },
   media: {
-    mobile: "(max-width: 768px)",
-    tablet: "(max-width: 1024px)",
+    mobile: "(max-width: 640px)",
+    tablet: "(max-width: 768px)",
+    laptop: "(max-width: 1024px)",
   },
 });
 

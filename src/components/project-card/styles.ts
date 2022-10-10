@@ -5,6 +5,8 @@ import { Card } from "../card";
 export const ProjectCardContainer = styled(Card, {
   height: "100%",
   maxWidth: 296,
+  width: "100%",
+  margin: "0 auto",
   padding: 0,
   position: "relative",
 
@@ -12,7 +14,7 @@ export const ProjectCardContainer = styled(Card, {
   flexDirection: "column",
 
   "@tablet": {
-    maxWidth: "none",
+    maxWidth: 336,
   },
 });
 
@@ -30,7 +32,7 @@ export const ProjectCardImage = styled("div", {
     "&:hover": {
       transform: "scale(1.05)",
 
-      "@mobile": {
+      "@tablet": {
         transform: "none",
       },
     },

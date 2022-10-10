@@ -6,6 +6,11 @@ export const HeroImage = styled(Image, {
   borderRadius: "$sm",
   boxShadow: "$md",
 
+  "@laptop": {
+    width: "15rem",
+    height: "15rem",
+  },
+
   "@mobile": {
     width: "11.25rem",
     height: "11.25rem",

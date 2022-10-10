@@ -16,10 +16,13 @@ export const SkillsSection = ({ technologies }: SkillsSectionProps) => {
       <Heading
         size={{
           "@initial": "h2",
-          "@mobile": "h3",
+          "@tablet": "h3",
         }}
         as="h2"
-        css={{ marginBottom: "2.5rem", "@mobile": { marginBottom: "1.5rem" } }}
+        css={{
+          marginBottom: "2.5rem",
+          "@tablet": { marginBottom: "1.5rem" },
+        }}
       >
         Skills
       </Heading>

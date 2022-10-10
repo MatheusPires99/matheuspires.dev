@@ -22,7 +22,7 @@ export const HeroSection = ({ technologies }: HeroSectionProps) => {
         alignItems: "center",
         gap: "5.25rem",
 
-        "@mobile": {
+        "@laptop": {
           flexDirection: "column",
           alignItems: "flex-start",
           gap: "3rem",

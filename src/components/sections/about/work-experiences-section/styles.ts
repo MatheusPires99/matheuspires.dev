@@ -7,7 +7,7 @@ export const WorkExperienceGroup = styled("div", {
   display: "flex",
   flexDirection: "column",
 
-  "@mobile": {
+  "@tablet": {
     gap: "2rem",
   },
 
@@ -19,7 +19,7 @@ export const WorkExperienceGroup = styled("div", {
     position: "absolute",
     left: "50%",
 
-    "@mobile": {
+    "@tablet": {
       left: "calc(3.75rem / 2)",
     },
   },
@@ -27,7 +27,7 @@ export const WorkExperienceGroup = styled("div", {
   [`${WorkExperience}:nth-child(even)`]: {
     flexDirection: "row-reverse",
 
-    "@mobile": {
+    "@tablet": {
       flexDirection: "row",
     },
   },

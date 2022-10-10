@@ -34,7 +34,10 @@ export const BioSection = () => {
       />
 
       <RichText
-        css={{ marginTop: "3.5rem", "@mobile": { marginTop: "2rem" } }}
+        css={{
+          marginTop: "3.5rem",
+          "@mobile": { marginTop: "2rem" },
+        }}
         variant="lg"
       >
         <p>

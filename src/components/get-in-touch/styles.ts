@@ -14,10 +14,6 @@ export const GetInTouchContainer = styled(Container, {
     fontSize: "$lg",
     lineHeight: "1.5",
     color: "$accent-text",
-
-    "@mobile": {
-      maxWidth: "21.5rem",
-    },
   },
 
   [`${Button}`]: {
