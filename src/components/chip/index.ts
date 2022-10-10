@@ -115,9 +115,10 @@ export const Chip = styled("div", {
       },
       black: {
         "&:hover": {
-          color: "#a0a0a0",
-          backgroundColor: "#1c1c1c",
-          borderColor: "#343434",
+          // Custom color schema for black in dark mode
+          color: "#ededed",
+          backgroundColor: "rgba(136, 136, 136, 0.08)",
+          borderColor: "rgba(136, 136, 136, 0.5)",
 
           [`.${lightTheme} &`]: {
             color: "#6f6f6f",
