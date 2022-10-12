@@ -13,7 +13,7 @@ export const Chip = styled("div", {
   padding: "0.5rem",
   color: "$text-base",
   fontSize: "$xs",
-  fontFamily: "$mono",
+  fontFamily: "$code",
   lineHeight: 1,
 
   display: "flex",

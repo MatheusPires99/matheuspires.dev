@@ -48,17 +48,8 @@ export const WorkContent = styled("div", {
   },
 });
 
-export const RoleAndCompany = styled("div", {
-  fontSize: "$2xl",
-
-  display: "flex",
-  alignItems: "center",
-  flexWrap: "wrap",
-  gap: "0.5rem",
-});
-
 export const WorkPeriod = styled("span", {
-  fontFamily: "$mono",
+  fontFamily: "$code",
   color: "$accent-text",
   marginTop: "0.5rem",
   display: "block",

@@ -48,7 +48,7 @@ export const Navigation = styled("nav", {
 
   [`${Link}`]: {
     padding: "0.5rem 0.75rem",
-    borderRadius: "$lg",
+    borderRadius: "$md",
 
     transition: "background-color 0.2s",
 

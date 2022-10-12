@@ -1,7 +1,7 @@
 import { LinkedinLogo } from "phosphor-react";
 
-import { GithubLogo } from "@/assets/icons/github-logo";
 import { IconButton } from "@/components/icon-button";
+import { GithubLogo } from "@/components/icons";
 import { Link } from "@/components/link";
 
 import { Section } from "../section";

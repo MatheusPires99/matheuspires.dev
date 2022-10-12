@@ -22,14 +22,14 @@ export const HeroContent = styled("div", {
   flexDirection: "column",
 });
 
-export const Introduction = styled("div", {
+export const Summary = styled("div", {
   marginBottom: "1rem",
 
   display: "flex",
   flexDirection: "column",
 
   span: {
-    fontFamily: "$mono",
+    fontFamily: "$code",
     fontSize: "$lg",
     color: "$text-contrast",
     marginBottom: "0.5rem",
@@ -41,7 +41,7 @@ export const Introduction = styled("div", {
 
   p: {
     fontSize: "$lg",
-    lineHeight: "1.5",
+    lineHeight: "$normal",
     color: "$accent-text",
     marginTop: "1.5rem",
 

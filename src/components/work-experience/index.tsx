@@ -1,5 +1,6 @@
 import Image from "next/future/image";
 
+import { Heading } from "@/components/heading";
 import { Link } from "@/components/link";
 import { RichText } from "@/components/rich-text";
 import { WorkExperiencesQuery } from "@/generated/graphql";
@@ -8,7 +9,6 @@ import {
   WorkExperienceContainer,
   CompanyImage,
   WorkContent,
-  RoleAndCompany,
   WorkPeriod,
 } from "./styles";
 
@@ -43,12 +43,21 @@ export const WorkExperience = ({
       </CompanyImage>
 
       <WorkContent>
-        <RoleAndCompany>
-          <strong>{role}</strong>
+        <Heading
+          size="md"
+          as="h3"
+          css={{
+            display: "flex",
+            alignItems: "center",
+            flexWrap: "wrap",
+            gap: "0.5rem",
+          }}
+        >
+          {role}
           <Link variant="hightlight" href={company!.websiteUrl} target="_blank">
             @ {company!.name}
           </Link>
-        </RoleAndCompany>
+        </Heading>
         <WorkPeriod>
           {formatDate(startsAt)} - {endsAt ? formatDate(endsAt) : "present"}
         </WorkPeriod>

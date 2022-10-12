@@ -11,14 +11,7 @@ export const BioSection = () => {
   return (
     <Section isFirstSection>
       <BioHeader>
-        <Heading
-          size={{
-            "@initial": "h2",
-            "@mobile": "h3",
-          }}
-        >
-          About
-        </Heading>
+        <Heading as="h1">About</Heading>
         <Button variant="outline" as={Link} href="/resume.pdf" target="_blank">
           Resume
         </Button>

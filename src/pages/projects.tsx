@@ -67,14 +67,7 @@ const Projects = ({ projects }: ProjectsProps) => {
         isFirstSection
         as="div"
       >
-        <Heading
-          size={{
-            "@initial": "h2",
-            "@mobile": "h3",
-          }}
-        >
-          Projects
-        </Heading>
+        <Heading as="h1">Projects</Heading>
 
         <Input
           preffix={<MagnifyingGlass />}
@@ -100,7 +93,7 @@ const Projects = ({ projects }: ProjectsProps) => {
           </ProjectsGrid>
         ) : (
           <NoProjectsFound>
-            <Heading size="h4" as="h4">
+            <Heading size="md" as="h4">
               No result found for "{searchText}".
             </Heading>
             <span>Try again with a different keyword.</span>

@@ -8,7 +8,7 @@ import { Section } from "@/components/section";
 import { TechnologiesQuery } from "@/generated/graphql";
 
 import avatar from "../../../../../public/avatar.png";
-import { HeroImage, HeroContent, Introduction, CallToActions } from "./styles";
+import { HeroImage, HeroContent, Summary, CallToActions } from "./styles";
 
 type HeroSectionProps = {
   technologies: TechnologiesQuery["technologies"];
@@ -39,14 +39,9 @@ export const HeroSection = ({ technologies }: HeroSectionProps) => {
       />
 
       <HeroContent>
-        <Introduction>
+        <Summary>
           <span>Hi, my name is</span>
-          <Heading
-            size={{
-              "@initial": "h1",
-              "@mobile": "h2",
-            }}
-          >
+          <Heading size="2xl" as="h1">
             Matheus Pires
           </Heading>
           <p>
@@ -55,7 +50,7 @@ export const HeroSection = ({ technologies }: HeroSectionProps) => {
             streaming and hospitality. I love building great products with
             interesting data, beautiful UI and great UX.
           </p>
-        </Introduction>
+        </Summary>
 
         <ChipsGroup>
           {technologies.map((tech) => (

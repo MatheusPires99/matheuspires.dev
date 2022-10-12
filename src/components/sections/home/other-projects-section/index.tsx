@@ -28,7 +28,7 @@ export const OtherProjectsSection = ({
         },
       }}
     >
-      <Heading size="h3" centered as="h3">
+      <Heading size="lg" as="h3" centered>
         Other Projects
       </Heading>
 

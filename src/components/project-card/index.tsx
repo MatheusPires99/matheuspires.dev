@@ -2,9 +2,9 @@ import Image from "next/future/image";
 
 import { ArrowSquareOut } from "phosphor-react";
 
-import { GithubLogo } from "@/assets/icons/github-logo";
 import { Chip } from "@/components/chip";
 import { IconButton } from "@/components/icon-button";
+import { GithubLogo } from "@/components/icons";
 import { Link } from "@/components/link";
 import { ProjectsQuery } from "@/generated/graphql";
 
@@ -47,12 +47,12 @@ export const ProjectCard = ({
 
       <ProjectCardContent>
         <ProjectCardHeader>
-          <Heading size="h5" as="strong">
+          <Heading size="sm" as="strong">
             {name}
           </Heading>
           <div>
             <IconButton
-              size="md"
+              size="sm"
               as={Link}
               href={githubUrl}
               target="_blank"
@@ -62,7 +62,7 @@ export const ProjectCard = ({
             </IconButton>
             {websiteUrl && (
               <IconButton
-                size="md"
+                size="sm"
                 as={Link}
                 href={websiteUrl}
                 target="_blank"

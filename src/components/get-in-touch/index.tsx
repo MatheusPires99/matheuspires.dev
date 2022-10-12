@@ -13,16 +13,7 @@ export const GetInTouch = () => {
 
       <Section as="div">
         <GetInTouchContainer>
-          <Heading
-            size={{
-              "@initial": "h2",
-              "@mobile": "h3",
-            }}
-            as="h2"
-            centered
-          >
-            Get In Touch
-          </Heading>
+          <Heading centered>Get In Touch</Heading>
           <p>
             I'm always open to chat, so please don't hesitate contacting me!
           </p>

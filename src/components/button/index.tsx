@@ -3,11 +3,11 @@ import { lightTheme, styled } from "@/styles";
 export const Button = styled("button", {
   height: "3.5rem",
   padding: "0 1.75rem",
-  fontFamily: "$mono",
+  fontFamily: "$code",
   fontWeight: "500",
   backgroundColor: "transparent",
   border: "none",
-  borderRadius: "$lg",
+  borderRadius: "$md",
 
   display: "flex",
   alignItems: "center",

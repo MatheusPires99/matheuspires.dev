@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 
 import { Moon, Sun } from "phosphor-react";
 
-import { Logo } from "@/assets/icons/logo";
 import { IconButton } from "@/components/icon-button";
+import { MatheusPiresLogo } from "@/components/icons";
 import { Link } from "@/components/link";
 
 import {
@@ -36,7 +36,7 @@ export const Header = () => {
       <HeaderContent>
         <Link variant="primary" href="/">
           <LogoContainer>
-            <Logo />
+            <MatheusPiresLogo />
             <span>Matheus Pires</span>
           </LogoContainer>
         </Link>
@@ -59,7 +59,7 @@ export const Header = () => {
 
           {canToggleTheme && (
             <IconButton
-              size="md"
+              size="sm"
               onClick={handleToggleTheme}
               aria-label="Toggle Light and Dark Mode"
             >

@@ -39,8 +39,8 @@ export const {
       divider: grayDark.gray6,
     },
     fonts: {
-      sans: "Inter, sans-serif",
-      mono: "Fira Mono, monospace",
+      default: "Inter, sans-serif",
+      code: "Fira Mono, monospace",
     },
     fontSizes: {
       xs: "0.75rem",
@@ -55,8 +55,11 @@ export const {
     },
     radii: {
       sm: "4px",
-      lg: "8px",
+      md: "8px",
       full: "9999px",
+    },
+    lineHeights: {
+      normal: "1.5",
     },
     shadows: {
       md: "0 10px 15px -3px rgb(0, 0, 0, 0.1), 0 4px 6px -4px rgb(0, 0, 0, 0.1)",

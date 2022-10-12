@@ -7,9 +7,8 @@ import { styled } from "@/styles";
 
 const Paragraph = styled("p", {
   color: "$accent-text",
-  lineHeight: "1.5",
+  lineHeight: "$normal",
   marginTop: "1rem",
-  marginBottom: "2rem",
 });
 
 const NotFound = () => {
@@ -26,14 +25,18 @@ const NotFound = () => {
           margin: "0 auto",
         }}
       >
-        <Heading size="h2">404 – Unavailable For Legal Reasons</Heading>
+        <Heading>404 – Unavailable For Legal Reasons</Heading>
         <Paragraph>
           Why show a generic 404 when I can make it sound mysterious? It seems
           you've found something that used to exist, or you spelled something
           wrong. I'm guessing you spelled something wrong. Can you double check
           that URL?
         </Paragraph>
-        <Button as={Link} href="/" css={{ alignSelf: "center" }}>
+        <Button
+          as={Link}
+          href="/"
+          css={{ alignSelf: "center", marginTop: "2rem" }}
+        >
           Return Home
         </Button>
       </Section>

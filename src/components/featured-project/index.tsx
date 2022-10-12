@@ -3,10 +3,10 @@ import Image from "next/future/image";
 import { VariantProps } from "@stitches/react";
 import { ArrowSquareOut } from "phosphor-react";
 
-import { GithubLogo } from "@/assets/icons/github-logo";
 import { Chip, ChipsGroup } from "@/components/chip";
 import { Heading } from "@/components/heading";
 import { IconButton } from "@/components/icon-button";
+import { GithubLogo } from "@/components/icons";
 import { Link } from "@/components/link";
 import { ProjectsQuery } from "@/generated/graphql";
 
@@ -52,7 +52,7 @@ export const FeaturedProject = ({
 
       <ProjectContent direction={direction}>
         <Link variant="primary" href={project.githubUrl} target="_blank">
-          <Heading size="h3" as="h3">
+          <Heading size="lg" as="h3">
             {project.name}
           </Heading>
         </Link>

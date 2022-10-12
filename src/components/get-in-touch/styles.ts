@@ -12,7 +12,7 @@ export const GetInTouchContainer = styled(Container, {
     marginTop: "1rem",
     textAlign: "center",
     fontSize: "$lg",
-    lineHeight: "1.5",
+    lineHeight: "$normal",
     color: "$accent-text",
   },
 

@@ -4,7 +4,7 @@ export const IconButton = styled("button", {
   color: "$text-base",
   backgroundColor: "transparent",
   border: "none",
-  borderRadius: "$lg",
+  borderRadius: "$md",
 
   display: "flex",
   alignItems: "center",
@@ -19,12 +19,12 @@ export const IconButton = styled("button", {
 
   variants: {
     size: {
-      md: {
+      sm: {
         fontSize: "1.25rem",
         width: "2.25rem",
         height: "2.25rem",
       },
-      lg: {
+      md: {
         fontSize: "1.5rem",
         width: "2.5rem",
         height: "2.5rem",
@@ -33,6 +33,6 @@ export const IconButton = styled("button", {
   },
 
   defaultVariants: {
-    size: "lg",
+    size: "md",
   },
 });

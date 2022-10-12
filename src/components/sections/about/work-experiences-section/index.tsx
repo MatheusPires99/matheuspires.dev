@@ -15,11 +15,6 @@ export const WorkExperiencesSection = ({
   return (
     <Section>
       <Heading
-        size={{
-          "@initial": "h2",
-          "@mobile": "h3",
-        }}
-        as="h2"
         css={{
           marginBottom: "6.5rem",
           "@mobile": { marginBottom: "4.5rem" },

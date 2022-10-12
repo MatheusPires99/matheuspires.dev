@@ -1,25 +1,16 @@
 import { styled } from "@/styles";
 
-export const Heading = styled("h1", {
+export const Heading = styled("h2", {
   fontWeight: "600",
+  fontFamily: "$default",
 
   variants: {
     size: {
-      h1: {
-        fontSize: "$5xl",
-      },
-      h2: {
-        fontSize: "$4xl",
-      },
-      h3: {
-        fontSize: "$3xl",
-      },
-      h4: {
-        fontSize: "$2xl",
-      },
-      h5: {
-        fontSize: "$xl",
-      },
+      sm: { fontSize: "$xl" },
+      md: { fontSize: "$2xl" },
+      lg: { fontSize: "$3xl" },
+      xl: { fontSize: "$4xl", "@mobile": { fontSize: "$3xl" } },
+      "2xl": { fontSize: "$5xl", "@mobile": { fontSize: "$4xl" } },
     },
     centered: {
       true: {
@@ -29,6 +20,6 @@ export const Heading = styled("h1", {
   },
 
   defaultVariants: {
-    size: "h1",
+    size: "xl",
   },
 });

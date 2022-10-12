@@ -14,15 +14,7 @@ export const FeaturedProjectsSection = ({
 }: FeaturedProjectSectionProps) => {
   return (
     <Section css={{ paddingBottom: 0 }}>
-      <Heading
-        size={{
-          "@initial": "h2",
-          "@mobile": "h3",
-        }}
-        as="h2"
-      >
-        Featured Projects
-      </Heading>
+      <Heading>Featured Projects</Heading>
 
       <FeaturedProjectsGroup>
         {featuredProjects.map((project, index) => (
