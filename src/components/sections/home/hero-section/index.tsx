@@ -35,6 +35,7 @@ export const HeroSection = ({ technologies }: HeroSectionProps) => {
         alt="Matheus's photo"
         width={298}
         height={298}
+        quality={100}
         placeholder="blur"
       />
 
