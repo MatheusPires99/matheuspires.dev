@@ -86,7 +86,10 @@ const Projects = ({ projects }: ProjectsProps) => {
                   slug={project.slug}
                   name={project.name}
                   description={project.description}
-                  images={project.images}
+                  image={{
+                    url: project.images[0].url,
+                    blurDataUrl: (project.images[0] as any).blurDataUrl,
+                  }}
                 />
               </li>
             ))}

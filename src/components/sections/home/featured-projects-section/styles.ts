@@ -13,7 +13,7 @@ export const FeaturedProjectsGroup = styled("div", {
   },
 });
 
-export const FeaturedProjectContainer = styled("div", {
+export const FeaturedProject = styled("div", {
   position: "relative",
   display: "flex",
 

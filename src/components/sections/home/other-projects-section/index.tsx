@@ -28,7 +28,7 @@ export const OtherProjectsSection = ({
         },
       }}
     >
-      <Heading size="lg" as="h3" centered>
+      <Heading size="xl" as="h3" centered>
         Other Projects
       </Heading>
 
@@ -41,7 +41,10 @@ export const OtherProjectsSection = ({
                 slug={project.slug}
                 name={project.name}
                 description={project.description}
-                images={project.images}
+                image={{
+                  url: project.images[0].url,
+                  blurDataUrl: (project.images[0] as any).blurDataUrl,
+                }}
               />
             </li>
           ))}

@@ -42,7 +42,7 @@ export const HeroSection = ({ technologies }: HeroSectionProps) => {
       <HeroContent>
         <Summary>
           <span>Hi, my name is</span>
-          <Heading size="2xl" as="h1">
+          <Heading size="3xl" as="h1">
             Matheus Pires
           </Heading>
           <p>

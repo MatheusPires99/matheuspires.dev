@@ -1,8 +1,7 @@
 query ProjectDetails($slug: String!) {
   project(where: { slug: $slug }) {
-    id
-    slug
     name
+    title
     description
     images {
       url
@@ -20,6 +19,5 @@ query ProjectDetails($slug: String!) {
       }
       highlightColor
     }
-    isFeatured
   }
 }

@@ -7,7 +7,7 @@ import { Section } from "@/components/section";
 import { ProjectsQuery } from "@/generated/graphql";
 
 import {
-  FeaturedProjectContainer,
+  FeaturedProject,
   FeaturedProjectContent,
   FeaturedProjectDescription,
   FeaturedProjectImageContainer,
@@ -30,7 +30,7 @@ export const FeaturedProjectsSection = ({
           const direction = index % 2 === 0 ? "right" : "left";
 
           return (
-            <FeaturedProjectContainer key={project.id} direction={direction}>
+            <FeaturedProject key={project.id} direction={direction}>
               <Link href={`/projects/${project.slug}`}>
                 <FeaturedProjectImageContainer>
                   <Image
@@ -45,7 +45,7 @@ export const FeaturedProjectsSection = ({
 
               <FeaturedProjectContent direction={direction}>
                 <Link variant="primary" href={`/projects/${project.slug}`}>
-                  <Heading size="lg" as="h3">
+                  <Heading size="xl" as="h3">
                     {project.name}
                   </Heading>
                 </Link>
@@ -75,7 +75,7 @@ export const FeaturedProjectsSection = ({
                   {project.description}
                 </FeaturedProjectDescription>
               </FeaturedProjectContent>
-            </FeaturedProjectContainer>
+            </FeaturedProject>
           );
         })}
       </FeaturedProjectsGroup>

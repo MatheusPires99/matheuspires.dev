@@ -6,17 +6,19 @@ import React from "react";
 type SEOProps = {
   title?: string;
   description?: string;
+  image?: string;
 };
+
+const url = "https://www.matheuspires.dev";
 
 export const SEO = ({
   title = "Matheus Pires - Front-end Developer",
   description = "I'm Matheus, a web developer focused on front-end. I love building great products with interesting data, beautiful UI and great UX.",
+  image = `${url}/matheus-banner.png`,
 }: SEOProps) => {
   const router = useRouter();
   const { theme } = useTheme();
 
-  const url = "https://www.matheuspires.dev";
-  const image = `${url}/matheus-banner.png`;
   const path = router.pathname;
   const themeColor = theme === "dark" ? "#131620" : "#FDFDFE";
 

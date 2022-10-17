@@ -1,8 +1,6 @@
 import { lightTheme, styled } from "@/styles";
 
 export const Button = styled("button", {
-  height: "3.5rem",
-  padding: "0 1.75rem",
   fontFamily: "$code",
   fontWeight: "500",
   backgroundColor: "transparent",
@@ -41,9 +39,21 @@ export const Button = styled("button", {
         },
       },
     },
+    size: {
+      sm: {
+        fontSize: "$sm",
+        height: "3rem",
+        padding: "0 1rem",
+      },
+      md: {
+        height: "3.5rem",
+        padding: "0 1.75rem",
+      },
+    },
   },
 
   defaultVariants: {
     variant: "primary",
+    size: "md",
   },
 });
