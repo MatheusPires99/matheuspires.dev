@@ -1,6 +1,6 @@
+import { Card } from "@/components/card";
+import { Heading } from "@/components/heading";
 import { styled } from "@/styles";
-
-import { Card } from "../card";
 
 export const ProjectCardContainer = styled(Card, {
   height: "100%",
@@ -16,9 +16,24 @@ export const ProjectCardContainer = styled(Card, {
   "@tablet": {
     maxWidth: 336,
   },
+
+  "&:hover": {
+    [`${Heading}`]: {
+      color: "$text-contrast",
+    },
+
+    img: {
+      transform: "scale(1.05)",
+      filter: "brightness(0.9)",
+
+      "@tablet": {
+        transform: "none",
+      },
+    },
+  },
 });
 
-export const ProjectCardImage = styled("div", {
+export const ProjectCardImageContainer = styled("div", {
   overflow: "hidden",
   position: "relative",
   height: 180,
@@ -27,15 +42,7 @@ export const ProjectCardImage = styled("div", {
 
   img: {
     objectFit: "cover",
-    transition: "transform 0.2s ease-in-out",
-
-    "&:hover": {
-      transform: "scale(1.05)",
-
-      "@tablet": {
-        transform: "none",
-      },
-    },
+    transition: "transform 0.2s, filter 0.2s",
   },
 });
 
@@ -46,16 +53,10 @@ export const ProjectCardContent = styled("div", {
   display: "flex",
   flexDirection: "column",
   flex: 1,
-});
 
-export const ProjectCardHeader = styled("div", {
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "space-between",
-
-  div: {
-    display: "flex",
-    alignItems: "center",
+  [`${Heading}`]: {
+    color: "$text-base",
+    transition: "color 0.2s",
   },
 });
 

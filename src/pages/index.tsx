@@ -12,6 +12,8 @@ import { SEO } from "@/components/seo";
 import { ProjectsQuery, TechnologiesQuery } from "@/generated/graphql";
 import { cmsService } from "@/services";
 
+const REVALIDATE_TIME_IN_SECONDS = 60 * 60; // 1 hour
+
 type HomeProps = {
   technologies: TechnologiesQuery["technologies"];
   featuredProjects: ProjectsQuery["projects"];
@@ -43,16 +45,13 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const projectsWithImageBlurHash = await Promise.all(
     projects.map(async (project) => {
-      const { base64 } = await getPlaiceholder(project.image.url, {
+      const { base64 } = await getPlaiceholder(project.images[0].url, {
         size: 24,
       });
 
       return {
         ...project,
-        image: {
-          ...project.image,
-          base64,
-        },
+        images: [{ ...project.images[0], blurDataUrl: base64 }],
       };
     }),
   );
@@ -70,6 +69,6 @@ export const getStaticProps: GetStaticProps = async () => {
       featuredProjects,
       otherProjects,
     },
-    revalidate: 60 * 60, // 1 hour
+    revalidate: REVALIDATE_TIME_IN_SECONDS,
   };
 };

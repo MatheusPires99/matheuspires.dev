@@ -13,6 +13,8 @@ import { ProjectsQuery } from "@/generated/graphql";
 import { cmsService } from "@/services";
 import { styled } from "@/styles";
 
+const REVALIDATE_TIME_IN_SECONDS = 60 * 60; // 1 hour
+
 export const ProjectsGrid = styled("ul", {
   display: "grid",
   gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
@@ -81,12 +83,10 @@ const Projects = ({ projects }: ProjectsProps) => {
             {filteredProjects.map((project) => (
               <li key={project.id}>
                 <ProjectCard
+                  slug={project.slug}
                   name={project.name}
                   description={project.description}
-                  image={project.image}
-                  githubUrl={project.githubUrl}
-                  websiteUrl={project.websiteUrl}
-                  technologies={project.technologies}
+                  images={project.images}
                 />
               </li>
             ))}
@@ -111,16 +111,13 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const projectsWithImageBlurHash = await Promise.all(
     projects.map(async (project) => {
-      const { base64 } = await getPlaiceholder(project.image.url, {
+      const { base64 } = await getPlaiceholder(project.images[0].url, {
         size: 24,
       });
 
       return {
         ...project,
-        image: {
-          ...project.image,
-          base64,
-        },
+        images: [{ ...project.images[0], blurDataUrl: base64 }],
       };
     }),
   );
@@ -129,6 +126,6 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       projects: projectsWithImageBlurHash,
     },
-    revalidate: 60 * 60, // 1 hour
+    revalidate: REVALIDATE_TIME_IN_SECONDS,
   };
 };

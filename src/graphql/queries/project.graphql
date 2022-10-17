@@ -1,12 +1,16 @@
-query Projects {
-  projects(orderBy: createdAt_DESC) {
+query ProjectDetails($slug: String!) {
+  project(where: { slug: $slug }) {
     id
     slug
     name
     description
     images {
       url
+      title
+      description
     }
+    githubUrl
+    websiteUrl
     technologies {
       id
       name

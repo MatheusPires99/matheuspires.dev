@@ -7,7 +7,7 @@ import { ProjectsQuery } from "@/generated/graphql";
 
 import { OtherProjectsGroup } from "./styles";
 
-const MAX_NUMBER_OF_PROJECTS = 6;
+const NUMBER_OF_PROJECTS_TO_DISPLAY = 6;
 
 type OtherProjectsSectionProps = {
   otherProjects: ProjectsQuery["projects"];
@@ -33,18 +33,18 @@ export const OtherProjectsSection = ({
       </Heading>
 
       <OtherProjectsGroup>
-        {otherProjects.slice(0, MAX_NUMBER_OF_PROJECTS).map((project) => (
-          <li key={project.id}>
-            <ProjectCard
-              name={project.name}
-              description={project.description}
-              image={project.image}
-              githubUrl={project.githubUrl}
-              websiteUrl={project.websiteUrl}
-              technologies={project.technologies}
-            />
-          </li>
-        ))}
+        {otherProjects
+          .slice(0, NUMBER_OF_PROJECTS_TO_DISPLAY)
+          .map((project) => (
+            <li key={project.id}>
+              <ProjectCard
+                slug={project.slug}
+                name={project.name}
+                description={project.description}
+                images={project.images}
+              />
+            </li>
+          ))}
       </OtherProjectsGroup>
 
       <Button

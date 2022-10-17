@@ -1,4 +1,6 @@
 import {
+  ProjectDetailsDocument,
+  ProjectDetailsQuery,
   ProjectsDocument,
   ProjectsQuery,
   TechnologiesDocument,
@@ -31,5 +33,16 @@ export class CmsService {
     });
 
     return data.projects;
+  }
+
+  async getProjectBySlug(slug: string) {
+    const { data } = await client.query<ProjectDetailsQuery>({
+      query: ProjectDetailsDocument,
+      variables: {
+        slug,
+      },
+    });
+
+    return data.project;
   }
 }

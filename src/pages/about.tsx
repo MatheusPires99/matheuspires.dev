@@ -10,6 +10,8 @@ import { SEO } from "@/components/seo";
 import { TechnologiesQuery, WorkExperiencesQuery } from "@/generated/graphql";
 import { cmsService } from "@/services";
 
+const REVALIDATE_TIME_IN_SECONDS = 60 * 60 * 3; // 3 hour
+
 type AboutProps = {
   technologies: TechnologiesQuery["technologies"];
   workExperiences: WorkExperiencesQuery["workExperiences"];
@@ -42,6 +44,6 @@ export const getStaticProps: GetStaticProps = async () => {
       technologies,
       workExperiences,
     },
-    revalidate: 60 * 60, // 1 hour
+    revalidate: REVALIDATE_TIME_IN_SECONDS,
   };
 };

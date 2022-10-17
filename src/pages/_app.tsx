@@ -6,8 +6,7 @@ import { Footer } from "@/components/footer";
 import { GetInTouch } from "@/components/get-in-touch";
 import { Header } from "@/components/header";
 import { lightTheme } from "@/styles";
-
-import { globalStyles } from "../styles/global";
+import { globalStyles } from "@/styles/global";
 
 globalStyles();
 
