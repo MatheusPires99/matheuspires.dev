@@ -3,7 +3,7 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import { getPlaiceholder } from "plaiceholder";
 
 import {
-  ProjectIntroductionSection,
+  ProjectOverviewSection,
   ProjectImagesSection,
 } from "@/components/sections/project-details";
 import { SEO } from "@/components/seo";
@@ -41,7 +41,7 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
         image={project.images[0].url}
       />
 
-      <ProjectIntroductionSection
+      <ProjectOverviewSection
         name={project.name}
         coverImage={project.images[0]}
         technologies={project.technologies}

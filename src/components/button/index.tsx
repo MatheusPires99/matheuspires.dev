@@ -10,6 +10,12 @@ export const Button = styled("button", {
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
+  gap: "0.5rem",
+
+  svg: {
+    width: 18,
+    height: 18,
+  },
 
   variants: {
     variant: {
