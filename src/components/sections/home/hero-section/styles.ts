@@ -35,18 +35,18 @@ export const Summary = styled("div", {
     marginBottom: "0.5rem",
 
     "@mobile": {
-      fontSize: "$base",
+      fontSize: "$md",
     },
   },
 
   p: {
     fontSize: "$lg",
-    lineHeight: "$normal",
+    lineHeight: "$base",
     color: "$accent-text",
     marginTop: "1.5rem",
 
     "@mobile": {
-      fontSize: "$base",
+      fontSize: "$md",
       marginTop: "1rem",
     },
   },

@@ -5,6 +5,6 @@ export const Card = styled("div", {
   boxShadow: "$md",
   borderRadius: "$sm",
   overflow: "hidden",
-  lineHeight: "$normal",
+  lineHeight: "$base",
   padding: "1.5rem",
 });

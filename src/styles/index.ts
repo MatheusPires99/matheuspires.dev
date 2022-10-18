@@ -45,7 +45,7 @@ export const {
     fontSizes: {
       xs: "0.75rem",
       sm: "0.875rem",
-      base: "1rem",
+      md: "1rem",
       lg: "1.125rem",
       xl: "1.25rem",
       "2xl": "1.5rem",
@@ -60,7 +60,7 @@ export const {
       full: "9999px",
     },
     lineHeights: {
-      normal: "1.5",
+      base: "1.5",
     },
     shadows: {
       md: "0 10px 15px -3px rgb(0, 0, 0, 0.1), 0 4px 6px -4px rgb(0, 0, 0, 0.1)",

@@ -33,7 +33,7 @@ export const ProjectTechnologies = styled("div", {
 
   span: {
     color: "$accent-text",
-    fontWeight: "600",
+    fontSize: "$sm",
   },
 });
 

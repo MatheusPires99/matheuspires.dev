@@ -7,7 +7,7 @@ import { styled } from "@/styles";
 
 const Paragraph = styled("p", {
   color: "$accent-text",
-  lineHeight: "$normal",
+  lineHeight: "$base",
   marginTop: "1rem",
 });
 
