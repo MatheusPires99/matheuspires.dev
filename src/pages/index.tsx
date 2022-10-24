@@ -10,7 +10,7 @@ import {
 } from "@/components/sections/home";
 import { SEO } from "@/components/seo";
 import { ProjectsQuery, TechnologiesQuery } from "@/generated/graphql";
-import { cmsService } from "@/services";
+import { getTechnologies, getProjects } from "@/services/cms-service";
 
 const REVALIDATE_TIME_IN_SECONDS = 60 * 60; // 1 hour
 
@@ -37,8 +37,8 @@ export default Home;
 
 export const getStaticProps: GetStaticProps = async () => {
   const [technologies, projects] = await Promise.all([
-    cmsService.getTechnologies(),
-    cmsService.getProjects(),
+    getTechnologies(),
+    getProjects(),
   ]);
 
   const featuredTechnologies = technologies.filter((tech) => tech.isFeatured);

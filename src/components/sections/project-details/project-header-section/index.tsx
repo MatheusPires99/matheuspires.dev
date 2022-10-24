@@ -17,7 +17,7 @@ import {
   ActionButtons,
 } from "./styles";
 
-type ProjectOverviewSectionProps = {
+type ProjectHeaderSectionProps = {
   name: string;
   coverImage: {
     url: string;
@@ -31,13 +31,13 @@ type ProjectOverviewSectionProps = {
   websiteUrl?: string;
 };
 
-export const ProjectOverviewSection = ({
+export const ProjectHeaderSection = ({
   name,
   coverImage,
   technologies,
   githubUrl,
   websiteUrl,
-}: ProjectOverviewSectionProps) => {
+}: ProjectHeaderSectionProps) => {
   return (
     <Section isFirstSection>
       <Heading as="h1" css={{ marginBottom: "2rem" }}>

@@ -1,5 +1,5 @@
 import { GetStaticProps } from "next";
-import { ChangeEvent, useState } from "react";
+import { useState } from "react";
 
 import { MagnifyingGlass } from "phosphor-react";
 import { getPlaiceholder } from "plaiceholder";
@@ -10,7 +10,7 @@ import { ProjectCard } from "@/components/project-card";
 import { Section } from "@/components/section";
 import { SEO } from "@/components/seo";
 import { ProjectsQuery } from "@/generated/graphql";
-import { cmsService } from "@/services";
+import { getProjects } from "@/services/cms-service";
 import { styled } from "@/styles";
 
 const REVALIDATE_TIME_IN_SECONDS = 60 * 60; // 1 hour
@@ -41,19 +41,13 @@ type ProjectsProps = {
 
 const Projects = ({ projects }: ProjectsProps) => {
   const [searchText, setSearchText] = useState("");
-  const [filteredProjects, setFilteredProjects] = useState(projects);
 
-  const handleFilterList = (e: ChangeEvent<HTMLInputElement>) => {
-    const { value } = e.target;
-
-    setSearchText(value);
-
-    const filteredProjectsByValue = projects.filter((project) =>
-      project.name.toLowerCase().includes(value.toLowerCase()),
-    );
-
-    setFilteredProjects(filteredProjectsByValue);
-  };
+  const filteredProjects =
+    searchText.length > 0
+      ? projects.filter((project) =>
+          project.name.toLowerCase().includes(searchText.toLowerCase()),
+        )
+      : projects;
 
   return (
     <>
@@ -74,7 +68,7 @@ const Projects = ({ projects }: ProjectsProps) => {
         <Input
           preffix={<MagnifyingGlass />}
           value={searchText}
-          onChange={handleFilterList}
+          onChange={(e) => setSearchText(e.target.value)}
           placeholder="Search projects..."
         />
 
@@ -110,7 +104,7 @@ const Projects = ({ projects }: ProjectsProps) => {
 export default Projects;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const projects = await cmsService.getProjects();
+  const projects = await getProjects();
 
   const projectsWithImageBlurHash = await Promise.all(
     projects.map(async (project) => {

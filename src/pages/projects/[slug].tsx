@@ -3,12 +3,12 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import { getPlaiceholder } from "plaiceholder";
 
 import {
-  ProjectOverviewSection,
+  ProjectHeaderSection,
   ProjectImagesSection,
 } from "@/components/sections/project-details";
 import { SEO } from "@/components/seo";
 import { Technology } from "@/generated/graphql";
-import { cmsService } from "@/services";
+import { getProjectBySlug, getProjects } from "@/services/cms-service";
 
 const REVALIDATE_TIME_IN_SECONDS = 60 * 60; // 1 hour
 
@@ -41,7 +41,7 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
         image={project.images[0].url}
       />
 
-      <ProjectOverviewSection
+      <ProjectHeaderSection
         name={project.name}
         coverImage={project.images[0]}
         technologies={project.technologies}
@@ -60,7 +60,7 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
 export default ProjectDetails;
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const projects = await cmsService.getProjects();
+  const projects = await getProjects();
 
   const paths = projects.map((project) => ({ params: { slug: project.slug } }));
 
@@ -73,7 +73,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async (ctx) => {
   const slug = ctx.params?.slug as string;
 
-  const project = await cmsService.getProjectBySlug(slug);
+  const project = await getProjectBySlug(slug);
 
   if (!project) {
     return {
