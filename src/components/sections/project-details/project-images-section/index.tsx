@@ -46,7 +46,9 @@ export const ProjectImagesSection = ({
             />
 
             <ImageContent>
-              <Heading size="md">{image.title}</Heading>
+              <Heading size={{ "@initial": "md", "@mobile": "sm" }}>
+                {image.title}
+              </Heading>
               <p>{image.description}</p>
             </ImageContent>
           </ImageItem>

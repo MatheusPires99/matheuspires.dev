@@ -56,5 +56,10 @@ export const ImageContent = styled("div", {
 
   p: {
     lineHeight: "1.5",
+    color: "$accent-text",
+
+    "@mobile": {
+      fontSize: "$sm",
+    },
   },
 });
