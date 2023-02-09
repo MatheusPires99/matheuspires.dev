@@ -8,9 +8,6 @@ const nextConfig = withPlaiceholder({
     dangerouslyAllowSVG: true,
     domains: ["media.graphassets.com"],
   },
-  experimental: {
-    newNextLinkBehavior: true,
-  },
 });
 
 module.exports = nextConfig;
