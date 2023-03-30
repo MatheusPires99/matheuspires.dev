@@ -1,6 +1,8 @@
 import { ThemeProvider } from "next-themes";
 import type { AppProps } from "next/app";
 
+import "@/styles/global.css";
+
 import { Container } from "@/components/container";
 import { Footer } from "@/components/footer";
 import { GetInTouch } from "@/components/get-in-touch";
