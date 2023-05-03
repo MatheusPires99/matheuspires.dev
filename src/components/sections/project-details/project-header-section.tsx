@@ -7,13 +7,6 @@ import { Chip } from "@/components/chip";
 import { GithubLogo } from "@/components/icons";
 import { Technology } from "@/generated/graphql";
 
-import {
-  CoverImage,
-  ProjectDetails,
-  ProjectTechnologies,
-  ActionButtons,
-} from "./styles";
-
 type ProjectHeaderSectionProps = {
   name: string;
   coverImage: {
@@ -41,7 +34,7 @@ export const ProjectHeaderSection = ({
         {name}
       </h1>
 
-      <CoverImage
+      <Image
         src={coverImage.url}
         alt={name}
         width={936}
@@ -49,11 +42,13 @@ export const ProjectHeaderSection = ({
         quality={100}
         placeholder="blur"
         blurDataURL={coverImage.blurDataUrl}
+        className="rounded shadow-lg"
       />
 
-      <ProjectDetails>
-        <ProjectTechnologies>
-          <span>Technologies</span>
+      <div className="mt-8 flex flex-col justify-between gap-8 md:flex-row md:items-center md:gap-4">
+        <div className="flex flex-col gap-3">
+          <span className="text-sm text-accent-text">Technologies</span>
+
           <div className="flex flex-wrap items-center gap-2">
             {technologies.map((tech) => (
               <Chip key={tech.id} highlightColor={tech.highlightColor} asChild>
@@ -73,9 +68,9 @@ export const ProjectHeaderSection = ({
               </Chip>
             ))}
           </div>
-        </ProjectTechnologies>
+        </div>
 
-        <ActionButtons>
+        <div className="flex shrink-0 items-center gap-4">
           {websiteUrl && (
             <Button
               variant="outline"
@@ -95,8 +90,8 @@ export const ProjectHeaderSection = ({
               Go to Github
             </a>
           </Button>
-        </ActionButtons>
-      </ProjectDetails>
+        </div>
+      </div>
     </section>
   );
 };

@@ -1,10 +1,4 @@
-import {
-  ImagesSectionHeader,
-  ImagesList,
-  ImageItem,
-  CoverImage,
-  ImageContent,
-} from "./styles";
+import Image from "next/image";
 
 type ProjectImagesSectionProps = {
   title: string;
@@ -24,17 +18,17 @@ export const ProjectImagesSection = ({
 }: ProjectImagesSectionProps) => {
   return (
     <section className="py-14 !pt-0 sm:py-26">
-      <ImagesSectionHeader>
+      <div>
         <h2 className="max-w-full text-3xl font-semibold leading-tight sm:max-w-[80%] sm:text-4xl">
           {title}
         </h2>
-        <p>{description}</p>
-      </ImagesSectionHeader>
+        <p className="mt-4 leading-normal text-accent-text">{description}</p>
+      </div>
 
-      <ImagesList>
+      <ul className="mt-14 flex flex-col gap-14">
         {images.map((image) => (
-          <ImageItem key={image.url}>
-            <CoverImage
+          <li key={image.url} className="relative flex flex-col gap-4 sm:gap-6">
+            <Image
               src={image.url}
               alt={image.description}
               width={936}
@@ -42,15 +36,18 @@ export const ProjectImagesSection = ({
               quality={100}
               placeholder="blur"
               blurDataURL={image.blurDataUrl}
+              className="rounded-lg shadow-lg"
             />
 
-            <ImageContent>
+            <div className="flex flex-col gap-2">
               <strong className="text-xl sm:text-2xl">{image.title}</strong>
-              <p>{image.description}</p>
-            </ImageContent>
-          </ImageItem>
+              <p className="text-sm leading-normal text-accent-text sm:text-base">
+                {image.description}
+              </p>
+            </div>
+          </li>
         ))}
-      </ImagesList>
+      </ul>
     </section>
   );
 };
