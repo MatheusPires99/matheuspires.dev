@@ -2,13 +2,6 @@ import Link from "next/link";
 
 import { Button } from "@/components/button";
 import { SEO } from "@/components/seo";
-import { styled } from "@/styles";
-
-const Paragraph = styled("p", {
-  color: "$accent-text",
-  lineHeight: "$base",
-  marginTop: "1rem",
-});
 
 const NotFound = () => {
   return (
@@ -19,12 +12,12 @@ const NotFound = () => {
         <h2 className="text-3xl font-semibold leading-tight sm:text-4xl">
           404 – Unavailable For Legal Reasons
         </h2>
-        <Paragraph>
+        <p className="mt-4 leading-normal text-accent-text">
           Why show a generic 404 when I can make it sound mysterious? It seems
           you've found something that used to exist, or you spelled something
           wrong. I'm guessing you spelled something wrong. Can you double check
           that URL?
-        </Paragraph>
+        </p>
         <Button className="mt-8 self-center" asChild>
           <Link href="/">Return Home</Link>
         </Button>
