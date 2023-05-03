@@ -8,29 +8,8 @@ import { ProjectCard } from "@/components/project-card";
 import { SEO } from "@/components/seo";
 import { ProjectsQuery } from "@/generated/graphql";
 import { getProjects } from "@/services/cms-service";
-import { styled } from "@/styles";
 
 const REVALIDATE_TIME_IN_SECONDS = 60 * 60; // 1 hour
-
-export const ProjectsGrid = styled("ul", {
-  display: "grid",
-  gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
-  gap: "1.5rem",
-
-  "@tablet": {
-    gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
-  },
-
-  "@mobile": {
-    gridTemplateColumns: "repeat(1, minmax(0, 1fr))",
-  },
-});
-
-const NoProjectsFound = styled("div", {
-  display: "flex",
-  flexDirection: "column",
-  gap: "0.5rem",
-});
 
 type ProjectsProps = {
   projects: ProjectsQuery["projects"];
@@ -68,7 +47,7 @@ const Projects = ({ projects }: ProjectsProps) => {
         </div>
 
         {filteredProjects.length > 0 ? (
-          <ProjectsGrid>
+          <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 [&>a]:mx-auto">
             {filteredProjects.map((project) => (
               <li key={project.id}>
                 <ProjectCard
@@ -82,14 +61,14 @@ const Projects = ({ projects }: ProjectsProps) => {
                 />
               </li>
             ))}
-          </ProjectsGrid>
+          </ul>
         ) : (
-          <NoProjectsFound>
+          <div className="flex flex-col gap-2">
             <strong className="text-2xl font-semibold">
               No result found for "{searchText}".
             </strong>
             <span>Try again with a different keyword.</span>
-          </NoProjectsFound>
+          </div>
         )}
       </div>
     </>
