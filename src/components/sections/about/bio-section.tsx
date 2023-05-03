@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Button } from "@/components/button";
 import { RichText } from "@/components/rich-text";
 
-import cover from "../../../../../public/cover.png";
+import cover from "../../../../public/cover.png";
 
 export const BioSection = () => {
   return (
