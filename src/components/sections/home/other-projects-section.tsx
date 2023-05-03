@@ -4,8 +4,6 @@ import { Button } from "@/components/button";
 import { ProjectCard } from "@/components/project-card";
 import { ProjectsQuery } from "@/generated/graphql";
 
-import { OtherProjectsGroup } from "./styles";
-
 const NUMBER_OF_PROJECTS_TO_DISPLAY = 6;
 
 type OtherProjectsSectionProps = {
@@ -21,23 +19,22 @@ export const OtherProjectsSection = ({
         Other Projects
       </h3>
 
-      <OtherProjectsGroup>
+      <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 [&>a]:mx-auto">
         {otherProjects
           .slice(0, NUMBER_OF_PROJECTS_TO_DISPLAY)
           .map((project) => (
-            <li key={project.id}>
-              <ProjectCard
-                slug={project.slug}
-                name={project.name}
-                description={project.description}
-                image={{
-                  url: project.images[0].url,
-                  blurDataUrl: (project.images[0] as any).blurDataUrl,
-                }}
-              />
-            </li>
+            <ProjectCard
+              key={project.id}
+              slug={project.slug}
+              name={project.name}
+              description={project.description}
+              image={{
+                url: project.images[0].url,
+                blurDataUrl: (project.images[0] as any).blurDataUrl,
+              }}
+            />
           ))}
-      </OtherProjectsGroup>
+      </div>
 
       <Button variant="outline" asChild className="mt-14 self-center">
         <Link href="/projects">View all</Link>
