@@ -16,7 +16,7 @@ export const GetInTouch = () => {
           <p>
             I'm always open to chat, so please don't hesitate contacting me!
           </p>
-          <Button variant="outline" asChild>
+          <Button variant="outline" className="mt-14" asChild>
             <a href="mailto:matheushenriquepires99@gmail.com">Say Hello</a>
           </Button>
         </GetInTouchContainer>
