@@ -8,9 +8,6 @@ import { Footer } from "@/components/footer";
 import { GetInTouch } from "@/components/get-in-touch";
 import { Header } from "@/components/header";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
-import { globalStyles } from "@/styles/global";
-
-globalStyles();
 
 const inter = Inter({
   subsets: ["latin"],

@@ -17,7 +17,7 @@ This project was developed with the following technologies:
 - [Next.js](https://nextjs.org/)
 - [GraphQL](https://graphql.org/) and [GraphQL Codegen](https://www.the-guild.dev/graphql/codegen)
 - [Apollo Client](https://www.apollographql.com/)
-- [Stitches](https://stitches.dev/)
+- [TailwindCSS](https://tailwindcss.com/)
 - [Radix UI Colors](https://www.radix-ui.com/colors)
 
 ## :hammer: How to Use
