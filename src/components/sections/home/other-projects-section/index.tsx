@@ -1,5 +1,6 @@
+import Link from "next/link";
+
 import { Button } from "@/components/button";
-import { Link } from "@/components/link";
 import { ProjectCard } from "@/components/project-card";
 import { ProjectsQuery } from "@/generated/graphql";
 

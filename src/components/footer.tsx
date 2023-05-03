@@ -2,7 +2,6 @@ import { LinkedinLogo } from "phosphor-react";
 
 import { IconButton } from "@/components/icon-button";
 import { GithubLogo } from "@/components/icons";
-import { Link } from "@/components/link";
 
 export const Footer = () => {
   return (
@@ -33,13 +32,14 @@ export const Footer = () => {
 
       <div className="mt-4">
         <span className="text-accent-text">Designed by</span>{" "}
-        <Link
-          variant="hightlight"
+        <a
           href="https://www.linkedin.com/in/gabriela-rezende-61a7881ba/"
           target="_blank"
+          rel="noreferrer"
+          className="relative font-semibold text-text-contrast hover:before:absolute hover:before:bottom-0 hover:before:h-px hover:before:w-full hover:before:bg-text-contrast"
         >
           Gabriela Rezende
-        </Link>
+        </a>
       </div>
     </footer>
   );

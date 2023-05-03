@@ -1,8 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import { Button } from "@/components/button";
 import { Chip } from "@/components/chip";
-import { Link } from "@/components/link";
 import { TechnologiesQuery } from "@/generated/graphql";
 
 import avatar from "../../../../../public/avatar.png";

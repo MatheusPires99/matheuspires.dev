@@ -1,6 +1,5 @@
 import Image from "next/image";
 
-import { Link } from "@/components/link";
 import { RichText } from "@/components/rich-text";
 import { WorkExperiencesQuery } from "@/generated/graphql";
 
@@ -47,13 +46,14 @@ export const WorkExperiencesSection = ({
             <WorkExperienceContent>
               <h3 className="flex flex-wrap items-center gap-2 text-2xl font-semibold leading-tight">
                 {workExperience.role}
-                <Link
-                  variant="hightlight"
+                <a
                   href={workExperience.company!.websiteUrl}
                   target="_blank"
+                  rel="noreferrer"
+                  className="relative font-semibold text-text-contrast hover:before:absolute hover:before:bottom-0 hover:before:h-px hover:before:w-full hover:before:bg-text-contrast"
                 >
                   @ {workExperience.company!.name}
-                </Link>
+                </a>
               </h3>
 
               <WorkExperiencePeriod>

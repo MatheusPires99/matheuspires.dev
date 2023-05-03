@@ -1,6 +1,5 @@
 import Image from "next/image";
-
-import { Link } from "@/components/link";
+import Link from "next/link";
 
 type ProjectCardProps = {
   slug: string;

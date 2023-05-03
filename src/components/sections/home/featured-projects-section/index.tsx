@@ -1,9 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import clsx from "clsx";
 
 import { Chip } from "@/components/chip";
-import { Link } from "@/components/link";
 import { ProjectsQuery } from "@/generated/graphql";
 
 import {
@@ -50,7 +50,10 @@ export const FeaturedProjectsSection = ({
                   "items-start left-0": direction === "right",
                 })}
               >
-                <Link variant="primary" href={`/projects/${project.slug}`}>
+                <Link
+                  href={`/projects/${project.slug}`}
+                  className="text-text-base transition hover:text-text-contrast"
+                >
                   <h3 className="text-2xl font-semibold leading-tight sm:text-3xl">
                     {project.name}
                   </h3>
