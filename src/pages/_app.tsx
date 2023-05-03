@@ -7,6 +7,7 @@ import "@/styles/global.css";
 import { Footer } from "@/components/footer";
 import { GetInTouch } from "@/components/get-in-touch";
 import { Header } from "@/components/header";
+import { TailwindIndicator } from "@/components/tailwind-indicator";
 import { globalStyles } from "@/styles/global";
 
 globalStyles();
@@ -42,6 +43,8 @@ const App = ({ Component, pageProps }: AppProps) => {
         </main>
         <GetInTouch />
         <Footer />
+
+        <TailwindIndicator />
       </ThemeProvider>
     </>
   );

@@ -46,7 +46,7 @@ export const FeaturedProjectsSection = ({
 
               <div
                 className={clsx(
-                  "flex w-[430px] flex-col lg:absolute lg:top-1/2 lg:-translate-y-1/2",
+                  "flex w-full flex-col lg:absolute lg:top-1/2 lg:w-[430px] lg:-translate-y-1/2",
                   {
                     "items-end right-0": direction === "left",
                     "items-start left-0": direction === "right",

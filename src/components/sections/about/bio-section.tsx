@@ -1,13 +1,14 @@
+import Image from "next/image";
+
 import { Button } from "@/components/button";
 import { RichText } from "@/components/rich-text";
 
 import cover from "../../../../../public/cover.png";
-import { BioHeader, BioImage } from "./styles";
 
 export const BioSection = () => {
   return (
     <section className="pb-14 pt-8 sm:pb-26 sm:pt-16">
-      <BioHeader>
+      <header className="flex items-center justify-between">
         <h1 className="text-3xl font-semibold leading-tight sm:text-4xl">
           About
         </h1>
@@ -16,15 +17,16 @@ export const BioSection = () => {
             Resume
           </a>
         </Button>
-      </BioHeader>
+      </header>
 
-      <BioImage
+      <Image
         src={cover}
         alt=""
         width={946}
         height={425}
         quality={100}
         placeholder="blur"
+        className="mt-8"
       />
 
       <RichText
