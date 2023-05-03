@@ -26,6 +26,14 @@ module.exports = {
         sans: ["var(--font-sans)", ...fontFamily.sans],
         mono: ["var(--font-mono)", ...fontFamily.mono],
       },
+      fontSize: {
+        "3xl": "2rem",
+        "4xl": "2.5rem",
+      },
+      spacing: {
+        18: "4.5rem",
+        26: "6.5rem",
+      },
     },
   },
   plugins: [],

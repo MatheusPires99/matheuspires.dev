@@ -1,7 +1,6 @@
 import Image from "next/image";
 
 import { Chip, ChipsGroup } from "@/components/chip";
-import { Heading } from "@/components/heading";
 import { Link } from "@/components/link";
 import { Section } from "@/components/section";
 import { TechnologiesQuery } from "@/generated/graphql";
@@ -13,14 +12,9 @@ type SkillsSectionProps = {
 export const SkillsSection = ({ technologies }: SkillsSectionProps) => {
   return (
     <Section>
-      <Heading
-        css={{
-          marginBottom: "2.5rem",
-          "@tablet": { marginBottom: "1.5rem" },
-        }}
-      >
+      <h2 className="mb-6 text-3xl font-semibold leading-tight sm:text-4xl md:mb-10">
         Skills
-      </Heading>
+      </h2>
       <ChipsGroup>
         {technologies.map((tech) => (
           <li key={tech.id}>

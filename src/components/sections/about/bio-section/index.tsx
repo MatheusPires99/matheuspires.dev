@@ -1,5 +1,4 @@
 import { Button } from "@/components/button";
-import { Heading } from "@/components/heading";
 import { Link } from "@/components/link";
 import { RichText } from "@/components/rich-text";
 import { Section } from "@/components/section";
@@ -11,7 +10,9 @@ export const BioSection = () => {
   return (
     <Section isFirstSection>
       <BioHeader>
-        <Heading as="h1">About</Heading>
+        <h1 className="text-3xl font-semibold leading-tight sm:text-4xl">
+          About
+        </h1>
         <Button variant="outline" asChild>
           <a href="/resume.pdf" target="_blank">
             Resume

@@ -1,5 +1,4 @@
 import { Button } from "@/components/button";
-import { Heading } from "@/components/heading";
 import { Link } from "@/components/link";
 import { ProjectCard } from "@/components/project-card";
 import { Section } from "@/components/section";
@@ -28,9 +27,9 @@ export const OtherProjectsSection = ({
         },
       }}
     >
-      <Heading size="xl" as="h3" centered>
+      <h3 className="text-center text-2xl font-semibold sm:text-3xl">
         Other Projects
-      </Heading>
+      </h3>
 
       <OtherProjectsGroup>
         {otherProjects

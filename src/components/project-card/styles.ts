@@ -1,5 +1,4 @@
 import { Card } from "@/components/card";
-import { Heading } from "@/components/heading";
 import { styled } from "@/styles";
 
 export const ProjectCardContainer = styled(Card, {
@@ -18,10 +17,6 @@ export const ProjectCardContainer = styled(Card, {
   },
 
   "&:hover": {
-    [`${Heading}`]: {
-      color: "$text-contrast",
-    },
-
     img: {
       transform: "scale(1.05)",
       filter: "brightness(0.9)",
@@ -53,11 +48,6 @@ export const ProjectCardContent = styled("div", {
   display: "flex",
   flexDirection: "column",
   flex: 1,
-
-  [`${Heading}`]: {
-    color: "$text-base",
-    transition: "color 0.2s",
-  },
 });
 
 export const ProjectCardDescription = styled("p", {

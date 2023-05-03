@@ -1,7 +1,6 @@
 import Image from "next/image";
 
 import { Chip, ChipsGroup } from "@/components/chip";
-import { Heading } from "@/components/heading";
 import { Link } from "@/components/link";
 import { Section } from "@/components/section";
 import { ProjectsQuery } from "@/generated/graphql";
@@ -23,7 +22,9 @@ export const FeaturedProjectsSection = ({
 }: FeaturedProjectSectionProps) => {
   return (
     <Section css={{ paddingBottom: 0 }}>
-      <Heading>Featured Projects</Heading>
+      <h2 className="text-3xl font-semibold leading-tight sm:text-4xl">
+        Featured Projects
+      </h2>
 
       <FeaturedProjectsGroup>
         {featuredProjects.map((project, index) => {
@@ -45,9 +46,9 @@ export const FeaturedProjectsSection = ({
 
               <FeaturedProjectContent direction={direction}>
                 <Link variant="primary" href={`/projects/${project.slug}`}>
-                  <Heading size="xl" as="h3">
+                  <h3 className="text-2xl font-semibold leading-tight sm:text-3xl">
                     {project.name}
-                  </Heading>
+                  </h3>
                 </Link>
 
                 <ChipsGroup css={{ marginTop: "1rem" }}>

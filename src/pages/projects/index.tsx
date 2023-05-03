@@ -4,7 +4,6 @@ import { useState } from "react";
 import { MagnifyingGlass } from "phosphor-react";
 import { getPlaiceholder } from "plaiceholder";
 
-import { Heading } from "@/components/heading";
 import { Input } from "@/components/input";
 import { ProjectCard } from "@/components/project-card";
 import { Section } from "@/components/section";
@@ -63,7 +62,9 @@ const Projects = ({ projects }: ProjectsProps) => {
         isFirstSection
         as="div"
       >
-        <Heading as="h1">Projects</Heading>
+        <h1 className="text-3xl font-semibold leading-tight sm:text-4xl">
+          Projects
+        </h1>
 
         <Input
           preffix={<MagnifyingGlass />}
@@ -90,9 +91,9 @@ const Projects = ({ projects }: ProjectsProps) => {
           </ProjectsGrid>
         ) : (
           <NoProjectsFound>
-            <Heading size="md" as="h4">
+            <strong className="text-2xl font-semibold">
               No result found for "{searchText}".
-            </Heading>
+            </strong>
             <span>Try again with a different keyword.</span>
           </NoProjectsFound>
         )}

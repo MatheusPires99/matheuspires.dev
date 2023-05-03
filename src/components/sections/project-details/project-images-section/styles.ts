@@ -1,17 +1,8 @@
 import Image from "next/image";
 
-import { Heading } from "@/components/heading";
 import { styled } from "@/styles";
 
 export const ImagesSectionHeader = styled("div", {
-  [`${Heading}`]: {
-    maxWidth: "80%",
-
-    "@mobile": {
-      maxWidth: "100%",
-    },
-  },
-
   p: {
     color: "$accent-text",
     marginTop: "1rem",

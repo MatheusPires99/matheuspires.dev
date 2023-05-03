@@ -1,6 +1,5 @@
 import Image from "next/image";
 
-import { Heading } from "@/components/heading";
 import { Link } from "@/components/link";
 import { RichText } from "@/components/rich-text";
 import { Section } from "@/components/section";
@@ -30,14 +29,9 @@ export const WorkExperiencesSection = ({
 }: WorkExperiencesSectionProps) => {
   return (
     <Section>
-      <Heading
-        css={{
-          marginBottom: "6.5rem",
-          "@mobile": { marginBottom: "4.5rem" },
-        }}
-      >
+      <h2 className="mb-18 text-3xl font-semibold leading-tight sm:mb-26 sm:text-4xl">
         Professional Experience
-      </Heading>
+      </h2>
 
       <WorkExperienceGroup>
         {workExperiences.map((workExperience) => (
@@ -52,16 +46,7 @@ export const WorkExperiencesSection = ({
             </CompanyImage>
 
             <WorkExperienceContent>
-              <Heading
-                size="md"
-                as="h3"
-                css={{
-                  display: "flex",
-                  alignItems: "center",
-                  flexWrap: "wrap",
-                  gap: "0.5rem",
-                }}
-              >
+              <h3 className="flex flex-wrap items-center gap-2 text-2xl font-semibold leading-tight">
                 {workExperience.role}
                 <Link
                   variant="hightlight"
@@ -70,7 +55,7 @@ export const WorkExperiencesSection = ({
                 >
                   @ {workExperience.company!.name}
                 </Link>
-              </Heading>
+              </h3>
 
               <WorkExperiencePeriod>
                 {formatDate(workExperience.startsAt)} -{" "}

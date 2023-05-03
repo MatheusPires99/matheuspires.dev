@@ -1,7 +1,6 @@
 import { Button } from "@/components/button";
-import { Heading } from "@/components/heading";
+import { Divider } from "@/components/divider";
 
-import { Divider } from "../divider";
 import { Section } from "../section";
 
 export const GetInTouch = () => {
@@ -11,7 +10,9 @@ export const GetInTouch = () => {
 
       <Section as="div">
         <div className="container flex flex-col items-center">
-          <Heading centered>Get In Touch</Heading>
+          <h2 className="text-center text-3xl font-semibold leading-tight sm:text-4xl">
+            Get In Touch
+          </h2>
           <p className="mt-4 text-center text-lg leading-6 text-accent-text">
             I'm always open to chat, so please don't hesitate contacting me!
           </p>

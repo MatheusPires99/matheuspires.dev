@@ -1,6 +1,5 @@
 import Image from "next/image";
 
-import { Heading } from "@/components/heading";
 import { Link } from "@/components/link";
 
 import {
@@ -28,7 +27,7 @@ export const ProjectCard = ({
 }: ProjectCardProps) => {
   return (
     <Link href={`/projects/${slug}`}>
-      <ProjectCardContainer>
+      <ProjectCardContainer className="group">
         <ProjectCardImageContainer>
           <Image
             src={image.url}
@@ -40,9 +39,9 @@ export const ProjectCard = ({
         </ProjectCardImageContainer>
 
         <ProjectCardContent>
-          <Heading size="sm" as="strong">
+          <strong className="text-xl font-semibold text-text-base transition group-hover:text-text-contrast">
             {name}
-          </Heading>
+          </strong>
 
           <ProjectCardDescription>{description}</ProjectCardDescription>
         </ProjectCardContent>

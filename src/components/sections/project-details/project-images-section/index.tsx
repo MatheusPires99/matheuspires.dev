@@ -1,4 +1,3 @@
-import { Heading } from "@/components/heading";
 import { Section } from "@/components/section";
 
 import {
@@ -28,7 +27,9 @@ export const ProjectImagesSection = ({
   return (
     <Section css={{ paddingTop: 0 }}>
       <ImagesSectionHeader>
-        <Heading as="h2">{title}</Heading>
+        <h2 className="max-w-full text-3xl font-semibold leading-tight sm:max-w-[80%] sm:text-4xl">
+          {title}
+        </h2>
         <p>{description}</p>
       </ImagesSectionHeader>
 
@@ -46,9 +47,7 @@ export const ProjectImagesSection = ({
             />
 
             <ImageContent>
-              <Heading size={{ "@initial": "md", "@mobile": "sm" }}>
-                {image.title}
-              </Heading>
+              <strong className="text-xl sm:text-2xl">{image.title}</strong>
               <p>{image.description}</p>
             </ImageContent>
           </ImageItem>

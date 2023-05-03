@@ -2,7 +2,6 @@ import Image from "next/image";
 
 import { Button } from "@/components/button";
 import { Chip, ChipsGroup } from "@/components/chip";
-import { Heading } from "@/components/heading";
 import { Link } from "@/components/link";
 import { Section } from "@/components/section";
 import { TechnologiesQuery } from "@/generated/graphql";
@@ -42,9 +41,9 @@ export const HeroSection = ({ technologies }: HeroSectionProps) => {
       <HeroContent>
         <Summary>
           <span>Hi, my name is</span>
-          <Heading size="3xl" as="h1">
+          <h1 className="text-4xl font-semibold leading-tight sm:text-6xl">
             Matheus Pires
-          </Heading>
+          </h1>
           <p>
             I'm Matheus, a Front-end Developer and a JavaScript enthusiast. I
             have worked in various industries such as clothing retail, video

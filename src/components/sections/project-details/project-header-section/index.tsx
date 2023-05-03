@@ -4,7 +4,6 @@ import { ArrowRight } from "phosphor-react";
 
 import { Button } from "@/components/button";
 import { Chip, ChipsGroup } from "@/components/chip";
-import { Heading } from "@/components/heading";
 import { GithubLogo } from "@/components/icons";
 import { Link } from "@/components/link";
 import { Section } from "@/components/section";
@@ -40,9 +39,9 @@ export const ProjectHeaderSection = ({
 }: ProjectHeaderSectionProps) => {
   return (
     <Section isFirstSection>
-      <Heading as="h1" css={{ marginBottom: "2rem" }}>
+      <h1 className="mb-8 text-3xl font-semibold leading-tight sm:text-4xl">
         {name}
-      </Heading>
+      </h1>
 
       <CoverImage
         src={coverImage.url}

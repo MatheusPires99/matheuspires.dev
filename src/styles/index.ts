@@ -47,12 +47,12 @@ export const {
       sm: "0.875rem",
       md: "1rem",
       lg: "1.125rem",
-      xl: "1.25rem",
-      "2xl": "1.5rem",
-      "3xl": "1.75rem",
-      "4xl": "2rem",
-      "5xl": "2.625rem",
-      "6xl": "3.75rem",
+      xl: "1.25rem", // 20px
+      "2xl": "1.5rem", // 24px
+      "3xl": "1.75rem", // 28px
+      "4xl": "2rem", // 32px
+      "5xl": "2.625rem", // 42px
+      "6xl": "3.75rem", // 60px
     },
     radii: {
       sm: "4px",
