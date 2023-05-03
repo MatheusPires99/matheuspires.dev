@@ -13,21 +13,23 @@ export const Footer = () => {
         <div className="flex items-center gap-10">
           <strong className="text-lg">© Matheus Pires 2022</strong>
           <div className="flex items-center">
-            <IconButton
-              as={Link}
-              href="https://www.linkedin.com/in/matheus-pires-521271180/"
-              target="_blank"
-              aria-label="LinkedIn"
-            >
-              <LinkedinLogo />
+            <IconButton aria-label="LinkedIn" asChild>
+              <a
+                href="https://www.linkedin.com/in/matheus-pires-521271180/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <LinkedinLogo />
+              </a>
             </IconButton>
-            <IconButton
-              as={Link}
-              href="https://github.com/MatheusPires99"
-              target="_blank"
-              aria-label="GitHub"
-            >
-              <GithubLogo />
+            <IconButton aria-label="GitHub" asChild>
+              <a
+                href="https://github.com/MatheusPires99"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <GithubLogo />
+              </a>
             </IconButton>
           </div>
         </div>
