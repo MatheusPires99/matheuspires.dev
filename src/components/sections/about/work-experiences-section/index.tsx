@@ -2,7 +2,6 @@ import Image from "next/image";
 
 import { Link } from "@/components/link";
 import { RichText } from "@/components/rich-text";
-import { Section } from "@/components/section";
 import { WorkExperiencesQuery } from "@/generated/graphql";
 
 import {
@@ -28,7 +27,7 @@ export const WorkExperiencesSection = ({
   workExperiences,
 }: WorkExperiencesSectionProps) => {
   return (
-    <Section>
+    <section className="py-14 sm:py-26">
       <h2 className="mb-18 text-3xl font-semibold leading-tight sm:mb-26 sm:text-4xl">
         Professional Experience
       </h2>
@@ -74,6 +73,6 @@ export const WorkExperiencesSection = ({
           </WorkExperience>
         ))}
       </WorkExperienceGroup>
-    </Section>
+    </section>
   );
 };

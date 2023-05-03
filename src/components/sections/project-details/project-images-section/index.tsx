@@ -1,5 +1,3 @@
-import { Section } from "@/components/section";
-
 import {
   ImagesSectionHeader,
   ImagesList,
@@ -25,7 +23,7 @@ export const ProjectImagesSection = ({
   images,
 }: ProjectImagesSectionProps) => {
   return (
-    <Section css={{ paddingTop: 0 }}>
+    <section className="py-14 !pt-0 sm:py-26">
       <ImagesSectionHeader>
         <h2 className="max-w-full text-3xl font-semibold leading-tight sm:max-w-[80%] sm:text-4xl">
           {title}
@@ -53,6 +51,6 @@ export const ProjectImagesSection = ({
           </ImageItem>
         ))}
       </ImagesList>
-    </Section>
+    </section>
   );
 };

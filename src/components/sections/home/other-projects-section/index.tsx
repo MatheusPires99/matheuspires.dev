@@ -1,7 +1,6 @@
 import { Button } from "@/components/button";
 import { Link } from "@/components/link";
 import { ProjectCard } from "@/components/project-card";
-import { Section } from "@/components/section";
 import { ProjectsQuery } from "@/generated/graphql";
 
 import { OtherProjectsGroup } from "./styles";
@@ -16,17 +15,7 @@ export const OtherProjectsSection = ({
   otherProjects,
 }: OtherProjectsSectionProps) => {
   return (
-    <Section
-      css={{
-        paddingTop: "9.5rem",
-        display: "flex",
-        flexDirection: "column",
-
-        "@mobile": {
-          paddingTop: "3.5rem",
-        },
-      }}
-    >
+    <section className="flex flex-col py-14 sm:pb-26 sm:pt-36">
       <h3 className="text-center text-2xl font-semibold sm:text-3xl">
         Other Projects
       </h3>
@@ -52,6 +41,6 @@ export const OtherProjectsSection = ({
       <Button variant="outline" asChild className="mt-14 self-center">
         <Link href="/projects">View all</Link>
       </Button>
-    </Section>
+    </section>
   );
 };

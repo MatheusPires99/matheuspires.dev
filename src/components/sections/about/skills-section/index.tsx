@@ -1,7 +1,6 @@
 import Image from "next/image";
 
 import { Chip } from "@/components/chip";
-import { Section } from "@/components/section";
 import { TechnologiesQuery } from "@/generated/graphql";
 
 type SkillsSectionProps = {
@@ -10,7 +9,7 @@ type SkillsSectionProps = {
 
 export const SkillsSection = ({ technologies }: SkillsSectionProps) => {
   return (
-    <Section>
+    <section className="py-14 sm:py-26">
       <h2 className="mb-6 text-3xl font-semibold leading-tight sm:text-4xl md:mb-10">
         Skills
       </h2>
@@ -29,6 +28,6 @@ export const SkillsSection = ({ technologies }: SkillsSectionProps) => {
           </Chip>
         ))}
       </div>
-    </Section>
+    </section>
   );
 };

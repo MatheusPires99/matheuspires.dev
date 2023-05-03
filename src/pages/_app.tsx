@@ -31,7 +31,7 @@ const App = ({ Component, pageProps }: AppProps) => {
       <style jsx global>{`
         :root {
           --font-sans: ${inter.style.fontFamily};
-          --font-code: ${firaMono.style.fontFamily};
+          --font-mono: ${firaMono.style.fontFamily};
         }
       `}</style>
 

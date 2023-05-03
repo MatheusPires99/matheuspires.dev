@@ -3,7 +3,6 @@ import Image from "next/image";
 import { Button } from "@/components/button";
 import { Chip } from "@/components/chip";
 import { Link } from "@/components/link";
-import { Section } from "@/components/section";
 import { TechnologiesQuery } from "@/generated/graphql";
 
 import avatar from "../../../../../public/avatar.png";
@@ -15,20 +14,7 @@ type HeroSectionProps = {
 
 export const HeroSection = ({ technologies }: HeroSectionProps) => {
   return (
-    <Section
-      css={{
-        display: "flex",
-        alignItems: "center",
-        gap: "5.25rem",
-
-        "@laptop": {
-          flexDirection: "column",
-          alignItems: "flex-start",
-          gap: "3rem",
-        },
-      }}
-      isFirstSection
-    >
+    <section className="flex flex-col items-start gap-12 pb-14 pt-8 sm:pb-26 sm:pt-16 lg:flex-row lg:items-center lg:gap-20">
       <HeroImage
         src={avatar}
         alt="Matheus's photo"
@@ -79,6 +65,6 @@ export const HeroSection = ({ technologies }: HeroSectionProps) => {
           </Button>
         </CallToActions>
       </HeroContent>
-    </Section>
+    </section>
   );
 };

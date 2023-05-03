@@ -1,6 +1,5 @@
 import { Button } from "@/components/button";
 import { Link } from "@/components/link";
-import { Section } from "@/components/section";
 import { SEO } from "@/components/seo";
 import { styled } from "@/styles";
 
@@ -15,15 +14,7 @@ const NotFound = () => {
     <>
       <SEO title="404 – Matheus Pires" />
 
-      <Section
-        isFirstSection
-        css={{
-          display: "flex",
-          flexDirection: "column",
-          maxWidth: 672,
-          margin: "0 auto",
-        }}
-      >
+      <section className="mx-auto flex max-w-[672px] flex-col pb-14 pt-8 sm:pb-26 sm:pt-16">
         <h2 className="text-3xl font-semibold leading-tight sm:text-4xl">
           404 – Unavailable For Legal Reasons
         </h2>
@@ -36,7 +27,7 @@ const NotFound = () => {
         <Button className="mt-8 self-center" asChild>
           <Link href="/">Return Home</Link>
         </Button>
-      </Section>
+      </section>
     </>
   );
 };

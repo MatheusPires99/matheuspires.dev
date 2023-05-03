@@ -4,7 +4,6 @@ import clsx from "clsx";
 
 import { Chip } from "@/components/chip";
 import { Link } from "@/components/link";
-import { Section } from "@/components/section";
 import { ProjectsQuery } from "@/generated/graphql";
 
 import {
@@ -22,7 +21,7 @@ export const FeaturedProjectsSection = ({
   featuredProjects,
 }: FeaturedProjectSectionProps) => {
   return (
-    <Section css={{ paddingBottom: 0 }}>
+    <section className="py-14 !pb-0 sm:py-26">
       <h2 className="text-3xl font-semibold leading-tight sm:text-4xl">
         Featured Projects
       </h2>
@@ -97,6 +96,6 @@ export const FeaturedProjectsSection = ({
           );
         })}
       </FeaturedProjectsGroup>
-    </Section>
+    </section>
   );
 };

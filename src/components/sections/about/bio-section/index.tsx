@@ -1,14 +1,13 @@
 import { Button } from "@/components/button";
 import { Link } from "@/components/link";
 import { RichText } from "@/components/rich-text";
-import { Section } from "@/components/section";
 
 import cover from "../../../../../public/cover.png";
 import { BioHeader, BioImage } from "./styles";
 
 export const BioSection = () => {
   return (
-    <Section isFirstSection>
+    <section className="pb-14 pt-8 sm:pb-26 sm:pt-16">
       <BioHeader>
         <h1 className="text-3xl font-semibold leading-tight sm:text-4xl">
           About
@@ -94,6 +93,6 @@ export const BioSection = () => {
           <strong>I am a solid addition to any team</strong>.
         </p>
       </RichText>
-    </Section>
+    </section>
   );
 };

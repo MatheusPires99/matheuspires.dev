@@ -5,7 +5,6 @@ import { MagnifyingGlass } from "phosphor-react";
 import { getPlaiceholder } from "plaiceholder";
 
 import { ProjectCard } from "@/components/project-card";
-import { Section } from "@/components/section";
 import { SEO } from "@/components/seo";
 import { ProjectsQuery } from "@/generated/graphql";
 import { getProjects } from "@/services/cms-service";
@@ -51,16 +50,7 @@ const Projects = ({ projects }: ProjectsProps) => {
     <>
       <SEO title="Projects | Matheus Pires" />
 
-      <Section
-        css={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "2.5rem",
-          "@mobile": { gap: "2rem" },
-        }}
-        isFirstSection
-        as="div"
-      >
+      <div className="flex flex-col gap-8 pb-14 pt-8 sm:gap-10 sm:pb-26 sm:pt-16">
         <h1 className="text-3xl font-semibold leading-tight sm:text-4xl">
           Projects
         </h1>
@@ -101,7 +91,7 @@ const Projects = ({ projects }: ProjectsProps) => {
             <span>Try again with a different keyword.</span>
           </NoProjectsFound>
         )}
-      </Section>
+      </div>
     </>
   );
 };

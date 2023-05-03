@@ -9,7 +9,7 @@ const buttonStyles = cva(
     variants: {
       variant: {
         primary:
-          "border-transparent bg-solid-background text-text-base transition hover:bg-solid-background-hover",
+          "border-transparent bg-solid-background text-background transition hover:bg-solid-background-hover",
         outline:
           "border-border text-text-contrast transition hover:border-border-hover hover:bg-background-light",
       },

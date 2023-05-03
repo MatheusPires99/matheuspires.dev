@@ -5,7 +5,6 @@ import { ArrowRight } from "phosphor-react";
 import { Button } from "@/components/button";
 import { Chip } from "@/components/chip";
 import { GithubLogo } from "@/components/icons";
-import { Section } from "@/components/section";
 import { Technology } from "@/generated/graphql";
 
 import {
@@ -37,7 +36,7 @@ export const ProjectHeaderSection = ({
   websiteUrl,
 }: ProjectHeaderSectionProps) => {
   return (
-    <Section isFirstSection>
+    <section className="pb-14 pt-8 sm:pb-26 sm:pt-16">
       <h1 className="mb-8 text-3xl font-semibold leading-tight sm:text-4xl">
         {name}
       </h1>
@@ -98,6 +97,6 @@ export const ProjectHeaderSection = ({
           </Button>
         </ActionButtons>
       </ProjectDetails>
-    </Section>
+    </section>
   );
 };
