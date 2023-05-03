@@ -1,7 +1,6 @@
 import Image from "next/image";
 
 import { Button } from "@/components/button";
-import { RichText } from "@/components/rich-text";
 
 import cover from "../../../../public/cover.png";
 
@@ -29,13 +28,7 @@ export const BioSection = () => {
         className="mt-8"
       />
 
-      <RichText
-        css={{
-          marginTop: "3.5rem",
-          "@mobile": { marginTop: "2rem" },
-        }}
-        variant="lg"
-      >
+      <div className="prose prose-lg mt-8 w-full max-w-none dark:prose-invert prose-p:text-accent-text prose-a:font-semibold prose-a:text-text-contrast prose-a:no-underline hover:prose-a:underline prose-strong:text-text-base sm:mt-14">
         <p>
           Whilst studying computer science, I always felt different. I cared
           deeply about the visual components of programming. After college, I
@@ -105,7 +98,7 @@ export const BioSection = () => {
           notably with design and UX people,{" "}
           <strong>I am a solid addition to any team</strong>.
         </p>
-      </RichText>
+      </div>
     </section>
   );
 };

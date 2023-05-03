@@ -1,6 +1,5 @@
 import Image from "next/image";
 
-import { RichText } from "@/components/rich-text";
 import { WorkExperiencesQuery } from "@/generated/graphql";
 
 type WorkExperiencesSectionProps = {
@@ -59,8 +58,8 @@ export const WorkExperiencesSection = ({
                   : "present"}
               </span>
 
-              <RichText
-                css={{ marginTop: "1rem" }}
+              <div
+                className="prose prose-lg mt-4 dark:prose-invert prose-p:text-accent-text prose-a:font-semibold prose-a:text-text-contrast prose-a:no-underline hover:prose-a:underline prose-strong:text-text-base"
                 dangerouslySetInnerHTML={{
                   __html: workExperience.description.html,
                 }}
