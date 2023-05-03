@@ -1,14 +1,12 @@
 import { Button } from "@/components/button";
 import { Divider } from "@/components/divider";
 
-import { Section } from "../section";
-
 export const GetInTouch = () => {
   return (
     <div>
       <Divider />
 
-      <Section as="div">
+      <section className="py-14 sm:py-26">
         <div className="container flex flex-col items-center">
           <h2 className="text-center text-3xl font-semibold leading-tight sm:text-4xl">
             Get In Touch
@@ -20,7 +18,7 @@ export const GetInTouch = () => {
             <a href="mailto:matheushenriquepires99@gmail.com">Say Hello</a>
           </Button>
         </div>
-      </Section>
+      </section>
     </div>
   );
 };
