@@ -1,4 +1,3 @@
-import { Card } from "@/components/card";
 import { styled } from "@/styles";
 
 export const FeaturedProjectsGroup = styled("div", {
@@ -74,35 +73,5 @@ export const FeaturedProjectContent = styled("div", {
     position: "unset",
     top: "unset",
     transform: "unset",
-  },
-
-  variants: {
-    direction: {
-      left: {
-        alignItems: "flex-end",
-        right: 0,
-
-        [`${Card}`]: {
-          textAlign: "right",
-        },
-      },
-      right: {
-        alignItems: "flex-start",
-        left: 0,
-
-        [`${Card}`]: {
-          textAlign: "left",
-        },
-      },
-    },
-  },
-});
-
-export const FeaturedProjectDescription = styled(Card, {
-  marginTop: "1.5rem",
-
-  "@laptop": {
-    width: "80vw",
-    marginTop: "10.75rem",
   },
 });

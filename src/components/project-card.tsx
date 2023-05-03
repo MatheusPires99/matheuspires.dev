@@ -2,13 +2,6 @@ import Image from "next/image";
 
 import { Link } from "@/components/link";
 
-import {
-  ProjectCardContainer,
-  ProjectCardImageContainer,
-  ProjectCardContent,
-  ProjectCardDescription,
-} from "./styles";
-
 type ProjectCardProps = {
   slug: string;
   name: string;
@@ -27,25 +20,28 @@ export const ProjectCard = ({
 }: ProjectCardProps) => {
   return (
     <Link href={`/projects/${slug}`}>
-      <ProjectCardContainer className="group">
-        <ProjectCardImageContainer>
+      <div className="group relative flex w-full max-w-[336px] flex-col rounded bg-shape shadow-lg md:max-w-[296px]">
+        <div className="relative flex h-[180px] overflow-hidden">
           <Image
             src={image.url}
             alt={name}
             fill
             placeholder="blur"
             blurDataURL={image.blurDataUrl}
+            className="object-cover transition duration-200 group-hover:scale-105 group-hover:brightness-90"
           />
-        </ProjectCardImageContainer>
+        </div>
 
-        <ProjectCardContent>
+        <div className="flex flex-1 flex-col p-6 pt-4">
           <strong className="text-xl font-semibold text-text-base transition group-hover:text-text-contrast">
             {name}
           </strong>
 
-          <ProjectCardDescription>{description}</ProjectCardDescription>
-        </ProjectCardContent>
-      </ProjectCardContainer>
+          <p className="mt-1 line-clamp-3 flex-1 text-sm leading-normal text-accent-text">
+            {description}
+          </p>
+        </div>
+      </div>
     </Link>
   );
 };

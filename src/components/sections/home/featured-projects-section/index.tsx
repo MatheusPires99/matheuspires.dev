@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import clsx from "clsx";
+
 import { Chip, ChipsGroup } from "@/components/chip";
 import { Link } from "@/components/link";
 import { Section } from "@/components/section";
@@ -8,7 +10,6 @@ import { ProjectsQuery } from "@/generated/graphql";
 import {
   FeaturedProject,
   FeaturedProjectContent,
-  FeaturedProjectDescription,
   FeaturedProjectImageContainer,
   FeaturedProjectsGroup,
 } from "./styles";
@@ -44,7 +45,12 @@ export const FeaturedProjectsSection = ({
                 </FeaturedProjectImageContainer>
               </Link>
 
-              <FeaturedProjectContent direction={direction}>
+              <FeaturedProjectContent
+                className={clsx({
+                  "items-end right-0": direction === "left",
+                  "items-start left-0": direction === "right",
+                })}
+              >
                 <Link variant="primary" href={`/projects/${project.slug}`}>
                   <h3 className="text-2xl font-semibold leading-tight sm:text-3xl">
                     {project.name}
@@ -72,9 +78,17 @@ export const FeaturedProjectsSection = ({
                   ))}
                 </ChipsGroup>
 
-                <FeaturedProjectDescription>
-                  {project.description}
-                </FeaturedProjectDescription>
+                <div
+                  className={clsx(
+                    "mt-40 w-[80vw] rounded bg-shape p-6 shadow-lg lg:mt-6 lg:w-auto",
+                    {
+                      "text-right": direction === "left",
+                      "text-left": direction === "right",
+                    },
+                  )}
+                >
+                  <p className="leading-normal">{project.description}</p>
+                </div>
               </FeaturedProjectContent>
             </FeaturedProject>
           );
