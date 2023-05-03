@@ -5,12 +5,12 @@ import { GithubLogo } from "@/components/icons";
 import { Link } from "@/components/link";
 
 import { Section } from "../section";
-import { FooterContainer, ContactInfo, DesignedBy } from "./styles";
+import { ContactInfo, DesignedBy } from "./styles";
 
 export const Footer = () => {
   return (
     <Section as="footer" css={{ paddingTop: 0 }}>
-      <FooterContainer>
+      <div className="container flex flex-col items-center">
         <ContactInfo>
           <strong>© Matheus Pires 2022</strong>
           <div>
@@ -43,7 +43,7 @@ export const Footer = () => {
             Gabriela Rezende
           </Link>
         </DesignedBy>
-      </FooterContainer>
+      </div>
     </Section>
   );
 };

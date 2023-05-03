@@ -1,4 +1,3 @@
-import { Container } from "@/components/container";
 import { Link } from "@/components/link";
 import { lightTheme, styled } from "@/styles";
 
@@ -28,13 +27,6 @@ export const LogoContainer = styled("div", {
       display: "none",
     },
   },
-});
-
-export const HeaderContent = styled(Container, {
-  height: "100%",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "space-between",
 });
 
 export const Navigation = styled("nav", {

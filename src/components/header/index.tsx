@@ -8,12 +8,7 @@ import { IconButton } from "@/components/icon-button";
 import { MatheusPiresLogo } from "@/components/icons";
 import { Link } from "@/components/link";
 
-import {
-  HeaderContainer,
-  LogoContainer,
-  HeaderContent,
-  Navigation,
-} from "./styles";
+import { HeaderContainer, LogoContainer, Navigation } from "./styles";
 
 export const Header = () => {
   const { pathname } = useRouter();
@@ -33,7 +28,7 @@ export const Header = () => {
 
   return (
     <HeaderContainer>
-      <HeaderContent>
+      <div className="container flex h-full items-center justify-between">
         <Link variant="primary" href="/">
           <LogoContainer>
             <MatheusPiresLogo />
@@ -67,7 +62,7 @@ export const Header = () => {
             </IconButton>
           )}
         </Navigation>
-      </HeaderContent>
+      </div>
     </HeaderContainer>
   );
 };

@@ -38,6 +38,10 @@
   }
 }
 
+.container {
+  @apply max-w-[1000px] w-full mx-auto px-4 sm:px-8;
+}
+
 :focus-visible {
   @apply outline-dashed outline-2 outline-text-contrast outline-offset-4;
 }

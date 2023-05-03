@@ -1,11 +1,4 @@
-import { Container } from "@/components/container";
 import { styled } from "@/styles";
-
-export const FooterContainer = styled(Container, {
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-});
 
 export const ContactInfo = styled("div", {
   display: "flex",
