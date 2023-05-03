@@ -19,7 +19,7 @@ const inter = Inter({
 
 const firaMono = Fira_Mono({
   subsets: ["latin"],
-  variable: "--font-code",
+  variable: "--font-mono",
   weight: ["400", "500"],
   display: "swap",
 });

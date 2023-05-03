@@ -4,7 +4,7 @@ import { Slot } from "@radix-ui/react-slot";
 import { VariantProps, cva } from "class-variance-authority";
 
 const buttonStyles = cva(
-  "flex items-center justify-center gap-2 rounded-lg border font-code font-medium [&>svg]:h-[18px] [&>svg]:w-[18px]",
+  "flex items-center justify-center gap-2 rounded-lg border font-mono font-medium [&>svg]:h-[18px] [&>svg]:w-[18px]",
   {
     variants: {
       variant: {
