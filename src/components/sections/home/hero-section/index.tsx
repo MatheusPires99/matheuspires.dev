@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import { Button } from "@/components/button";
-import { Chip, ChipsGroup } from "@/components/chip";
+import { Chip } from "@/components/chip";
 import { Link } from "@/components/link";
 import { Section } from "@/components/section";
 import { TechnologiesQuery } from "@/generated/graphql";
@@ -52,15 +52,10 @@ export const HeroSection = ({ technologies }: HeroSectionProps) => {
           </p>
         </Summary>
 
-        <ChipsGroup>
+        <div className="flex flex-wrap items-center gap-2">
           {technologies.map((tech) => (
-            <li key={tech.id}>
-              <Chip
-                highlightColor={tech.highlightColor}
-                as={Link}
-                href={tech.websiteUrl}
-                target="_blank"
-              >
+            <Chip key={tech.id} highlightColor={tech.highlightColor} asChild>
+              <a href={tech.websiteUrl} target="_blank" rel="noreferrer">
                 <Image
                   src={tech.image.url}
                   alt={tech.name}
@@ -68,10 +63,10 @@ export const HeroSection = ({ technologies }: HeroSectionProps) => {
                   height={18}
                 />
                 {tech.name}
-              </Chip>
-            </li>
+              </a>
+            </Chip>
           ))}
-        </ChipsGroup>
+        </div>
 
         <CallToActions>
           <Button asChild>

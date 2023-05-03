@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import clsx from "clsx";
 
-import { Chip, ChipsGroup } from "@/components/chip";
+import { Chip } from "@/components/chip";
 import { Link } from "@/components/link";
 import { Section } from "@/components/section";
 import { ProjectsQuery } from "@/generated/graphql";
@@ -57,14 +57,17 @@ export const FeaturedProjectsSection = ({
                   </h3>
                 </Link>
 
-                <ChipsGroup css={{ marginTop: "1rem" }}>
+                <div className="mt-4 flex flex-wrap items-center gap-2">
                   {project.technologies.slice(0, 2).map((tech) => (
-                    <li key={tech.id}>
-                      <Chip
-                        highlightColor={tech.highlightColor}
-                        as={Link}
+                    <Chip
+                      key={tech.id}
+                      highlightColor={tech.highlightColor}
+                      asChild
+                    >
+                      <a
                         href={tech.websiteUrl}
                         target="_blank"
+                        rel="noreferrer"
                       >
                         <Image
                           src={tech.image.url}
@@ -73,10 +76,10 @@ export const FeaturedProjectsSection = ({
                           height={18}
                         />
                         {tech.name}
-                      </Chip>
-                    </li>
+                      </a>
+                    </Chip>
                   ))}
-                </ChipsGroup>
+                </div>
 
                 <div
                   className={clsx(

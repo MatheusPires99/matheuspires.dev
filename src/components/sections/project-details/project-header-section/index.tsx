@@ -3,9 +3,8 @@ import Image from "next/image";
 import { ArrowRight } from "phosphor-react";
 
 import { Button } from "@/components/button";
-import { Chip, ChipsGroup } from "@/components/chip";
+import { Chip } from "@/components/chip";
 import { GithubLogo } from "@/components/icons";
-import { Link } from "@/components/link";
 import { Section } from "@/components/section";
 import { Technology } from "@/generated/graphql";
 
@@ -56,12 +55,10 @@ export const ProjectHeaderSection = ({
       <ProjectDetails>
         <ProjectTechnologies>
           <span>Technologies</span>
-          <ChipsGroup>
+          <div className="flex flex-wrap items-center gap-2">
             {technologies.map((tech) => (
-              <li key={tech.id}>
-                <Chip
-                  highlightColor={tech.highlightColor}
-                  as={Link}
+              <Chip key={tech.id} highlightColor={tech.highlightColor} asChild>
+                <a
                   href={tech.websiteUrl}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -73,11 +70,12 @@ export const ProjectHeaderSection = ({
                     height={18}
                   />
                   {tech.name}
-                </Chip>
-              </li>
+                </a>
+              </Chip>
             ))}
-          </ChipsGroup>
+          </div>
         </ProjectTechnologies>
+
         <ActionButtons>
           {websiteUrl && (
             <Button

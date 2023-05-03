@@ -1,7 +1,6 @@
 import Image from "next/image";
 
-import { Chip, ChipsGroup } from "@/components/chip";
-import { Link } from "@/components/link";
+import { Chip } from "@/components/chip";
 import { Section } from "@/components/section";
 import { TechnologiesQuery } from "@/generated/graphql";
 
@@ -15,15 +14,10 @@ export const SkillsSection = ({ technologies }: SkillsSectionProps) => {
       <h2 className="mb-6 text-3xl font-semibold leading-tight sm:text-4xl md:mb-10">
         Skills
       </h2>
-      <ChipsGroup>
+      <div className="flex flex-wrap items-center gap-2">
         {technologies.map((tech) => (
-          <li key={tech.id}>
-            <Chip
-              highlightColor={tech.highlightColor}
-              as={Link}
-              href={tech.websiteUrl}
-              target="_blank"
-            >
+          <Chip key={tech.id} highlightColor={tech.highlightColor} asChild>
+            <a href={tech.websiteUrl} target="_blank" rel="noreferrer">
               <Image
                 src={tech.image.url}
                 alt={tech.name}
@@ -31,10 +25,10 @@ export const SkillsSection = ({ technologies }: SkillsSectionProps) => {
                 height={18}
               />
               {tech.name}
-            </Chip>
-          </li>
+            </a>
+          </Chip>
         ))}
-      </ChipsGroup>
+      </div>
     </Section>
   );
 };
