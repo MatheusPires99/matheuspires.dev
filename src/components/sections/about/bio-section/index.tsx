@@ -12,8 +12,10 @@ export const BioSection = () => {
     <Section isFirstSection>
       <BioHeader>
         <Heading as="h1">About</Heading>
-        <Button variant="outline" as={Link} href="/resume.pdf" target="_blank">
-          Resume
+        <Button variant="outline" asChild>
+          <a href="/resume.pdf" target="_blank">
+            Resume
+          </a>
         </Button>
       </BioHeader>
 

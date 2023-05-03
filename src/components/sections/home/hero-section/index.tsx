@@ -75,16 +75,13 @@ export const HeroSection = ({ technologies }: HeroSectionProps) => {
         </ChipsGroup>
 
         <CallToActions>
-          <Button as={Link} href="/about">
-            More about me
+          <Button asChild>
+            <Link href="/about">More about me</Link>
           </Button>
-          <Button
-            variant="outline"
-            as={Link}
-            href="/resume.pdf"
-            target="_blank"
-          >
-            Resume
+          <Button variant="outline" asChild>
+            <a href="/resume.pdf" target="_blank">
+              Resume
+            </a>
           </Button>
         </CallToActions>
       </HeroContent>

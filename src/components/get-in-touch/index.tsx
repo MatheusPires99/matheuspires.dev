@@ -1,6 +1,5 @@
 import { Button } from "@/components/button";
 import { Heading } from "@/components/heading";
-import { Link } from "@/components/link";
 
 import { Divider } from "../divider";
 import { Section } from "../section";
@@ -17,12 +16,8 @@ export const GetInTouch = () => {
           <p>
             I'm always open to chat, so please don't hesitate contacting me!
           </p>
-          <Button
-            variant="outline"
-            as={Link}
-            href="mailto:matheushenriquepires99@gmail.com"
-          >
-            Say Hello
+          <Button variant="outline" asChild>
+            <a href="mailto:matheushenriquepires99@gmail.com">Say Hello</a>
           </Button>
         </GetInTouchContainer>
       </Section>

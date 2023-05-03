@@ -50,13 +50,8 @@ export const OtherProjectsSection = ({
           ))}
       </OtherProjectsGroup>
 
-      <Button
-        variant="outline"
-        as={Link}
-        href="/projects"
-        css={{ marginTop: "3.5rem", alignSelf: "center" }}
-      >
-        View all
+      <Button variant="outline" asChild className="mt-14 self-center">
+        <Link href="/projects">View all</Link>
       </Button>
     </Section>
   );

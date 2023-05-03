@@ -84,26 +84,20 @@ export const ProjectHeaderSection = ({
             <Button
               variant="outline"
               size="sm"
-              as={Link}
-              href={websiteUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              css={{ "@tablet": { width: "100%" } }}
+              className="w-full lg:w-auto"
+              asChild
             >
-              Go to Website
-              <ArrowRight weight="bold" />
+              <a href={websiteUrl} target="_blank" rel="noopener noreferrer">
+                Go to Website
+                <ArrowRight weight="bold" />
+              </a>
             </Button>
           )}
-          <Button
-            size="sm"
-            as={Link}
-            href={githubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            css={{ "@tablet": { width: "100%" } }}
-          >
-            <GithubLogo />
-            Go to Github
+          <Button size="sm" className="w-full lg:w-auto" asChild>
+            <a href={githubUrl} target="_blank" rel="noopener noreferrer">
+              <GithubLogo />
+              Go to Github
+            </a>
           </Button>
         </ActionButtons>
       </ProjectDetails>
