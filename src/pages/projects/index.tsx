@@ -4,7 +4,6 @@ import { useState } from "react";
 import { MagnifyingGlass } from "phosphor-react";
 import { getPlaiceholder } from "plaiceholder";
 
-import { Input } from "@/components/input";
 import { ProjectCard } from "@/components/project-card";
 import { Section } from "@/components/section";
 import { SEO } from "@/components/seo";
@@ -66,12 +65,17 @@ const Projects = ({ projects }: ProjectsProps) => {
           Projects
         </h1>
 
-        <Input
-          preffix={<MagnifyingGlass />}
-          value={searchText}
-          onChange={(e) => setSearchText(e.target.value)}
-          placeholder="Search projects..."
-        />
+        <div className="relative w-full">
+          <div className="absolute left-4 top-1/2 flex -translate-y-1/2 items-center justify-center">
+            <MagnifyingGlass className="h-5 w-5 text-accent-placeholder" />
+          </div>
+          <input
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)}
+            placeholder="Search projects..."
+            className="h-12 w-full rounded border border-accent-border bg-transparent pl-11 pr-4 text-text-base placeholder:text-accent-placeholder focus:ring-2 focus:ring-border-hover focus-visible:outline-none"
+          />
+        </div>
 
         {filteredProjects.length > 0 ? (
           <ProjectsGrid>
