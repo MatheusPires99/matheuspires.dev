@@ -6,13 +6,6 @@ import clsx from "clsx";
 import { Chip } from "@/components/chip";
 import { ProjectsQuery } from "@/generated/graphql";
 
-import {
-  FeaturedProject,
-  FeaturedProjectContent,
-  FeaturedProjectImageContainer,
-  FeaturedProjectsGroup,
-} from "./styles";
-
 type FeaturedProjectSectionProps = {
   featuredProjects: ProjectsQuery["projects"];
 };
@@ -26,29 +19,39 @@ export const FeaturedProjectsSection = ({
         Featured Projects
       </h2>
 
-      <FeaturedProjectsGroup>
+      <div className="mt-14 flex flex-col gap-16 sm:gap-26">
         {featuredProjects.map((project, index) => {
           const direction = index % 2 === 0 ? "right" : "left";
 
           return (
-            <FeaturedProject key={project.id} direction={direction}>
+            <div
+              key={project.id}
+              className={clsx("relative flex", {
+                "justify-start": direction === "left",
+                "justify-end": direction === "right",
+              })}
+            >
               <Link href={`/projects/${project.slug}`}>
-                <FeaturedProjectImageContainer>
+                <div className="absolute top-26 -z-10 h-[216px] w-full overflow-hidden rounded border border-accent-border lg:relative lg:top-auto lg:z-auto lg:h-[328px] lg:w-[602px]">
                   <Image
                     src={project.images[0].url}
                     alt={project.name}
                     fill
                     placeholder="blur"
                     blurDataURL={(project.images[0] as any).blurDataUrl}
+                    className="object-cover transition-transform hover:scale-105 lg:hover:transform-none"
                   />
-                </FeaturedProjectImageContainer>
+                </div>
               </Link>
 
-              <FeaturedProjectContent
-                className={clsx({
-                  "items-end right-0": direction === "left",
-                  "items-start left-0": direction === "right",
-                })}
+              <div
+                className={clsx(
+                  "flex w-[430px] flex-col lg:absolute lg:top-1/2 lg:-translate-y-1/2",
+                  {
+                    "items-end right-0": direction === "left",
+                    "items-start left-0": direction === "right",
+                  },
+                )}
               >
                 <Link
                   href={`/projects/${project.slug}`}
@@ -94,11 +97,11 @@ export const FeaturedProjectsSection = ({
                 >
                   <p className="leading-normal">{project.description}</p>
                 </div>
-              </FeaturedProjectContent>
-            </FeaturedProject>
+              </div>
+            </div>
           );
         })}
-      </FeaturedProjectsGroup>
+      </div>
     </section>
   );
 };
