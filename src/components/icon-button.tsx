@@ -1,10 +1,12 @@
-import { ButtonHTMLAttributes } from "react";
+"use client";
+
+import { ButtonHTMLAttributes, forwardRef } from "react";
 
 import { Slot } from "@radix-ui/react-slot";
 import { VariantProps, cva } from "class-variance-authority";
 
 const iconButtonStyles = cva(
-  "flex items-center justify-center rounded-lg bg-transparent text-text-base transition hover:bg-shape hover:text-text-contrast",
+  "flex items-center justify-center rounded-lg bg-transparent text-text-base transition hover:bg-shape hover:text-text-contrast [&>svg]:h-5 [&>svg]:w-5",
   {
     variants: {
       size: {
@@ -23,15 +25,16 @@ type IconButtonProps = VariantProps<typeof iconButtonStyles> &
     asChild?: boolean;
   };
 
-export const IconButton = ({
-  size,
-  className,
-  asChild,
-  ...props
-}: IconButtonProps) => {
-  const Component = asChild ? Slot : "button";
+export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
+  ({ size, className, asChild, ...props }, ref) => {
+    const Component = asChild ? Slot : "button";
 
-  return (
-    <Component className={iconButtonStyles({ size, className })} {...props} />
-  );
-};
+    return (
+      <Component
+        ref={ref}
+        className={iconButtonStyles({ size, className })}
+        {...props}
+      />
+    );
+  },
+);

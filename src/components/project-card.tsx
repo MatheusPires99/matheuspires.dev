@@ -20,18 +20,17 @@ export const ProjectCard = ({
   return (
     <Link
       href={`/projects/${slug}`}
-      className="group relative flex w-full max-w-[336px] flex-col rounded bg-shape shadow-lg md:max-w-[296px]"
+      className="group relative flex w-full max-w-[336px] flex-col overflow-hidden rounded bg-shape shadow-lg md:max-w-[296px]"
     >
-      <div className="relative flex h-[180px] overflow-hidden">
-        <Image
-          src={image.url}
-          alt={name}
-          fill
-          placeholder="blur"
-          blurDataURL={image.blurDataUrl}
-          className="object-cover transition duration-200 group-hover:scale-105 group-hover:brightness-90"
-        />
-      </div>
+      <Image
+        src={image.url}
+        alt={name}
+        width={336}
+        height={180}
+        placeholder="blur"
+        blurDataURL={image.blurDataUrl}
+        className="object-cover transition duration-200 group-hover:scale-105 group-hover:brightness-90"
+      />
 
       <div className="flex flex-1 flex-col p-6 pt-4">
         <strong className="text-xl font-semibold text-text-base transition group-hover:text-text-contrast">
