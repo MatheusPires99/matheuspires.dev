@@ -1,30 +1,49 @@
 import { ThemeProvider } from "next-themes";
 import type { AppProps } from "next/app";
+import { Inter, Fira_Mono } from "next/font/google";
 
-import { Container } from "@/components/container";
+import "@/styles/global.css";
+
 import { Footer } from "@/components/footer";
 import { GetInTouch } from "@/components/get-in-touch";
 import { Header } from "@/components/header";
-import { lightTheme } from "@/styles";
-import { globalStyles } from "@/styles/global";
+import { TailwindIndicator } from "@/components/tailwind-indicator";
 
-globalStyles();
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+});
+
+const firaMono = Fira_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  weight: ["400", "500"],
+  display: "swap",
+});
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
-    <ThemeProvider
-      disableTransitionOnChange
-      attribute="class"
-      value={{ dark: "dark-theme", light: lightTheme.className }}
-      defaultTheme="dark"
-    >
-      <Header />
-      <Container as="main" css={{ flex: 1, marginTop: "$sizes$header-height" }}>
-        <Component {...pageProps} />
-      </Container>
-      <GetInTouch />
-      <Footer />
-    </ThemeProvider>
+    <>
+      {/* eslint-disable-next-line react/no-unknown-property */}
+      <style jsx global>{`
+        :root {
+          --font-sans: ${inter.style.fontFamily};
+          --font-mono: ${firaMono.style.fontFamily};
+        }
+      `}</style>
+
+      <ThemeProvider attribute="class" enableSystem defaultTheme="system">
+        <Header />
+        <main className="container mt-20 flex-1">
+          <Component {...pageProps} />
+        </main>
+        <GetInTouch />
+        <Footer />
+
+        <TailwindIndicator />
+      </ThemeProvider>
+    </>
   );
 };
 
