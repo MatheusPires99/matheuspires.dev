@@ -1,7 +1,8 @@
 {
-  "extends": "@matheuspires/eslint-config",
+  "extends": ["@matheuspires/eslint-config", "plugin:tailwindcss/recommended"],
   "rules": {
-    "react/no-unescaped-entities": "off"
+    "react/no-unescaped-entities": "off",
+    "camelcase": "off"
   },
   "ignorePatterns": [
     "src/generated"

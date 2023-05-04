@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #fdfdfe;
+    --background-light: #f8faff;
+    --shape: #f0f4ff;
+    --shape-hover: #e6edfe;
+    --border: #aec0f5;
+    --border-hover: #8da4ef;
+    --solid-background: #3e63dd;
+    --solid-background-hover: #3a5ccc;
+    --text-contrast: #3451b2;
+    --text-base: #101d46;
+
+    --accent-border: #e2e2e2;
+    --accent-placeholder: #8f8f8f;
+    --accent-text: #6f6f6f;
+  }
+
+  .dark {
+    --background: #131620;
+    --background-light: #15192d;
+    --shape: #192140;
+    --shape-hover: #1c274f;
+    --border: #273e89;
+    --border-hover: #274eb2;
+    --solid-background: #3e63dd;
+    --solid-background-hover: #5373e7;
+    --text-contrast: #849dff;
+    --text-base: #eef1fd;
+
+    --accent-border: #343434;
+    --accent-placeholder: #707070;
+    --accent-text: #a0a0a0;
+  }
+}
+
+.container {
+  @apply max-w-[1000px] w-full mx-auto px-4 sm:px-8;
+}
+
+:focus-visible {
+  @apply outline-dashed outline-2 outline-text-contrast outline-offset-4;
+}
+
+#__next {
+  @apply h-screen flex flex-col;
+}
+
+body {
+  @apply bg-background text-text-base antialiased font-sans;
+}

@@ -1,7 +1,5 @@
 import { Html, Head, Main, NextScript } from "next/document";
 
-import { getCssText } from "../styles";
-
 const Document = () => {
   return (
     <Html lang="en">
@@ -45,11 +43,6 @@ const Document = () => {
         <meta
           content="/favicons/browserconfig.xml"
           name="msapplication-config"
-        />
-
-        <style
-          id="stitches"
-          dangerouslySetInnerHTML={{ __html: getCssText() }}
         />
       </Head>
       <body>
