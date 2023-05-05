@@ -1,3 +1,5 @@
+"use client";
+
 import { HTMLAttributes } from "react";
 
 import { Slot } from "@radix-ui/react-slot";

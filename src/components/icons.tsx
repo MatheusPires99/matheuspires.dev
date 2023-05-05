@@ -1,5 +1,7 @@
-export const MatheusPiresLogo = () => {
-  return (
+import { Sun, Moon, Search, ArrowRight, Linkedin, Github } from "lucide-react";
+
+export const Icons = {
+  MatheusPiresLogo: () => (
     <svg
       width="32"
       height="32"
@@ -13,5 +15,11 @@ export const MatheusPiresLogo = () => {
         fill="#EEF1FD"
       />
     </svg>
-  );
+  ),
+  Github,
+  Linkedin,
+  Moon,
+  Sun,
+  ArrowRight,
+  Search,
 };

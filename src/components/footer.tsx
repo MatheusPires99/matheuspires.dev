@@ -1,7 +1,5 @@
-import { LinkedinLogo } from "phosphor-react";
-
 import { IconButton } from "@/components/icon-button";
-import { GithubLogo } from "@/components/icons";
+import { Icons } from "@/components/icons";
 
 export const Footer = () => {
   return (
@@ -15,7 +13,7 @@ export const Footer = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <LinkedinLogo />
+              <Icons.Linkedin />
             </a>
           </IconButton>
           <IconButton aria-label="GitHub" asChild>
@@ -24,7 +22,7 @@ export const Footer = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <GithubLogo />
+              <Icons.Github />
             </a>
           </IconButton>
         </div>
