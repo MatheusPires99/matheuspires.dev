@@ -70,11 +70,11 @@ export const metadata: Metadata = {
     images: [siteConfig.ogImage],
   },
   icons: {
-    icon: "/favicons/favicon.ico",
-    shortcut: "/favicons/favicon-16x16.png",
-    apple: "/favicons//apple-touch-icon.png",
+    icon: "/favicon.ico",
+    shortcut: "/favicon-16x16.png",
+    apple: "/apple-touch-icon.png",
   },
-  manifest: `${siteConfig.url}/favicons/site.webmanifest`,
+  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({ children }: RootLayoutProps) {
