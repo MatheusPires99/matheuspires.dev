@@ -32,8 +32,8 @@ const firaMono = Fira_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Matheus Pires - Front-end Developer",
-    template: "%s | Matheus Pires",
+    default: siteConfig.name,
+    template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
   authors: [
@@ -52,8 +52,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: siteConfig.url,
     title: siteConfig.name,
-    description:
-      "I'm Matheus, a web developer focused on front-end. I love building great products with interesting data, beautiful UI and great UX.",
+    description: siteConfig.description,
     siteName: siteConfig.name,
     images: [
       {

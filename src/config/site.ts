@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: "Matheus Pires",
+  name: "Matheus Pires - Front-end Developer",
   url: "https://matheuspires.dev",
   ogImage: "https://matheuspires.dev/og.jpg",
   description:
